@@ -1,0 +1,11 @@
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\bin\Debug\net6.0\Clases.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\bin\Debug\net6.0\Clases.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\bin\Debug\net6.0\Clases.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\refint\Clases.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\Clases.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clases\obj\Debug\net6.0\ref\Clases.dll

@@ -1,0 +1,28 @@
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\bin\Debug\net6.0\Clase 2.exe
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\bin\Debug\net6.0\Clase 2.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\bin\Debug\net6.0\Clase 2.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\bin\Debug\net6.0\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\bin\Debug\net6.0\Clase 2.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\refint\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\Clase 2.genruntimeconfig.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\Clase 2\Clase 2\obj\Debug\net6.0\ref\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\bin\Debug\net6.0\Clase 2.exe
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\bin\Debug\net6.0\Clase 2.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\bin\Debug\net6.0\Clase 2.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\bin\Debug\net6.0\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\bin\Debug\net6.0\Clase 2.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\refint\Clase 2.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\Clase 2.genruntimeconfig.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase 2\obj\Debug\net6.0\ref\Clase 2.dll
