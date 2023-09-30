@@ -1,0 +1,16 @@
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\bin\Debug\net6.0-windows\ControlDeEmpleados.exe
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\bin\Debug\net6.0-windows\ControlDeEmpleados.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\bin\Debug\net6.0-windows\ControlDeEmpleados.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\bin\Debug\net6.0-windows\ControlDeEmpleados.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\bin\Debug\net6.0-windows\ControlDeEmpleados.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.Form1.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.csproj.GenerateResource.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\refint\ControlDeEmpleados.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ControlDeEmpleados.genruntimeconfig.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\ControlDeEmpleados\obj\Debug\net6.0-windows\ref\ControlDeEmpleados.dll

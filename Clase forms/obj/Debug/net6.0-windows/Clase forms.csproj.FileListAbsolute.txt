@@ -1,0 +1,16 @@
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\bin\Debug\net6.0-windows\Clase forms.exe
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\bin\Debug\net6.0-windows\Clase forms.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\bin\Debug\net6.0-windows\Clase forms.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\bin\Debug\net6.0-windows\Clase forms.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\bin\Debug\net6.0-windows\Clase forms.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase_forms.Form1.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.csproj.GenerateResource.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\refint\Clase forms.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\Clase forms.genruntimeconfig.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Clase forms\obj\Debug\net6.0-windows\ref\Clase forms.dll
