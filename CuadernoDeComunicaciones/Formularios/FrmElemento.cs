@@ -25,11 +25,41 @@ namespace CuadernoDeComunicaciones
             get { return this.usuarios; }
             set { this.usuarios = value; }
         }
-        public string Alumno
+        public ComboBox CboAlumnos
         {
-            get { return this.cboAlumno.SelectedValue.ToString(); }
+            get { return this.cboAlumno; }
             set { this.cboAlumno.SelectedValue = value; }
         }
+        public Button BtnCrear
+        {
+            get { return this.btnCrear; }
+            set { this.btnCrear = value; }
+        }
+
+        public Button BtnModificar
+        {
+            get { return this.btnModificar; }
+            set { this.btnModificar = value; }
+        }
+
+        public Button BtnBorrar
+        {
+            get { return this.btnBorrar; }
+            set { this.btnBorrar = value; }
+        }
+
+        public Button BtnListar
+        {
+            get { return this.btnListar; }
+            set { this.btnListar = value; }
+        }
+
+        public Button BtnLimpiar
+        {
+            get { return this.btnLimpiar; }
+            set { this.btnLimpiar = value; }
+        }
+
 
         public DateTime Fecha
         {
@@ -45,6 +75,13 @@ namespace CuadernoDeComunicaciones
         public event EventHandler BtnModificarClick;
         public event EventHandler BtnBorrarClick;
         public event EventHandler BtnListarClick;
+        public event EventHandler BtnLimpiarClick;
+
+        public event DataGridViewCellEventHandler dgvElementosCellClick;
+        public FrmElemento()
+        {
+            InitializeComponent();
+        }
         public FrmElemento(Usuario Usuario, List<Usuario> Usuarios)
         {
             InitializeComponent();
@@ -112,6 +149,17 @@ namespace CuadernoDeComunicaciones
         private void btnListar_Click(object sender, EventArgs e)
         {
             BtnListarClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void dgvElementos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvElementosCellClick?.Invoke(this, e);
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            BtnLimpiarClick?.Invoke(this, EventArgs.Empty);
         }
     }
 }

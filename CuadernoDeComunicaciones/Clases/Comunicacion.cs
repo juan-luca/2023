@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace CuadernoDeComunicaciones
+namespace CuadernoDeComunicaciones.Clases
 {
     public class Comunicacion : Elemento
     {
@@ -16,22 +16,24 @@ namespace CuadernoDeComunicaciones
         #region Constructor
         public Comunicacion()
         {
-            
+
         }
-        public Comunicacion( string Remitente,  string Alumno, int ComunicacionNro, Categoria Categoria, string Texto, DateTime Fecha)
-            : base(Remitente, Alumno,Fecha)
+        public Comunicacion(string Remitente, string Alumno, int ComunicacionNro, Categoria Categoria, string Texto, DateTime Fecha)
+            : base(Remitente, Alumno, Fecha)
         {
-            this.comunicacionNro = ComunicacionNro;
-            this.categoria = Categoria;
-            this.texto = Texto;
+            comunicacionNro = ComunicacionNro;
+            categoria = Categoria;
+            texto = Texto;
         }
         #endregion
 
         #region Métodos Públicos
         public override bool Crear()
         {
-            return this.AgregarComunicacionAXml();
-
+                if(AgregarComunicacionAXml())
+                    return true;
+                
+            return false;
         }
 
         public override void Modificar()
@@ -46,8 +48,8 @@ namespace CuadernoDeComunicaciones
 
         public static List<Comunicacion> ListarTodos()
         {
-           
-            return Comunicacion.DeserializarComunicaciones();
+
+            return DeserializarComunicaciones();
         }
 
         public override Elemento Buscar()
@@ -59,7 +61,7 @@ namespace CuadernoDeComunicaciones
         #endregion
         private bool AgregarComunicacionAXml()
         {
-            List<Comunicacion> comunicaciones = Comunicacion.ListarTodos();
+            List<Comunicacion> comunicaciones = ListarTodos();
 
             comunicaciones.Add(this);
 
@@ -90,7 +92,7 @@ namespace CuadernoDeComunicaciones
         }
         public static bool SerializarComunicaciones(List<Comunicacion> comunicaciones, string archivoXml)
         {
-            bool Serializado=false;
+            bool Serializado = false;
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Comunicacion>));
@@ -110,20 +112,20 @@ namespace CuadernoDeComunicaciones
         #region Propiedades Públicas
         public int ComunicacionNro
         {
-            get { return this.comunicacionNro; }
-            set { this.comunicacionNro = value; }
+            get { return comunicacionNro; }
+            set { comunicacionNro = value; }
         }
 
         public Categoria Categoria
         {
-            get { return this.categoria; }
-            set { this.categoria = value; }
+            get { return categoria; }
+            set { categoria = value; }
         }
 
         public string Texto
         {
-            get { return this.texto; }
-            set { this.texto = value; }
+            get { return texto; }
+            set { texto = value; }
         }
 
         #endregion

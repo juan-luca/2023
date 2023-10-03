@@ -59,6 +59,7 @@
             statusStrip1 = new StatusStrip();
             txtBuscar = new ToolStripTextBox();
             errorProvider1 = new ErrorProvider(components);
+            btnLimpiar = new Button();
             gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvElementos).BeginInit();
             statusStrip1.SuspendLayout();
@@ -74,11 +75,11 @@
             gbxDatos.Controls.Add(lblFecha);
             gbxDatos.Controls.Add(lblRemitenteValue);
             gbxDatos.Controls.Add(lblRemitente);
-            gbxDatos.Location = new Point(14, 14);
-            gbxDatos.Margin = new Padding(4, 3, 4, 3);
+            gbxDatos.Location = new Point(16, 19);
+            gbxDatos.Margin = new Padding(5, 4, 5, 4);
             gbxDatos.Name = "gbxDatos";
-            gbxDatos.Padding = new Padding(4, 3, 4, 3);
-            gbxDatos.Size = new Size(905, 115);
+            gbxDatos.Padding = new Padding(5, 4, 5, 4);
+            gbxDatos.Size = new Size(1034, 153);
             gbxDatos.TabIndex = 0;
             gbxDatos.TabStop = false;
             gbxDatos.Text = "Datos";
@@ -87,60 +88,60 @@
             // 
             cboAlumno.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAlumno.FormattingEnabled = true;
-            cboAlumno.Location = new Point(74, 76);
-            cboAlumno.Margin = new Padding(4, 3, 4, 3);
+            cboAlumno.Location = new Point(85, 101);
+            cboAlumno.Margin = new Padding(5, 4, 5, 4);
             cboAlumno.Name = "cboAlumno";
-            cboAlumno.Size = new Size(124, 23);
+            cboAlumno.Size = new Size(141, 28);
             cboAlumno.TabIndex = 12;
             // 
             // lblAlumno
             // 
             lblAlumno.Anchor = AnchorStyles.Left;
             lblAlumno.AutoSize = true;
-            lblAlumno.Location = new Point(7, 78);
-            lblAlumno.Margin = new Padding(4, 0, 4, 0);
+            lblAlumno.Location = new Point(8, 104);
+            lblAlumno.Margin = new Padding(5, 0, 5, 0);
             lblAlumno.Name = "lblAlumno";
-            lblAlumno.Size = new Size(53, 15);
+            lblAlumno.Size = new Size(64, 20);
             lblAlumno.TabIndex = 4;
             lblAlumno.Text = "Alumno:";
             // 
             // dtpFecha
             // 
             dtpFecha.Anchor = AnchorStyles.Left;
-            dtpFecha.Location = new Point(74, 45);
-            dtpFecha.Margin = new Padding(4, 3, 4, 3);
+            dtpFecha.Location = new Point(85, 60);
+            dtpFecha.Margin = new Padding(5, 4, 5, 4);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(124, 23);
+            dtpFecha.Size = new Size(141, 27);
             dtpFecha.TabIndex = 3;
             // 
             // lblFecha
             // 
             lblFecha.Anchor = AnchorStyles.Left;
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(7, 48);
-            lblFecha.Margin = new Padding(4, 0, 4, 0);
+            lblFecha.Location = new Point(8, 64);
+            lblFecha.Margin = new Padding(5, 0, 5, 0);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(41, 15);
+            lblFecha.Size = new Size(50, 20);
             lblFecha.TabIndex = 2;
             lblFecha.Text = "Fecha:";
             // 
             // lblRemitenteValue
             // 
             lblRemitenteValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            lblRemitenteValue.Location = new Point(74, 17);
-            lblRemitenteValue.Margin = new Padding(4, 3, 4, 3);
+            lblRemitenteValue.Location = new Point(85, 23);
+            lblRemitenteValue.Margin = new Padding(5, 4, 5, 4);
             lblRemitenteValue.Name = "lblRemitenteValue";
-            lblRemitenteValue.Size = new Size(124, 23);
+            lblRemitenteValue.Size = new Size(142, 31);
             lblRemitenteValue.TabIndex = 1;
             // 
             // lblRemitente
             // 
             lblRemitente.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblRemitente.AutoSize = true;
-            lblRemitente.Location = new Point(7, 18);
-            lblRemitente.Margin = new Padding(4, 0, 4, 0);
+            lblRemitente.Location = new Point(8, 24);
+            lblRemitente.Margin = new Padding(5, 0, 5, 0);
             lblRemitente.Name = "lblRemitente";
-            lblRemitente.Size = new Size(64, 15);
+            lblRemitente.Size = new Size(80, 20);
             lblRemitente.TabIndex = 0;
             lblRemitente.Text = "Remitente:";
             // 
@@ -149,10 +150,10 @@
             btnCrear.BackColor = Color.PaleGreen;
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCrear.Location = new Point(14, 136);
-            btnCrear.Margin = new Padding(4, 3, 4, 3);
+            btnCrear.Location = new Point(16, 181);
+            btnCrear.Margin = new Padding(5, 4, 5, 4);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(88, 27);
+            btnCrear.Size = new Size(101, 36);
             btnCrear.TabIndex = 6;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = false;
@@ -160,10 +161,10 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(108, 136);
-            btnModificar.Margin = new Padding(4, 3, 4, 3);
+            btnModificar.Location = new Point(123, 181);
+            btnModificar.Margin = new Padding(5, 4, 5, 4);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(88, 27);
+            btnModificar.Size = new Size(101, 36);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -171,10 +172,10 @@
             // 
             // btnBorrar
             // 
-            btnBorrar.Location = new Point(203, 136);
-            btnBorrar.Margin = new Padding(4, 3, 4, 3);
+            btnBorrar.Location = new Point(232, 181);
+            btnBorrar.Margin = new Padding(5, 4, 5, 4);
             btnBorrar.Name = "btnBorrar";
-            btnBorrar.Size = new Size(88, 27);
+            btnBorrar.Size = new Size(101, 36);
             btnBorrar.TabIndex = 8;
             btnBorrar.Text = "Borrar";
             btnBorrar.UseVisualStyleBackColor = true;
@@ -182,10 +183,10 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(298, 136);
-            btnListar.Margin = new Padding(4, 3, 4, 3);
+            btnListar.Location = new Point(341, 181);
+            btnListar.Margin = new Padding(5, 4, 5, 4);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(88, 27);
+            btnListar.Size = new Size(101, 36);
             btnListar.TabIndex = 9;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
@@ -197,39 +198,54 @@
             dgvElementos.AllowUserToDeleteRows = false;
             dgvElementos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvElementos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvElementos.Location = new Point(14, 170);
-            dgvElementos.Margin = new Padding(4, 3, 4, 3);
+            dgvElementos.Location = new Point(16, 227);
+            dgvElementos.Margin = new Padding(5, 4, 5, 4);
             dgvElementos.MultiSelect = false;
             dgvElementos.Name = "dgvElementos";
             dgvElementos.ReadOnly = true;
+            dgvElementos.RowHeadersWidth = 51;
             dgvElementos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvElementos.Size = new Size(905, 314);
+            dgvElementos.Size = new Size(1034, 419);
             dgvElementos.TabIndex = 10;
+            dgvElementos.CellClick += dgvElementos_CellClick;
             // 
             // statusStrip1
             // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { txtBuscar });
-            statusStrip1.Location = new Point(0, 496);
+            statusStrip1.Location = new Point(0, 665);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Padding = new Padding(1, 0, 16, 0);
-            statusStrip1.Size = new Size(933, 23);
+            statusStrip1.Padding = new Padding(1, 0, 18, 0);
+            statusStrip1.Size = new Size(1066, 27);
             statusStrip1.TabIndex = 11;
             statusStrip1.Text = "statusStrip1";
             // 
             // txtBuscar
             // 
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(116, 23);
+            txtBuscar.Size = new Size(132, 27);
             // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(452, 180);
+            btnLimpiar.Margin = new Padding(5, 4, 5, 4);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(101, 36);
+            btnLimpiar.TabIndex = 12;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // FrmElemento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(1066, 692);
+            Controls.Add(btnLimpiar);
             Controls.Add(statusStrip1);
             Controls.Add(dgvElementos);
             Controls.Add(btnListar);
@@ -237,7 +253,7 @@
             Controls.Add(btnModificar);
             Controls.Add(btnCrear);
             Controls.Add(gbxDatos);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "FrmElemento";
             Text = "Elemento";
             gbxDatos.ResumeLayout(false);
@@ -253,5 +269,6 @@
         #endregion
 
 
+        private Button btnLimpiar;
     }
 }

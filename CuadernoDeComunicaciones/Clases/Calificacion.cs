@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CuadernoDeComunicaciones
+namespace CuadernoDeComunicaciones.Clases
 {
     public class Calificacion : Elemento
     {
@@ -16,44 +16,44 @@ namespace CuadernoDeComunicaciones
         #region Propiedades
         public int CalificacionNro
         {
-            get { return this.calificacionNro; }
-            set { this.calificacionNro = value; }
+            get { return calificacionNro; }
+            set { calificacionNro = value; }
         }
 
         public string Concepto
         {
-            get { return this.concepto; }
-            set { this.concepto = value; }
+            get { return concepto; }
+            set { concepto = value; }
         }
 
         public double Nota
         {
-            get { return this.nota; }
-            set { this.nota = value; }
+            get { return nota; }
+            set { nota = value; }
         }
 
         public Materia Materia
         {
-            get { return this.materia; }
-            set { this.materia = value; }
+            get { return materia; }
+            set { materia = value; }
         }
 
         public string Observacion
         {
-            get { return this.observacion; }
-            set { this.observacion = value; }
+            get { return observacion; }
+            set { observacion = value; }
         }
         #endregion
 
         #region Constructor
-        public Calificacion(string Remitente, string Alumno, double Nota, Materia Materia , int CalificacionNro, string Concepto = "", string Observacion = "", DateTime? Fecha = null)
+        public Calificacion(string Remitente, string Alumno, double Nota, Materia Materia, int CalificacionNro, string Concepto = "", string Observacion = "", DateTime? Fecha = null)
             : base(Remitente, Alumno, Fecha)
         {
-            this.calificacionNro = CalificacionNro;
-            this.concepto = Concepto;
-            this.nota = Nota;
-            this.materia = Materia;
-            this.observacion = Observacion;
+            calificacionNro = CalificacionNro;
+            concepto = Concepto;
+            nota = Nota;
+            materia = Materia;
+            observacion = Observacion;
         }
         #endregion
 

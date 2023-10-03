@@ -7,9 +7,9 @@
         private Label lblComunicacionNroValue;
         private Label lblRemitente;
         private Label lblRemitenteValue;
-        
+
         private Label lblCategoria;
-        private ComboBox cboCategoria;
+        private ComboBox CboCategoria;
         private Label lblTexto;
         private TextBox txtTexto;
 
@@ -20,18 +20,19 @@
             {
                 components.Dispose();
             }
-            
+
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComunicacion));
             lblComunicacionNro = new Label();
             lblComunicacionNroValue = new Label();
             lblRemitente = new Label();
             lblRemitenteValue = new Label();
             lblCategoria = new Label();
-            cboCategoria = new ComboBox();
+            CboCategoria = new ComboBox();
             lblTexto = new Label();
             txtTexto = new TextBox();
             gbxDatos.SuspendLayout();
@@ -42,16 +43,16 @@
             gbxDatos.Controls.Add(lblComunicacionNro);
             gbxDatos.Controls.Add(lblComunicacionNroValue);
             gbxDatos.Controls.Add(lblCategoria);
-            gbxDatos.Controls.Add(cboCategoria);
+            gbxDatos.Controls.Add(CboCategoria);
             gbxDatos.Controls.Add(lblTexto);
             gbxDatos.Controls.Add(txtTexto);
-            gbxDatos.Location = new Point(16, 16);
-            gbxDatos.Margin = new Padding(5, 3, 5, 3);
-            gbxDatos.Padding = new Padding(5, 3, 5, 3);
-            gbxDatos.Size = new Size(1056, 133);
+            gbxDatos.Location = new Point(18, 21);
+            gbxDatos.Margin = new Padding(6, 4, 6, 4);
+            gbxDatos.Padding = new Padding(6, 4, 6, 4);
+            gbxDatos.Size = new Size(1182, 177);
             gbxDatos.Controls.SetChildIndex(txtTexto, 0);
             gbxDatos.Controls.SetChildIndex(lblTexto, 0);
-            gbxDatos.Controls.SetChildIndex(cboCategoria, 0);
+            gbxDatos.Controls.SetChildIndex(CboCategoria, 0);
             gbxDatos.Controls.SetChildIndex(lblCategoria, 0);
             gbxDatos.Controls.SetChildIndex(lblComunicacionNroValue, 0);
             gbxDatos.Controls.SetChildIndex(lblComunicacionNro, 0);
@@ -59,70 +60,85 @@
             // lblComunicacionNro
             // 
             lblComunicacionNro.AutoSize = true;
-            lblComunicacionNro.Location = new Point(242, 21);
-            lblComunicacionNro.Margin = new Padding(4, 0, 4, 0);
+            lblComunicacionNro.Location = new Point(277, 28);
+            lblComunicacionNro.Margin = new Padding(5, 0, 5, 0);
             lblComunicacionNro.Name = "lblComunicacionNro";
-            lblComunicacionNro.Size = new Size(151, 15);
+            lblComunicacionNro.Size = new Size(185, 20);
             lblComunicacionNro.TabIndex = 6;
             lblComunicacionNro.Text = "Número de Comunicación:";
             // 
             // lblComunicacionNroValue
             // 
-            lblComunicacionNroValue.Location = new Point(401, 17);
-            lblComunicacionNroValue.Margin = new Padding(4, 3, 4, 3);
+            lblComunicacionNroValue.Location = new Point(458, 23);
+            lblComunicacionNroValue.Margin = new Padding(5, 4, 5, 4);
             lblComunicacionNroValue.Name = "lblComunicacionNroValue";
-            lblComunicacionNroValue.Size = new Size(119, 23);
+            lblComunicacionNroValue.Size = new Size(136, 31);
             lblComunicacionNroValue.TabIndex = 7;
+            lblComunicacionNroValue.TextChanged += lblComunicacionNroValue_TextChanged;
+            // 
+            // lblRemitente
+            // 
+            lblRemitente.Location = new Point(0, 0);
+            lblRemitente.Name = "lblRemitente";
+            lblRemitente.Size = new Size(100, 23);
+            lblRemitente.TabIndex = 0;
+            // 
+            // lblRemitenteValue
+            // 
+            lblRemitenteValue.Location = new Point(0, 0);
+            lblRemitenteValue.Name = "lblRemitenteValue";
+            lblRemitenteValue.Size = new Size(100, 23);
+            lblRemitenteValue.TabIndex = 0;
             // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(242, 52);
-            lblCategoria.Margin = new Padding(4, 0, 4, 0);
+            lblCategoria.Location = new Point(277, 69);
+            lblCategoria.Margin = new Padding(5, 0, 5, 0);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(61, 15);
+            lblCategoria.Size = new Size(77, 20);
             lblCategoria.TabIndex = 8;
             lblCategoria.Text = "Categoría:";
             // 
-            // cboCategoria
+            // CboCategoria
             // 
-            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(401, 55);
-            cboCategoria.Margin = new Padding(4, 3, 4, 3);
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(119, 23);
-            cboCategoria.TabIndex = 9;
-            cboCategoria.DataSource = Enum.GetValues(typeof(Categoria)).Cast<Categoria>().ToList();
+            CboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboCategoria.FormattingEnabled = true;
+            CboCategoria.Location = new Point(458, 73);
+            CboCategoria.Margin = new Padding(5, 4, 5, 4);
+            CboCategoria.Name = "CboCategoria";
+            CboCategoria.Size = new Size(135, 28);
+            CboCategoria.TabIndex = 9;
+            CboCategoria.DataSource = Enum.GetValues(typeof(Categoria));
 
             // 
             // lblTexto
             // 
             lblTexto.AutoSize = true;
-            lblTexto.Location = new Point(528, 17);
-            lblTexto.Margin = new Padding(4, 0, 4, 0);
+            lblTexto.Location = new Point(603, 23);
+            lblTexto.Margin = new Padding(5, 0, 5, 0);
             lblTexto.Name = "lblTexto";
-            lblTexto.Size = new Size(38, 15);
+            lblTexto.Size = new Size(48, 20);
             lblTexto.TabIndex = 10;
             lblTexto.Text = "Texto:";
             // 
             // txtTexto
             // 
-            txtTexto.Location = new Point(574, 12);
-            txtTexto.Margin = new Padding(4, 3, 4, 3);
+            txtTexto.Location = new Point(656, 16);
+            txtTexto.Margin = new Padding(5, 4, 5, 4);
             txtTexto.Multiline = true;
             txtTexto.Name = "txtTexto";
-            txtTexto.Size = new Size(473, 115);
+            txtTexto.Size = new Size(540, 152);
             txtTexto.TabIndex = 11;
-            txtTexto.Text = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum";
-
+            txtTexto.Text = resources.GetString("txtTexto.Text");
             // 
             // FrmComunicacion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1088, 599);
-            Margin = new Padding(5, 3, 5, 3);
+            ClientSize = new Size(1243, 799);
+            Fecha = new DateTime(2023, 9, 30, 18, 56, 35, 845);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "FrmComunicacion";
             Text = "Comunicación";
             gbxDatos.ResumeLayout(false);
