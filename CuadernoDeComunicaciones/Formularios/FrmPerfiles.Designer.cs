@@ -54,8 +54,13 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
+            this.usuarios = Usuario.ListarTodos();
+
+            this.dgvUsuarios.DataSource = this.usuarios;
             // 
             // txtNombreUsuario
             // 
@@ -64,6 +69,7 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(200, 20);
             this.txtNombreUsuario.TabIndex = 1;
+            this.txtNombreUsuario.TextChanged += TxtNombreUsuario_TextChanged;
             // 
             // txtContraseña
             // 
@@ -119,6 +125,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnBorrar_Click);
+
             // 
             // btnLimpiar
             // 
@@ -189,6 +196,10 @@
             this.PerformLayout();
 
         }
+
+       
+
+
 
         #endregion
     }

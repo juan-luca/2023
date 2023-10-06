@@ -60,40 +60,56 @@ namespace CuadernoDeComunicaciones
             return DeserializarUsuarios();
         }
 
-        public bool AgregarUsuario(Usuario nuevoUsuario)
-        {
-            if (AgregarUsuarioAXml())
-                return true;
-
-            return false;
-        }
-
-        public bool ModificarUsuario(Usuario usuarioModificado)
+        public bool Crear()
         {
             List<Usuario> usuarios = ListarTodos();
-            int index = usuarios.FindIndex(u => u.NombreUsuario == usuarioModificado.NombreUsuario);
+            Usuario usuarioExistente = usuarios.FirstOrDefault(u => u.NombreUsuario == this.NombreUsuario);
 
-            if (index >= 0)
+            if (usuarioExistente != null)
             {
-                usuarios[index] = usuarioModificado;
-                return SerializarUsuarios(usuarios, archivoXml);
+                throw new Exception("El usuario ya existe.");
+            }
+
+            if (AgregarUsuarioAXml())
+            {
+                return true;
             }
 
             return false;
         }
-
-        public bool EliminarUsuario(string nombreUsuario)
+        public bool Modificar()
         {
             List<Usuario> usuarios = ListarTodos();
-            Usuario usuarioAEliminar = usuarios.Find(u => u.NombreUsuario == nombreUsuario);
+            Usuario usuarioExistente = usuarios.FirstOrDefault(u => u.NombreUsuario == this.NombreUsuario);
+
+            if (usuarioExistente != null)
+            {
+                usuarioExistente.Contraseña = this.Contraseña;
+                usuarioExistente.Perfil = this.Perfil;
+                usuarioExistente.NombreCompleto = this.NombreCompleto;
+
+                return SerializarUsuarios(usuarios, archivoXml);
+            }
+            else
+            {
+                throw new Exception("El usuario a modificar no existe.");
+            }
+        }
+
+        public bool Borrar()
+        {
+            List<Usuario> usuarios = ListarTodos();
+            Usuario usuarioAEliminar = usuarios.Find(u => u.NombreUsuario == this.NombreUsuario);
 
             if (usuarioAEliminar != null)
             {
                 usuarios.Remove(usuarioAEliminar);
                 return SerializarUsuarios(usuarios, archivoXml);
             }
-
-            return false;
+            else
+            {
+                throw new Exception("El usuario a eliminar no existe.");
+            }
         }
 
         private bool AgregarUsuarioAXml()
