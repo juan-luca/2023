@@ -36,14 +36,45 @@ namespace CuadernoDeComunicaciones.Clases
             return false;
         }
 
-        public override void Modificar()
+        public override bool Modificar()
         {
-            // Implementar la lógica para modificar una comunicación
+            List<Comunicacion> comunicaciones = ListarTodos();
+
+            Comunicacion comunicacionExistente = comunicaciones.FirstOrDefault(c => c.ComunicacionNro == this.ComunicacionNro);
+
+            if (comunicacionExistente != null)
+            {
+                comunicacionExistente.Remitente = this.Remitente;
+                comunicacionExistente.Alumno = this.Alumno;
+                comunicacionExistente.Categoria = this.Categoria;
+                comunicacionExistente.Texto = this.Texto;
+                comunicacionExistente.Fecha = this.Fecha;
+
+                if (SerializarComunicaciones(comunicaciones, archivoXml))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        public override void Borrar()
+        public override bool Borrar()
         {
-            // Implementar la lógica para borrar una comunicación
+            List<Comunicacion> comunicaciones = ListarTodos();
+
+            Comunicacion comunicacionExistente = comunicaciones.FirstOrDefault(c => c.ComunicacionNro == this.ComunicacionNro);
+
+            if (comunicacionExistente != null)
+            {
+                comunicaciones.Remove(comunicacionExistente);
+                if (SerializarComunicaciones(comunicaciones, archivoXml))
+                {
+                    return true; 
+                }
+            }
+
+            return false;
         }
 
         public static List<Comunicacion> ListarTodos()
@@ -55,18 +86,21 @@ namespace CuadernoDeComunicaciones.Clases
         public override Elemento Buscar()
         {
             Elemento comunicacionEncontrada = null;
-            // Implementar la lógica para buscar una comunicación
             return comunicacionEncontrada;
         }
         #endregion
         private bool AgregarComunicacionAXml()
         {
             List<Comunicacion> comunicaciones = ListarTodos();
+            Comunicacion comunicacionExistente = comunicaciones.FirstOrDefault(c => c.ComunicacionNro == this.ComunicacionNro);
 
-            comunicaciones.Add(this);
+            if (comunicacionExistente==null)
+            {
+                comunicaciones.Add(this);
+                return SerializarComunicaciones(comunicaciones, archivoXml);
+            }
 
-            return SerializarComunicaciones(comunicaciones, archivoXml);
-
+            return false;
         }
         public static List<Comunicacion> DeserializarComunicaciones()
         {

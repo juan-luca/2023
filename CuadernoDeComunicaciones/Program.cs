@@ -9,7 +9,7 @@ namespace CuadernoDeComunicaciones
         [STAThread]
         static void Main()
         {
-            GuardarUsuariosEnXML();
+           // GuardarUsuariosEnXML();
             ApplicationConfiguration.Initialize();
             Application.Run(new FrmLogin());
         }

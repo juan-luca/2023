@@ -49,8 +49,8 @@ namespace CuadernoDeComunicaciones
 
         #region Métodos Abstractos
         public abstract bool Crear();
-        public abstract void Modificar();
-        public abstract void Borrar();
+        public abstract bool Modificar();
+        public abstract bool Borrar();
         public abstract Elemento Buscar();
         #endregion
     }

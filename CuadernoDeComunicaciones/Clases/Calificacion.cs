@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace CuadernoDeComunicaciones.Clases
 {
@@ -7,84 +10,168 @@ namespace CuadernoDeComunicaciones.Clases
     {
         #region Atributos
         private int calificacionNro;
-        private string concepto;
-        private double nota;
         private Materia materia;
-        private string observacion;
-        #endregion
-
-        #region Propiedades
-        public int CalificacionNro
-        {
-            get { return calificacionNro; }
-            set { calificacionNro = value; }
-        }
-
-        public string Concepto
-        {
-            get { return concepto; }
-            set { concepto = value; }
-        }
-
-        public double Nota
-        {
-            get { return nota; }
-            set { nota = value; }
-        }
-
-        public Materia Materia
-        {
-            get { return materia; }
-            set { materia = value; }
-        }
-
-        public string Observacion
-        {
-            get { return observacion; }
-            set { observacion = value; }
-        }
+        private double nota;
+        private string observaciones;
+        private string concepto;
+        protected string archivoXml = "Calificaciones.xml";
         #endregion
 
         #region Constructor
-        public Calificacion(string Remitente, string Alumno, double Nota, Materia Materia, int CalificacionNro, string Concepto = "", string Observacion = "", DateTime? Fecha = null)
-            : base(Remitente, Alumno, Fecha)
+        public Calificacion()
         {
-            calificacionNro = CalificacionNro;
-            concepto = Concepto;
-            nota = Nota;
-            materia = Materia;
-            observacion = Observacion;
+
+        }
+
+        public Calificacion(string Remitente, string Alumno, double Nota, Materia Materia, int CalificacionNro, string Concepto = "", string Observaciones = "", DateTime? Fecha = null)
+     : base(Remitente, Alumno, Fecha)
+        {
+            this.calificacionNro = CalificacionNro;
+            this.concepto = Concepto;
+            this.nota = Nota;
+            this.materia = Materia;
+            this.observaciones = Observaciones;
         }
         #endregion
 
         #region Métodos Públicos
         public override bool Crear()
         {
-            return true; // Implementar la lógica para crear una calificación
+            if (AgregarCalificacionAXml())
+                return true;
+
+            return false;
         }
 
-        public override void Modificar()
+        public override bool Modificar()
         {
-            // Implementar la lógica para modificar una calificación
+            List<Calificacion> calificaciones = ListarTodos(); 
+            Calificacion calificacionExistente = calificaciones.FirstOrDefault(c => c.CalificacionNro == this.CalificacionNro);
+
+            if (calificacionExistente != null)
+            {
+                calificacionExistente.Alumno = this.Alumno;
+                calificacionExistente.Materia = this.Materia;
+                calificacionExistente.Nota = this.Nota;
+                calificacionExistente.Observaciones = this.Observaciones;
+                calificacionExistente.Concepto = this.Concepto;
+                calificacionExistente.Fecha = this.Fecha;
+
+                return SerializarCalificaciones(calificaciones,archivoXml);
+            }
+
+            return false;
         }
 
-        public override void Borrar()
+        public override bool Borrar()
         {
-            // Implementar la lógica para borrar una calificación
+            List<Calificacion> calificaciones = ListarTodos();
+            Calificacion calificacionExistente = calificaciones.FirstOrDefault(c => c.CalificacionNro == this.CalificacionNro);
+
+            if (calificacionExistente != null)
+            {
+                calificaciones.Remove(calificacionExistente);
+                return SerializarCalificaciones(calificaciones, archivoXml);
+            }
+
+            return false;
         }
 
-        public static List<Calificacion> Listar<Calificacion>()
+        public static List<Calificacion> ListarTodos()
         {
-            List<Calificacion> calificaciones = new List<Calificacion>();
-            // Implementar la lógica para listar calificaciones
-            return calificaciones;
+            return DeserializarCalificaciones();
         }
 
         public override Elemento Buscar()
         {
             Elemento calificacionEncontrada = null;
-            // Implementar la lógica para buscar una calificación
             return calificacionEncontrada;
+        }
+        #endregion
+
+        private bool AgregarCalificacionAXml()
+        {
+            List<Calificacion> calificaciones = ListarTodos();
+
+            calificaciones.Add(this);
+
+            return SerializarCalificaciones(calificaciones, archivoXml);
+        }
+
+        public static List<Calificacion> DeserializarCalificaciones()
+        {
+            List<Calificacion> calificaciones = new List<Calificacion>();
+            string archivoXml = "Calificaciones.xml";
+
+            if (File.Exists(archivoXml))
+            {
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Calificacion>));
+                    using (FileStream fs = new FileStream(archivoXml, FileMode.Open))
+                    {
+                        calificaciones = (List<Calificacion>)serializer.Deserialize(fs);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al deserializar: " + ex.Message);
+                }
+            }
+
+            return calificaciones;
+        }
+
+        public static bool SerializarCalificaciones(List<Calificacion> calificaciones, string archivoXml)
+        {
+            bool Serializado = false;
+
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Calificacion>));
+                using (FileStream fs = new FileStream(archivoXml, FileMode.Create))
+                {
+                    serializer.Serialize(fs, calificaciones);
+                    Serializado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al serializar: " + ex.Message);
+            }
+
+            return Serializado;
+        }
+
+        #region Propiedades Públicas
+        public int CalificacionNro
+        {
+            get { return this.calificacionNro; }
+            set { this.calificacionNro = value; }
+        }
+
+        public Materia Materia
+        {
+            get { return this.materia; }
+            set { this.materia = value; }
+        }
+
+        public double Nota
+        {
+            get { return this.nota; }
+            set { this.nota = value; }
+        }
+
+        public string Observaciones
+        {
+            get { return this.observaciones; }
+            set { this.observaciones = value; }
+        }
+
+        public string Concepto
+        {
+            get { return this.concepto; }
+            set { this.concepto = value; }
         }
         #endregion
     }

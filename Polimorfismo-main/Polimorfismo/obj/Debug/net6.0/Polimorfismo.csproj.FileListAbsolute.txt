@@ -1,0 +1,29 @@
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.csproj.AssemblyReference.cache
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.AssemblyInfoInputs.cache
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.AssemblyInfo.cs
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\bin\Debug\net6.0\Polimorfismo.exe
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\bin\Debug\net6.0\Polimorfismo.deps.json
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\bin\Debug\net6.0\Polimorfismo.runtimeconfig.json
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\bin\Debug\net6.0\Polimorfismo.dll
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\bin\Debug\net6.0\Polimorfismo.pdb
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.dll
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\refint\Polimorfismo.dll
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.pdb
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\Polimorfismo.genruntimeconfig.cache
+C:\Users\German PC\Desktop\C#\Polimorfismo\Polimorfismo\obj\Debug\net6.0\ref\Polimorfismo.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\refint\Polimorfismo.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\bin\Debug\net6.0\Polimorfismo.exe
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\bin\Debug\net6.0\Polimorfismo.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\bin\Debug\net6.0\Polimorfismo.runtimeconfig.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\bin\Debug\net6.0\Polimorfismo.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\bin\Debug\net6.0\Polimorfismo.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\Polimorfismo.genruntimeconfig.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Polimorfismo-main\Polimorfismo\obj\Debug\net6.0\ref\Polimorfismo.dll

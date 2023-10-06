@@ -15,3 +15,13 @@ public enum Materia
     Historia,
     Quimica
 }
+
+public enum Perfil
+{
+    Director,
+    Profesor,
+    Preceptor,
+    Padres,
+    Alumno
+}
+

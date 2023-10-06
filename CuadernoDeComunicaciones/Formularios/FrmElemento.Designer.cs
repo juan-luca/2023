@@ -18,15 +18,8 @@
         private Button btnBorrar;
         private Button btnListar;
         private DataGridView dgvElementos;
-        private StatusStrip statusStrip1;
-        private ToolStripTextBox txtBuscar;
-        private ErrorProvider errorProvider1;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+      protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -37,13 +30,9 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             gbxDatos = new GroupBox();
             cboAlumno = new ComboBox();
             lblAlumno = new Label();
@@ -56,14 +45,9 @@
             btnBorrar = new Button();
             btnListar = new Button();
             dgvElementos = new DataGridView();
-            statusStrip1 = new StatusStrip();
-            txtBuscar = new ToolStripTextBox();
-            errorProvider1 = new ErrorProvider(components);
             btnLimpiar = new Button();
             gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvElementos).BeginInit();
-            statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // gbxDatos
@@ -209,26 +193,6 @@
             dgvElementos.TabIndex = 10;
             dgvElementos.CellClick += dgvElementos_CellClick;
             // 
-            // statusStrip1
-            // 
-            statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { txtBuscar });
-            statusStrip1.Location = new Point(0, 665);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Padding = new Padding(1, 0, 18, 0);
-            statusStrip1.Size = new Size(1066, 27);
-            statusStrip1.TabIndex = 11;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(132, 27);
-            // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
-            // 
             // btnLimpiar
             // 
             btnLimpiar.Location = new Point(452, 180);
@@ -246,7 +210,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1066, 692);
             Controls.Add(btnLimpiar);
-            Controls.Add(statusStrip1);
             Controls.Add(dgvElementos);
             Controls.Add(btnListar);
             Controls.Add(btnBorrar);
@@ -259,11 +222,7 @@
             gbxDatos.ResumeLayout(false);
             gbxDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvElementos).EndInit();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

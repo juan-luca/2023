@@ -18,3 +18,4 @@ C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\C
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\ref\CuadernoDeComunicaciones.dll
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmPrincipal.resources
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmLogin.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.Formularios.FrmPerfiles.resources

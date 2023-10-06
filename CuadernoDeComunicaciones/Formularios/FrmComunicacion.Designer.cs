@@ -1,4 +1,6 @@
-﻿namespace CuadernoDeComunicaciones
+﻿using CuadernoDeComunicaciones.Clases;
+
+namespace CuadernoDeComunicaciones
 {
     partial class FrmComunicacion : FrmElemento
     {
@@ -131,6 +133,16 @@
             txtTexto.Size = new Size(540, 152);
             txtTexto.TabIndex = 11;
             txtTexto.Text = resources.GetString("txtTexto.Text");
+
+            this.BtnCrearClick += FrmElemento_BtnCrearClick;
+            this.BtnModificarClick += FrmElemento_BtnModificarClick;
+            this.BtnBorrarClick += FrmElemento_BtnBorrarClick;
+            this.BtnListarClick += FrmElemento_BtnListarClick;
+            this.BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
+            this.dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
+            this.comunicaciones = Comunicacion.ListarTodos();
+
+            this.DgvElementos.DataSource = this.comunicaciones;
             // 
             // FrmComunicacion
             // 
@@ -148,3 +160,6 @@
         }
     }
 }
+
+
+

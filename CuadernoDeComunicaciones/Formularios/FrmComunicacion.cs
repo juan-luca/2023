@@ -26,21 +26,14 @@ namespace CuadernoDeComunicaciones
         public FrmComunicacion(Usuario Usuario, List<Usuario> Usuarios) : base(Usuario, Usuarios)
         {
             InitializeComponent();
-            this.BtnCrearClick += FrmElemento_BtnCrearClick;
-            this.BtnModificarClick += FrmElemento_BtnModificarClick;
-            this.BtnBorrarClick += FrmElemento_BtnBorrarClick;
-            this.BtnListarClick += FrmElemento_BtnListarClick;
-            this.BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
-            this.dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
-            this.comunicaciones = Comunicacion.ListarTodos();
-
-            this.DgvElementos.DataSource = this.comunicaciones;
+            
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
         }
 
 
         private void ConfigurarControlesSegunPerfil(string Perfil)
         {
+            HabilitarDeshabilitarBotones();
             switch (Perfil)
             {
                 case "Director":
@@ -76,8 +69,7 @@ namespace CuadernoDeComunicaciones
                 {
                     MessageBox.Show("Comunicado creado con exito");
 
-                    this.Listar();
-                    this.Limpiar();
+                    ActualizarGrilla();
 
                 }
             }
@@ -89,24 +81,67 @@ namespace CuadernoDeComunicaciones
         }
         private void FrmElemento_BtnModificarClick(object sender, EventArgs e)
         {
+            try
+            {
 
+                int ComunicacionNro = -1;
+                int.TryParse(lblComunicacionNroValue.Text, out ComunicacionNro);
+                
+                Comunicacion nuevaComunicacion = new Comunicacion(this.Usuario.NombreCompleto, this.CboAlumnos.SelectedValue.ToString(), ComunicacionNro, this.CategoriaSeleccionada, this.TextoValue, this.Fecha);
+
+                if (nuevaComunicacion.Modificar())
+                {
+                    MessageBox.Show("Comunicado modificado con exito");
+
+                    ActualizarGrilla();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el comunicado. " + ex.Message);
+            }
 
         }
         private void FrmElemento_BtnBorrarClick(object sender, EventArgs e)
         {
+            try
+            {
+
+                int ComunicacionNro = -1;
+                int.TryParse(lblComunicacionNroValue.Text, out ComunicacionNro);
+
+                Comunicacion nuevaComunicacion = new Comunicacion(this.Usuario.NombreCompleto, this.CboAlumnos.SelectedValue.ToString(), ComunicacionNro, this.CategoriaSeleccionada, this.TextoValue, this.Fecha);
+
+                if (nuevaComunicacion.Borrar())
+                {
+                    MessageBox.Show("Comunicado eliminado con exito");
+
+                    ActualizarGrilla();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el comunicado. " + ex.Message);
+            }
 
 
-
+        }
+        private void ActualizarGrilla()
+        {
+            this.Listar();
+            this.Limpiar();
         }
 
         private void FrmElemento_BtnListarClick(object sender, EventArgs e)
         {
-            this.Listar();
+            ActualizarGrilla();
 
         }
         private void FrmElemento_BtnLimpiarClick(object sender, EventArgs e)
         {
-            this.Limpiar();
+            ActualizarGrilla();
 
         }
         private void FrmElemento_dgvElementosCellClick(object sender, DataGridViewCellEventArgs e)
@@ -163,6 +198,11 @@ namespace CuadernoDeComunicaciones
         }
 
         private void lblComunicacionNroValue_TextChanged(object sender, EventArgs e)
+        {
+            HabilitarDeshabilitarBotones();
+        }
+
+        private void HabilitarDeshabilitarBotones()
         {
             if (!string.IsNullOrEmpty(this.lblComunicacionNroValue.Text))
             {

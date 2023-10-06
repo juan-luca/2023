@@ -6,7 +6,7 @@
     <Alumno>Juan</Alumno>
     <ComunicacionNro>1</ComunicacionNro>
     <Categoria>Amolestacion</Categoria>
-    <Texto>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</Texto>
+    <Texto>jhjgjhg</Texto>
   </Comunicacion>
   <Comunicacion>
     <Remitente>Roberto</Remitente>
@@ -14,7 +14,7 @@
     <Alumno>Juan</Alumno>
     <ComunicacionNro>2</ComunicacionNro>
     <Categoria>Amolestacion</Categoria>
-    <Texto>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</Texto>
+    <Texto>{{{{{{{{</Texto>
   </Comunicacion>
   <Comunicacion>
     <Remitente>Roberto</Remitente>
@@ -36,16 +36,8 @@
     <Remitente>Roberto</Remitente>
     <Fecha>2023-09-12T23:28:36</Fecha>
     <Alumno>Juan</Alumno>
-    <ComunicacionNro>5</ComunicacionNro>
-    <Categoria>Aviso</Categoria>
-    <Texto>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</Texto>
-  </Comunicacion>
-  <Comunicacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-09-12T23:28:36</Fecha>
-    <Alumno>Juan</Alumno>
     <ComunicacionNro>6</ComunicacionNro>
-    <Categoria>SinEspecificar</Categoria>
+    <Categoria>Invitacion</Categoria>
     <Texto>JHKJHJHKJ</Texto>
   </Comunicacion>
   <Comunicacion>
@@ -55,14 +47,6 @@
     <ComunicacionNro>7</ComunicacionNro>
     <Categoria>Invitacion</Categoria>
     <Texto>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</Texto>
-  </Comunicacion>
-  <Comunicacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-09-29T23:59:57.3585505-03:00</Fecha>
-    <Alumno>Juan</Alumno>
-    <ComunicacionNro>8</ComunicacionNro>
-    <Categoria>Invitacion</Categoria>
-    <Texto>DDDDD</Texto>
   </Comunicacion>
   <Comunicacion>
     <Remitente>Roberto</Remitente>
@@ -175,5 +159,45 @@
     <ComunicacionNro>22</ComunicacionNro>
     <Categoria>Invitacion</Categoria>
     <Texto>ghgfhgfhg</Texto>
+  </Comunicacion>
+  <Comunicacion>
+    <Remitente>Roberto</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>Juan</Alumno>
+    <ComunicacionNro>23</ComunicacionNro>
+    <Categoria>Invitacion</Categoria>
+    <Texto>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum</Texto>
+  </Comunicacion>
+  <Comunicacion>
+    <Remitente>Roberto</Remitente>
+    <Fecha>2023-10-04T19:22:10.4663021-03:00</Fecha>
+    <Alumno>Juan</Alumno>
+    <ComunicacionNro>24</ComunicacionNro>
+    <Categoria>AltaImportancia</Categoria>
+    <Texto />
+  </Comunicacion>
+  <Comunicacion>
+    <Remitente>Roberto</Remitente>
+    <Fecha>2023-10-04T21:09:39.1662521-03:00</Fecha>
+    <Alumno>Juan</Alumno>
+    <ComunicacionNro>25</ComunicacionNro>
+    <Categoria>Amolestacion</Categoria>
+    <Texto />
+  </Comunicacion>
+  <Comunicacion>
+    <Remitente>Roberto</Remitente>
+    <Fecha>2023-10-04T21:10:12.343961-03:00</Fecha>
+    <Alumno>Juan</Alumno>
+    <ComunicacionNro>26</ComunicacionNro>
+    <Categoria>AltaImportancia</Categoria>
+    <Texto>uuuuuuuuuuuuuuuu</Texto>
+  </Comunicacion>
+  <Comunicacion>
+    <Remitente>Roberto</Remitente>
+    <Fecha>2023-10-04T21:10:28.9135418-03:00</Fecha>
+    <Alumno>Juan</Alumno>
+    <ComunicacionNro>27</ComunicacionNro>
+    <Categoria>Amolestacion</Categoria>
+    <Texto>llllllllllllllllll</Texto>
   </Comunicacion>
 </ArrayOfComunicacion>
