@@ -1,6 +1,9 @@
-﻿namespace CuadernoDeComunicaciones.Formularios
+﻿
+using MetroSet_UI.Forms;
+using MetroSet_UI.Controls;
+namespace CuadernoDeComunicaciones.Formularios
 {
-    partial class FrmPerfiles
+    partial class FrmPerfiles : MetroSetForm
     {
        private System.ComponentModel.IContainer components = null;
 
@@ -18,6 +21,8 @@
         private Label lblContraseña;
         private Label lblPerfil;
         private Label lblNombreCompleto;
+        
+
 
         protected override void Dispose(bool disposing)
         {
@@ -33,6 +38,8 @@
         
         private void InitializeComponent()
         {
+           
+
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -51,15 +58,18 @@
             // 
             // dgvUsuarios
             // 
+         
+
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
             this.usuarios = Usuario.ListarTodos();
-
             this.dgvUsuarios.DataSource = this.usuarios;
             // 
             // txtNombreUsuario

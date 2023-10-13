@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hBSWiBIgmFpYfgZ8Nhxi0ehlhnKuoV/NtMOlTXTqB3P+ciA67c28TjfWUyK0TFuMcL+eOn/1ysJT+RI+7HJ6Qw==",
+  "dgSpecHash": "/iwwUfGGIL8zof9AUL2ogIlt4YXRmoK3g+/t92bRYbjd1BJa70rXyzU6nokbdBgpmaxSzAYQAKhuubCSbV8ZZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jluca\\OneDrive\\Escritorio\\Juan\\UTN 2023 2do cuatri\\laboratorio 2\\2023\\CuadernoDeComunicaciones\\CuadernoDeComunicaciones.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jluca\\.nuget\\packages\\metroset_ui\\2.0.0\\metroset_ui.2.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

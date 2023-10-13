@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CuadernoDeComunicaciones.Clases;
+using MetroSet_UI.Forms;
+using MetroSet_UI.Controls;
 
 namespace CuadernoDeComunicaciones.Formularios
 {
-    public partial class FrmPerfiles : Form
+    public partial class FrmPerfiles : MetroSetForm
     {
         private List<Usuario> usuarios;
 
@@ -13,6 +15,7 @@ namespace CuadernoDeComunicaciones.Formularios
         {
             InitializeComponent();
             HabilitarDeshabilitarBotones();
+
         }
 
 
@@ -59,9 +62,9 @@ namespace CuadernoDeComunicaciones.Formularios
                 txtNombreUsuario.Text = usuarioSeleccionado.NombreUsuario;
                 txtNombreUsuario.Enabled = false;
                 txtContraseña.Text = usuarioSeleccionado.Contraseña;
-                cboPerfil.SelectedItem = (Perfil)Enum.Parse(typeof(Perfil),usuarioSeleccionado.Perfil);
+                cboPerfil.SelectedItem = (Perfil)Enum.Parse(typeof(Perfil), usuarioSeleccionado.Perfil);
                 txtNombreCompleto.Text = usuarioSeleccionado.NombreCompleto;
-                
+
             }
         }
 
@@ -149,7 +152,7 @@ namespace CuadernoDeComunicaciones.Formularios
                     }
                     this.ActualizarGrilla();
 
-                    
+
                 }
             }
             catch (Exception ex)

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MetroSet_UI.Forms;
+using System;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace CuadernoDeComunicaciones
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MetroSetForm
     {
         private List<Usuario> usuarios;
         public FrmLogin()
@@ -56,7 +57,7 @@ namespace CuadernoDeComunicaciones
             }
             if (usuarioEncontrado != null)
             {
-                
+
                 FrmPrincipal frmPrincipal = new FrmPrincipal(usuarioEncontrado, this.usuarios);
                 frmPrincipal.Show();
                 this.Hide();

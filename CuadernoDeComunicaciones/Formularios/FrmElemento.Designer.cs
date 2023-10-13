@@ -1,6 +1,7 @@
-﻿namespace CuadernoDeComunicaciones
+﻿using MetroSet_UI.Forms;
+namespace CuadernoDeComunicaciones
 {
-    partial class FrmElemento
+    partial class FrmElemento : MetroSetForm
     {
         /// <summary>
         /// Required designer variable.

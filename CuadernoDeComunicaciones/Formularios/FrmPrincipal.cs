@@ -1,9 +1,10 @@
 using CuadernoDeComunicaciones.Clases;
 using CuadernoDeComunicaciones.Formularios;
+using MetroSet_UI.Forms;
 
 namespace CuadernoDeComunicaciones
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmPrincipal : MetroSetForm
     {
         private Usuario usuario;
         private List<Usuario> usuarios;
@@ -33,7 +34,7 @@ namespace CuadernoDeComunicaciones
         private void btnComunicaciones_Click(object sender, EventArgs e)
         {
             FrmComunicacion FrmComunicacion = new FrmComunicacion(this.usuario, this.usuarios);
-           
+
             MostrarFormularioEnPanel(FrmComunicacion);
         }
 
@@ -67,8 +68,8 @@ namespace CuadernoDeComunicaciones
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            FrmPerfiles FrmPerfil = new FrmPerfiles();           
-            
+            FrmPerfiles FrmPerfil = new FrmPerfiles();
+
             MostrarFormularioEnPanel(FrmPerfil);
         }
     }

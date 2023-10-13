@@ -36,10 +36,4 @@
     <Perfil>Alumno</Perfil>
     <NombreCompleto>Olga Gutierrez</NombreCompleto>
   </Usuario>
-  <Usuario>
-    <NombreUsuario>sdfd</NombreUsuario>
-    <Contraseña>fdfd</Contraseña>
-    <Perfil>Profesor</Perfil>
-    <NombreCompleto>fdf</NombreCompleto>
-  </Usuario>
 </ArrayOfUsuario>
