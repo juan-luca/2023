@@ -31,33 +31,28 @@ namespace CuadernoDeComunicaciones
         }
 
 
-        private void ConfigurarControlesSegunPerfil(string Perfil)
+        protected override void ConfigurarControlesSegunPerfil(string Perfil)
         {
-            HabilitarDeshabilitarBotones();
+            HabilitarControles();
+
             switch (Perfil)
             {
                 case "Director":
-
                     break;
                 case "Profesor":
-
-
                     break;
                 case "Preceptor":
-
-
                     break;
                 case "Padres":
-
-
                     break;
                 case "Alumno":
-
+                    HabilitarControles();
+                    
                     break;
                 default:
-
                     break;
             }
+
         }
         private void FrmElemento_BtnCrearClick(object sender, EventArgs e)
         {
@@ -199,24 +194,39 @@ namespace CuadernoDeComunicaciones
 
         private void lblComunicacionNroValue_TextChanged(object sender, EventArgs e)
         {
-            HabilitarDeshabilitarBotones();
+            HabilitarControles();
+        }
+        protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
+        {
+            
+
+            switch (base.Usuario.Perfil)
+            {
+                case "Director":
+                    habilitar = true;
+                    break;
+                case "Profesor":
+                    habilitar = true;
+                    break;
+                case "Preceptor":
+                    habilitar = true;
+                    break;
+                case "Padres":
+                    habilitar = true;
+                    break;
+                case "Alumno":
+                    habilitar = false;
+                    txtTexto.Enabled = false;
+                    CboCategoria.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
+            base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblComunicacionNroValue.Text));
+
+
         }
 
-        private void HabilitarDeshabilitarBotones()
-        {
-            if (!string.IsNullOrEmpty(this.lblComunicacionNroValue.Text))
-            {
-                this.BtnCrear.Enabled = false;
-                this.BtnModificar.Enabled = true;
-                this.BtnBorrar.Enabled = true;
-            }
-            else
-            {
-                this.BtnCrear.Enabled = true;
-                this.BtnModificar.Enabled = false;
-                this.BtnBorrar.Enabled = false;
-            }
-        }
     }
 }
 

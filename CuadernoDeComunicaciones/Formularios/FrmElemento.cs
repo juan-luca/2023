@@ -89,7 +89,7 @@ namespace CuadernoDeComunicaciones
             this.usuarios = Usuarios;
 
             CargarAlumnos();
-            ConfigurarControlesSegunPerfil();
+           // ConfigurarControlesSegunPerfil();
         }
         private void CargarAlumnos()
         {
@@ -101,35 +101,117 @@ namespace CuadernoDeComunicaciones
             cboAlumno.DataSource = usuariosAlumnos;
         }
 
-        private void ConfigurarControlesSegunPerfil()
+        protected virtual void ConfigurarControlesSegunPerfil(string Perfil="")
         {
-            lblRemitente.Text = this.usuario.Perfil;
+            if (Perfil == "")
+                Perfil = this.usuario.Perfil;
+
+
+            lblRemitente.Text = Perfil;
+
             lblRemitenteValue.Text = this.usuario.NombreCompleto;
-            switch (this.usuario.Perfil)
+
+            switch (Perfil)
             {
                 case "Director":
-
+                    HabilitarControles(true);
                     break;
                 case "Profesor":
-
-
+                    HabilitarControles(true);
                     break;
                 case "Preceptor":
-
-
+                    HabilitarControles(true);
                     break;
                 case "Padres":
-
-
+                    HabilitarControles(true);
                     break;
                 case "Alumno":
-
+                    HabilitarControles(false);
                     break;
                 default:
-
                     break;
             }
         }
+
+        protected virtual void HabilitarControles(bool habilitar=false, bool modificar = false)
+        {
+            switch (this.usuario.Perfil)
+            {
+                case "Director":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = modificar;
+                    btnBorrar.Enabled = modificar;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    if (modificar)
+                    {
+                        this.BtnCrear.Enabled = false;
+                        this.BtnModificar.Enabled = true;
+                        this.BtnBorrar.Enabled = true;
+                    }
+                    else
+                    {
+                        this.BtnCrear.Enabled = true;
+                        this.BtnModificar.Enabled = false;
+                        this.BtnBorrar.Enabled = false;
+                    }
+                    break;
+                case "Profesor":
+                    habilitar = false;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    
+                    break;
+                case "Preceptor":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case "Padres":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case "Alumno":
+                    habilitar = false;
+                    cboAlumno.Enabled = false;
+                    btnCrear.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = false;
+                    btnLimpiar.Enabled = false;
+                    dtpFecha.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
+
+          
+
+           
+            
+            
+
+        }
+
 
         private void btnCrear_Click(object sender, EventArgs e)
         {

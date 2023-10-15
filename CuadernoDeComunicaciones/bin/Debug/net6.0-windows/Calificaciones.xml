@@ -50,4 +50,14 @@
     <Observaciones>dgfdgfd</Observaciones>
     <Concepto>dsfdsfd</Concepto>
   </Calificacion>
+  <Calificacion>
+    <Remitente>Juan</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>Juan</Alumno>
+    <CalificacionNro>6</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>0</Nota>
+    <Observaciones />
+    <Concepto />
+  </Calificacion>
 </ArrayOfCalificacion>

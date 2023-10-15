@@ -26,33 +26,26 @@ namespace CuadernoDeComunicaciones
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
         }
-        private void ConfigurarControlesSegunPerfil(string Perfil)
+        protected override void ConfigurarControlesSegunPerfil(string Perfil)
         {
-            HabilitarDeshabilitarBotones();
+            HabilitarControles();
             switch (Perfil)
             {
                 case "Director":
-
                     break;
                 case "Profesor":
-
-
                     break;
                 case "Preceptor":
-
-
                     break;
                 case "Padres":
-
-
                     break;
                 case "Alumno":
-
+                    HabilitarControles();
                     break;
                 default:
-
                     break;
             }
+
         }
 
 
@@ -178,7 +171,7 @@ namespace CuadernoDeComunicaciones
         }
         private void lblCalificacionNroValue_TextChanged(object sender, EventArgs e)
         {
-            HabilitarDeshabilitarBotones();
+            HabilitarControles();
         }
 
         private void FrmElemento_dgvElementosCellClick(object sender, DataGridViewCellEventArgs e)
@@ -218,20 +211,43 @@ namespace CuadernoDeComunicaciones
             this.txtObservaciones.Text = "";
             this.txtConcepto.Text = "";
         }
-        private void HabilitarDeshabilitarBotones()
+       
+        protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
-            if (!string.IsNullOrEmpty(this.lblCalificacionNroValue.Text))
+
+
+            switch (base.Usuario.Perfil)
             {
-                this.BtnCrear.Enabled = false;
-                this.BtnModificar.Enabled = true;
-                this.BtnBorrar.Enabled = true;
+                case "Director":
+                    habilitar = true;
+                    modificar = true;
+
+                    break;
+                case "Profesor":
+                    habilitar = true;
+                    break;
+                case "Preceptor":
+                    habilitar = true;
+                    break;
+                case "Padres":
+                    habilitar = true;
+                    break;
+                case "Alumno":
+                    habilitar = false;
+                    
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                this.BtnCrear.Enabled = true;
-                this.BtnModificar.Enabled = false;
-                this.BtnBorrar.Enabled = false;
-            }
+            txtObservaciones.Enabled = habilitar;
+            txtConcepto.Enabled = habilitar;
+            nuNota.Enabled = habilitar;
+            CboMateria.Enabled = habilitar;
+           
+
+            base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblCalificacionNroValue.Text));
+
+
         }
         private void ActualizarGrilla()
         {

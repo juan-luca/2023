@@ -165,6 +165,7 @@ namespace CuadernoDeComunicaciones
             BtnCrearClick += FrmElemento_BtnCrearClick;
             BtnModificarClick += FrmElemento_BtnModificarClick;
             BtnBorrarClick += FrmElemento_BtnBorrarClick;
+            BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
             BtnListarClick += FrmElemento_BtnListarClick;
             dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
 
