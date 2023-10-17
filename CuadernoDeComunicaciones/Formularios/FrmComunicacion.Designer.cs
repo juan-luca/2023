@@ -140,9 +140,7 @@ namespace CuadernoDeComunicaciones
             this.BtnListarClick += FrmElemento_BtnListarClick;
             this.BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
             this.dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
-            this.comunicaciones = Comunicacion.ListarTodos();
-
-            this.DgvElementos.DataSource = this.comunicaciones;
+            this.Listar();
             // 
             // FrmComunicacion
             // 

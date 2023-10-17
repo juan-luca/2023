@@ -89,15 +89,15 @@ namespace CuadernoDeComunicaciones
             this.usuarios = Usuarios;
 
             CargarAlumnos();
-           // ConfigurarControlesSegunPerfil();
+           
         }
         private void CargarAlumnos()
         {
             List<Usuario> usuariosAlumnos = this.usuarios.Where(u => u.Perfil == "Alumno").ToList();
 
 
-            cboAlumno.DisplayMember = "nombreCompleto";
-            cboAlumno.ValueMember = "nombreCompleto";
+            cboAlumno.DisplayMember = "nombreUsuario";
+            cboAlumno.ValueMember = "nombreUsuario";
             cboAlumno.DataSource = usuariosAlumnos;
         }
 

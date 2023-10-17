@@ -123,6 +123,7 @@ namespace CuadernoDeComunicaciones
             nuNota.Margin = new Padding(5, 4, 5, 4);
             nuNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nuNota.Name = "nuNota";
+            nuNota.Value = 10;
             nuNota.Size = new Size(120, 27);
             nuNota.TabIndex = 11;
             // 
@@ -143,6 +144,7 @@ namespace CuadernoDeComunicaciones
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
             txtObservaciones.Size = new Size(448, 89);
+            txtObservaciones.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada";
             txtObservaciones.TabIndex = 13;
             // 
             // lblConcepto
@@ -159,6 +161,7 @@ namespace CuadernoDeComunicaciones
             txtConcepto.Location = new Point(459, 122);
             txtConcepto.Name = "txtConcepto";
             txtConcepto.Size = new Size(134, 27);
+            txtConcepto.Text = "Conceptual";
             txtConcepto.TabIndex = 15;
 
 
@@ -169,9 +172,7 @@ namespace CuadernoDeComunicaciones
             BtnListarClick += FrmElemento_BtnListarClick;
             dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
 
-            this.calificaciones = Calificacion.ListarTodos();
-
-            this.DgvElementos.DataSource = this.calificaciones;
+            this.Listar();
 
             // 
             // FrmCalificacion

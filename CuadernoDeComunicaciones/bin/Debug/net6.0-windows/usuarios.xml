@@ -13,12 +13,6 @@
     <NombreCompleto>Ludmila</NombreCompleto>
   </Usuario>
   <Usuario>
-    <NombreUsuario>Preceptor</NombreUsuario>
-    <Contraseña>contraseña_preceptor</Contraseña>
-    <Perfil>Preceptor</Perfil>
-    <NombreCompleto>Carlos</NombreCompleto>
-  </Usuario>
-  <Usuario>
     <NombreUsuario>Padres</NombreUsuario>
     <Contraseña>contraseña_padres</Contraseña>
     <Perfil>Padres</Perfil>
@@ -34,12 +28,36 @@
     <NombreUsuario>Olga</NombreUsuario>
     <Contraseña>contraseña_alumno</Contraseña>
     <Perfil>Alumno</Perfil>
-    <NombreCompleto>Olga Gutierrez</NombreCompleto>
+    <NombreCompleto>Olga Gutierrezdfdf</NombreCompleto>
   </Usuario>
   <Usuario>
     <NombreUsuario>sdfd</NombreUsuario>
     <Contraseña>fdfd</Contraseña>
     <Perfil>Alumno</Perfil>
     <NombreCompleto>fdfkkkl</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>juan</NombreUsuario>
+    <Contraseña>juan</Contraseña>
+    <Perfil>Padres</Perfil>
+    <NombreCompleto>juan</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>karlin</NombreUsuario>
+    <Contraseña>karlin</Contraseña>
+    <Perfil>Alumno</Perfil>
+    <NombreCompleto>karlin</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>travis</NombreUsuario>
+    <Contraseña>travis</Contraseña>
+    <Perfil>Padres</Perfil>
+    <NombreCompleto>travis</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>scott</NombreUsuario>
+    <Contraseña>scott</Contraseña>
+    <Perfil>Alumno</Perfil>
+    <NombreCompleto>scott</NombreCompleto>
   </Usuario>
 </ArrayOfUsuario>

@@ -15,6 +15,7 @@ namespace CuadernoDeComunicaciones.Clases
         private string observaciones;
         private string concepto;
         protected string archivoXml = "Calificaciones.xml";
+
         #endregion
 
         #region Constructor
@@ -88,6 +89,19 @@ namespace CuadernoDeComunicaciones.Clases
             return calificacionEncontrada;
         }
         #endregion
+
+        public static List<Calificacion> ListarCalificacionesDeAlumno(string usuarioAlumno)
+        {
+            List<Calificacion> calificaciones = ListarTodos();
+            return calificaciones.Where(c => c.Alumno == usuarioAlumno).ToList();
+        }
+        public static List<Calificacion> ListarCalificacionesDeAlumno(List<Alumno> alumnosCalificaciones)
+        {
+            List<Calificacion> calificaciones = ListarTodos();
+            List<string> nombresAlumnos = alumnosCalificaciones.Select(a => a.NombreUsuario).ToList();
+            return calificaciones.Where(c => nombresAlumnos.Contains(c.Alumno)).ToList();
+        }
+       
 
         private bool AgregarCalificacionAXml()
         {

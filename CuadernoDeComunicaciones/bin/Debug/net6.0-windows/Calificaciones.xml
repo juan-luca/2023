@@ -1,63 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCalificacion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Calificacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-09-30T18:56:35</Fecha>
-    <Alumno>Juan</Alumno>
-    <CalificacionNro>2</CalificacionNro>
-    <Materia>Matematica</Materia>
-    <Nota>1</Nota>
-    <Observaciones>ppppppp</Observaciones>
-    <Concepto>pppp</Concepto>
-  </Calificacion>
-  <Calificacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-09-30T18:56:35.845</Fecha>
-    <Alumno>Juan</Alumno>
-    <CalificacionNro>3</CalificacionNro>
-    <Materia>Matematica</Materia>
-    <Nota>0</Nota>
-    <Observaciones>AAAAAA</Observaciones>
-    <Concepto>PP</Concepto>
-  </Calificacion>
-  <Calificacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-09-30T18:56:35.845</Fecha>
-    <Alumno>Juan</Alumno>
-    <CalificacionNro>4</CalificacionNro>
-    <Materia>Historia</Materia>
-    <Nota>0</Nota>
-    <Observaciones>VVVV</Observaciones>
-    <Concepto>PP</Concepto>
-  </Calificacion>
-  <Calificacion>
-    <Remitente>Roberto</Remitente>
+    <Remitente>Director</Remitente>
     <Fecha>2023-09-30T18:56:35.845</Fecha>
     <Alumno>Juan</Alumno>
     <CalificacionNro>1</CalificacionNro>
     <Materia>Matematica</Materia>
-    <Nota>6</Nota>
-    <Observaciones>7ghgh</Observaciones>
-    <Concepto>bvfg</Concepto>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
   </Calificacion>
   <Calificacion>
-    <Remitente>Roberto</Remitente>
-    <Fecha>2023-10-04T23:08:48.9609563-03:00</Fecha>
-    <Alumno>Juan</Alumno>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-10-16T20:46:06</Fecha>
+    <Alumno>scott</Alumno>
+    <CalificacionNro>2</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>8</Nota>
+    <Observaciones>fgdhbfgdgf</Observaciones>
+    <Concepto>gvfhgf</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-10-16T20:46:09</Fecha>
+    <Alumno>scott</Alumno>
+    <CalificacionNro>3</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>9</Nota>
+    <Observaciones>fdsfdsfds</Observaciones>
+    <Concepto>dsfds</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>Olga Gutierrezdfdf</Alumno>
+    <CalificacionNro>4</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>fdfkkkl</Alumno>
     <CalificacionNro>5</CalificacionNro>
     <Materia>Matematica</Materia>
-    <Nota>5</Nota>
-    <Observaciones>dgfdgfd</Observaciones>
-    <Concepto>dsfdsfd</Concepto>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
   </Calificacion>
   <Calificacion>
-    <Remitente>Juan</Remitente>
+    <Remitente>Director</Remitente>
     <Fecha>2023-09-30T18:56:35.845</Fecha>
-    <Alumno>Juan</Alumno>
+    <Alumno>karlin</Alumno>
     <CalificacionNro>6</CalificacionNro>
     <Materia>Matematica</Materia>
-    <Nota>0</Nota>
-    <Observaciones />
-    <Concepto />
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>scott</Alumno>
+    <CalificacionNro>7</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>Olga Gutierrezdfdf</Alumno>
+    <CalificacionNro>8</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
+  </Calificacion>
+  <Calificacion>
+    <Remitente>Director</Remitente>
+    <Fecha>2023-09-30T18:56:35.845</Fecha>
+    <Alumno>Olga</Alumno>
+    <CalificacionNro>9</CalificacionNro>
+    <Materia>Matematica</Materia>
+    <Nota>10</Nota>
+    <Observaciones>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada</Observaciones>
+    <Concepto>Conceptual</Concepto>
   </Calificacion>
 </ArrayOfCalificacion>

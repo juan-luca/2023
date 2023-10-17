@@ -1,0 +1,27 @@
+[
+  {
+    "NombreUsuario": "scott",
+    "Padre": "Padres",
+    "Madre": "travis"
+  },
+  {
+    "NombreUsuario": "karlin",
+    "Padre": "travis",
+    "Madre": "juan"
+  },
+  {
+    "NombreUsuario": "Olga",
+    "Padre": "travis",
+    "Madre": "travis"
+  },
+  {
+    "NombreUsuario": "Alumno",
+    "Padre": "travis",
+    "Madre": "travis"
+  },
+  {
+    "NombreUsuario": "sdfd",
+    "Padre": "juan",
+    "Madre": "juan"
+  }
+]

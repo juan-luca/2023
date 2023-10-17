@@ -77,7 +77,7 @@ namespace CuadernoDeComunicaciones
                 double.TryParse(this.nuNota.Text, out Nota);
 
 
-                Calificacion nuevaCalificacion = new Calificacion(this.Usuario.NombreCompleto, this.CboAlumnos.SelectedValue.ToString(), Nota, this.MateriaSeleccionada, this.ObtenerProximoNumeroCalificacion(), this.txtConcepto.Text, this.txtObservaciones.Text, this.Fecha);
+                Calificacion nuevaCalificacion = new Calificacion(this.Usuario.NombreUsuario, this.CboAlumnos.SelectedValue.ToString(), Nota, this.MateriaSeleccionada, this.ObtenerProximoNumeroCalificacion(), this.txtConcepto.Text, this.txtObservaciones.Text, this.Fecha);
 
                 if (nuevaCalificacion.Crear())
                 {
@@ -186,7 +186,8 @@ namespace CuadernoDeComunicaciones
                 string observaciones = fila.Cells["Observaciones"].Value.ToString();
                 string concepto = fila.Cells["Concepto"].Value.ToString();
                 DateTime Fecha = Convert.ToDateTime(fila.Cells["Fecha"].Value.ToString());
-
+                string alumno = fila.Cells["Alumno"].Value.ToString();
+                this.CboAlumnos.SelectedValue = alumno;
                 this.lblCalificacionNroValue.Text = calificacionNro.ToString();
                 this.CboMateria.SelectedItem = materia;
                 this.nuNota.Text = nota.ToString();
@@ -199,8 +200,22 @@ namespace CuadernoDeComunicaciones
         private void Listar()
         {
             this.calificaciones = Calificacion.ListarTodos();
+            RelacionesManager relacionesManager = new RelacionesManager();
+            if (Usuario.Perfil == "Padres")
+            {
+               List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
+
+                calificaciones = Calificacion.ListarCalificacionesDeAlumno(alumnosRelacionados);
+            }
+            else if (Usuario.Perfil == "Alumno")
+            {
+                
+                calificaciones = Calificacion.ListarCalificacionesDeAlumno(Usuario.NombreUsuario);
+            }
+
             this.DgvElementos.DataSource = this.calificaciones;
         }
+       
 
         private void Limpiar()
         {
@@ -214,6 +229,7 @@ namespace CuadernoDeComunicaciones
        
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
+            bool habilitarFiltro = false;
 
 
             switch (base.Usuario.Perfil)
@@ -221,32 +237,36 @@ namespace CuadernoDeComunicaciones
                 case "Director":
                     habilitar = true;
                     modificar = true;
-
+                    habilitarFiltro = true;
                     break;
                 case "Profesor":
                     habilitar = true;
+                    habilitarFiltro = true;
                     break;
                 case "Preceptor":
                     habilitar = true;
+                    habilitarFiltro = true;
                     break;
                 case "Padres":
-                    habilitar = true;
+                    habilitar = false;
+                    habilitarFiltro = false;
                     break;
                 case "Alumno":
                     habilitar = false;
-                    
+                    habilitarFiltro = false;
                     break;
                 default:
                     break;
             }
+
             txtObservaciones.Enabled = habilitar;
             txtConcepto.Enabled = habilitar;
             nuNota.Enabled = habilitar;
             CboMateria.Enabled = habilitar;
-           
 
             base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblCalificacionNroValue.Text));
 
+            CboAlumnos.Enabled = habilitarFiltro;
 
         }
         private void ActualizarGrilla()

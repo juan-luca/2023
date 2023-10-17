@@ -58,7 +58,7 @@ namespace CuadernoDeComunicaciones
         {
             try
             {
-                Comunicacion nuevaComunicacion = new Comunicacion(this.Usuario.NombreCompleto, this.CboAlumnos.SelectedValue.ToString(), this.ObtenerProximoNumeroComunicacion(), this.CategoriaSeleccionada, this.TextoValue, this.Fecha);
+                Comunicacion nuevaComunicacion = new Comunicacion(this.Usuario.NombreUsuario, this.CboAlumnos.SelectedValue.ToString(), this.ObtenerProximoNumeroComunicacion(), this.CategoriaSeleccionada, this.TextoValue, this.Fecha);
 
                 if (nuevaComunicacion.Crear())
                 {
@@ -152,6 +152,8 @@ namespace CuadernoDeComunicaciones
                 DateTime Fecha = Convert.ToDateTime(fila.Cells["Fecha"].Value.ToString());
                 this.lblComunicacionNroValue.Text = comunicacionNro;
                 this.CboCategoria.SelectedItem = categoria;
+                string alumno = fila.Cells["Alumno"].Value.ToString();
+                this.CboAlumnos.SelectedValue = alumno;
                 this.txtTexto.Text = texto;
                 this.Fecha = Fecha;
             }
@@ -162,6 +164,19 @@ namespace CuadernoDeComunicaciones
         private void Listar()
         {
             this.comunicaciones = Comunicacion.ListarTodos();
+            RelacionesManager relacionesManager = new RelacionesManager();
+            if (Usuario.Perfil == "Padres")
+            {
+                List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
+
+                comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(alumnosRelacionados);
+            }
+            else if (Usuario.Perfil == "Alumno")
+            {
+
+                comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(Usuario.NombreUsuario);
+            }
+
             this.DgvElementos.DataSource = this.comunicaciones;
         }
         private void Limpiar()

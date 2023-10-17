@@ -3,9 +3,12 @@ C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\C
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\CuadernoDeComunicaciones.runtimeconfig.json
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\CuadernoDeComunicaciones.dll
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\CuadernoDeComunicaciones.pdb
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.frmCalificacion.resources
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.frmComunicacion.resources
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.frmElemento.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmCalificacion.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmComunicacion.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmElemento.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmLogin.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.Formularios.FrmPerfiles.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmPrincipal.resources
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.GenerateResource.cache
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.AssemblyInfoInputs.cache
@@ -16,6 +19,6 @@ C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\C
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.pdb
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.genruntimeconfig.cache
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\ref\CuadernoDeComunicaciones.dll
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmPrincipal.resources
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.FrmLogin.resources
-C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.Formularios.FrmPerfiles.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.AssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.CopyComplete

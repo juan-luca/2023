@@ -89,6 +89,20 @@ namespace CuadernoDeComunicaciones.Clases
             return comunicacionEncontrada;
         }
         #endregion
+
+
+        public static List<Comunicacion> ListarComunicacionesDeAlumno(string usuarioAlumno)
+        {
+            List<Comunicacion> Comunicaciones = ListarTodos();
+            return Comunicaciones.Where(c => c.Alumno == usuarioAlumno).ToList();
+        }
+        public static List<Comunicacion> ListarComunicacionesDeAlumno(List<Alumno> alumnosComunicaciones)
+        {
+            List<Comunicacion> Comunicaciones = ListarTodos();
+            List<string> nombresAlumnos = alumnosComunicaciones.Select(a => a.NombreUsuario).ToList();
+            return Comunicaciones.Where(c => nombresAlumnos.Contains(c.Alumno)).ToList();
+        }
+
         private bool AgregarComunicacionAXml()
         {
             List<Comunicacion> comunicaciones = ListarTodos();
