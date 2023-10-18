@@ -22,3 +22,4 @@ C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\C
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.AssemblyReference.cache
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.CopyComplete
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.Properties.Resources.resources

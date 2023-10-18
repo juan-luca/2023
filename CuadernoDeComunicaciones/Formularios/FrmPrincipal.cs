@@ -33,7 +33,7 @@ namespace CuadernoDeComunicaciones
         private void btnComunicaciones_Click(object sender, EventArgs e)
         {
             FrmComunicacion FrmComunicacion = new FrmComunicacion(this.usuario, this.usuarios);
-           
+
             MostrarFormularioEnPanel(FrmComunicacion);
         }
 
@@ -67,8 +67,8 @@ namespace CuadernoDeComunicaciones
 
         private void btnPerfiles_Click(object sender, EventArgs e)
         {
-            FrmPerfiles FrmPerfil = new FrmPerfiles();           
-            
+            FrmPerfiles FrmPerfil = new FrmPerfiles();
+
             MostrarFormularioEnPanel(FrmPerfil);
         }
     }

@@ -2,14 +2,14 @@
 {
     partial class FrmPrincipal
     {
-      
+
         private System.ComponentModel.IContainer components = null;
 
         private Button btnComunicaciones;
         private Button btnCalificaciones;
         private Button btnPerfiles;
         private Panel pnlElemento;
-        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,7 +21,7 @@
 
         #region Windows Form Designer generated code
 
-        
+
         private void InitializeComponent()
         {
             btnComunicaciones = new Button();
@@ -44,6 +44,7 @@
             // 
             // btnCalificaciones
             // 
+            btnCalificaciones.FlatAppearance.MouseOverBackColor = Color.Blue;
             btnCalificaciones.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnCalificaciones.Location = new Point(731, 23);
             btnCalificaciones.Margin = new Padding(4);
@@ -77,11 +78,13 @@
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = SystemColors.HotTrack;
             ClientSize = new Size(1374, 880);
             Controls.Add(pnlElemento);
             Controls.Add(btnPerfiles);
             Controls.Add(btnCalificaciones);
             Controls.Add(btnComunicaciones);
+            ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4);
             MaximizeBox = false;
@@ -93,6 +96,6 @@
 
         #endregion
 
-       
+
     }
 }
