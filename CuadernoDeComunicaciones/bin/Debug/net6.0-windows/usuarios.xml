@@ -60,4 +60,10 @@
     <Perfil>Alumno</Perfil>
     <NombreCompleto>scott</NombreCompleto>
   </Usuario>
+  <Usuario>
+    <NombreUsuario>sdsads</NombreUsuario>
+    <Contraseña>adsa</Contraseña>
+    <Perfil>Preceptor</Perfil>
+    <NombreCompleto>sdasad</NombreCompleto>
+  </Usuario>
 </ArrayOfUsuario>

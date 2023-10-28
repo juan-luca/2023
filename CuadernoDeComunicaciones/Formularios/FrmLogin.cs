@@ -24,7 +24,7 @@ namespace CuadernoDeComunicaciones
                     using (FileStream fs = new FileStream(archivoXML, FileMode.Open))
                     {
                         XmlSerializer serializer = new XmlSerializer(typeof(List<Usuario>));
-                        usuarios = (List<Usuario>)serializer.Deserialize(fs);
+                        this.usuarios = (List<Usuario>)serializer.Deserialize(fs);
                     }
                 }
                 catch (Exception ex)
@@ -56,7 +56,7 @@ namespace CuadernoDeComunicaciones
             }
             if (usuarioEncontrado != null)
             {
-                
+
                 FrmPrincipal frmPrincipal = new FrmPrincipal(usuarioEncontrado, this.usuarios);
                 frmPrincipal.Show();
                 this.Hide();

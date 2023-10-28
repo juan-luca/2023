@@ -54,7 +54,7 @@ namespace CuadernoDeComunicaciones
         }
         #endregion
 
-
+        
         public static List<Usuario> ListarTodos()
         {
             return DeserializarUsuarios();
