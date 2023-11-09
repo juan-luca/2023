@@ -1,4 +1,4 @@
-﻿using CuadernoDeComunicaciones.Clases;
+﻿using BibliotecaClases;
 
 namespace CuadernoDeComunicaciones
 {

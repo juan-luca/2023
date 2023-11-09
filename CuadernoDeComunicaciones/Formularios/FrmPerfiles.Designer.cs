@@ -1,4 +1,5 @@
-﻿namespace CuadernoDeComunicaciones.Formularios
+﻿using BibliotecaClases;
+namespace CuadernoDeComunicaciones.Formularios
 {
     partial class FrmPerfiles
     {

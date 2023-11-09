@@ -1,0 +1,15 @@
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\bin\Debug\net6.0\Serializer.deps.json
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\bin\Debug\net6.0\Serializer.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\bin\Debug\net6.0\Serializer.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\bin\Debug\net6.0\Excepciones.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\bin\Debug\net6.0\Excepciones.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.csproj.AssemblyReference.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.AssemblyInfoInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.AssemblyInfo.cs
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.csproj.CoreCompileInputs.cache
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.csproj.CopyComplete
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\refint\Serializer.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\Serializer.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\Serializer\obj\Debug\net6.0\ref\Serializer.dll

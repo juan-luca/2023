@@ -1,5 +1,5 @@
 using System.Xml.Serialization;
-using CuadernoDeComunicaciones.Clases;
+using BibliotecaClases;
 
 namespace CuadernoDeComunicaciones
 {

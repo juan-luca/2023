@@ -23,3 +23,15 @@ C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\C
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.AssemblyReference.cache
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.csproj.CopyComplete
 C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\obj\Debug\net6.0-windows\CuadernoDeComunicaciones.Properties.Resources.resources
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\BibliotecaClases.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\BibliotecaClases.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Excepciones.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Serializer.dll
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Excepciones.pdb
+C:\Users\jluca\OneDrive\Escritorio\Juan\UTN 2023 2do cuatri\laboratorio 2\2023\CuadernoDeComunicaciones\bin\Debug\net6.0-windows\Serializer.pdb

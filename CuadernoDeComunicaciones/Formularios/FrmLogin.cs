@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-
+using BibliotecaClases;
 namespace CuadernoDeComunicaciones
 {
     public partial class FrmLogin : Form
