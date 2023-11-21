@@ -45,7 +45,7 @@ namespace CuadernoDeComunicaciones.Formularios
                     {
                         this.Invoke((MethodInvoker)delegate ()
                         {
-                            this.Listar();
+                            this.Listar(true);
 
                             ActualizacionUI?.Invoke();
                         });
@@ -64,18 +64,22 @@ namespace CuadernoDeComunicaciones.Formularios
             this.Limpiar();
             this.Listar();
         }
-        private void Listar()
+        private void Listar(bool automatico =false)
         {
             this.usuarios = Usuario.ListarTodos();
             this.dgvUsuarios.DataSource = this.usuarios;
             this.padres = usuarios.Where(u => u.Perfil == "Padres").ToList();
             this.madres = usuarios.Where(u => u.Perfil == "Padres").ToList();
-            padres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
-            madres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
+            if(!automatico)
+            {
+                padres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
+                madres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
 
+
+                cboPadre.DataSource = padres;
+                cboMadre.DataSource = madres;
+            }
             
-            cboPadre.DataSource = padres;
-            cboMadre.DataSource = madres;
 
 
         }

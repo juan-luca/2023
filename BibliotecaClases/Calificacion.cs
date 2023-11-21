@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Data.SqlClient;
+using System.Xml.Serialization;
 
 namespace BibliotecaClases
 {
@@ -34,44 +35,90 @@ namespace BibliotecaClases
         #region Métodos Públicos
         public override bool Crear()
         {
-            if (AgregarCalificacionAXml())
-                return true;
+            try
+            {
+                if (AgregarCalificacionABD())
+                    return true;
 
-            return false;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al crear calificación: " + ex.Message);
+                throw new Exception("Error al crear calificación.", ex);
+            }
         }
 
         public override bool Modificar()
         {
-            List<Calificacion> calificaciones = ListarTodos(); 
-            Calificacion calificacionExistente = calificaciones.FirstOrDefault(c => c.CalificacionNro == this.CalificacionNro);
-
-            if (calificacionExistente != null)
+            try
             {
-                calificacionExistente.Alumno = this.Alumno;
-                calificacionExistente.Materia = this.Materia;
-                calificacionExistente.Nota = this.Nota;
-                calificacionExistente.Observaciones = this.Observaciones;
-                calificacionExistente.Concepto = this.Concepto;
-                calificacionExistente.Fecha = this.Fecha;
+                if (CalificacionExiste(this.calificacionNro))
+                {
+                    using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                    {
+                        string consulta = "UPDATE Calificaciones SET Alumno = @Alumno, Materia = @Materia, Nota = @Nota, " +
+                                          "Observaciones = @Observaciones, Concepto = @Concepto, Fecha = @Fecha " +
+                                          "WHERE CalificacionNro = @CalificacionNro";
 
-                return SerializarCalificaciones(calificaciones,archivoXml);
+                        using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@CalificacionNro", this.calificacionNro);
+                            comando.Parameters.AddWithValue("@Alumno", this.Alumno);
+                            comando.Parameters.AddWithValue("@Materia", this.materia);
+                            comando.Parameters.AddWithValue("@Nota", this.nota);
+                            comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
+                            comando.Parameters.AddWithValue("@Concepto", this.concepto);
+                            comando.Parameters.AddWithValue("@Fecha", this.Fecha);
+
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("La calificación a modificar no existe.");
+                }
             }
-
-            return false;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al modificar calificación: " + ex.Message);
+                throw new Exception("Error al modificar calificación.", ex);
+            }
         }
 
         public override bool Borrar()
         {
-            List<Calificacion> calificaciones = ListarTodos();
-            Calificacion calificacionExistente = calificaciones.FirstOrDefault(c => c.CalificacionNro == this.CalificacionNro);
-
-            if (calificacionExistente != null)
+            try
             {
-                calificaciones.Remove(calificacionExistente);
-                return SerializarCalificaciones(calificaciones, archivoXml);
-            }
+                if (CalificacionExiste(this.calificacionNro))
+                {
+                    using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                    {
+                        string consulta = "DELETE FROM Calificaciones WHERE CalificacionNro = @CalificacionNro";
 
-            return false;
+                        using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@CalificacionNro", this.calificacionNro);
+
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("La calificación a borrar no existe.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al borrar calificación: " + ex.Message);
+                throw new Exception("Error al borrar calificación.", ex);
+            }
         }
 
         public static List<Calificacion> ListarTodos()
@@ -86,6 +133,23 @@ namespace BibliotecaClases
         }
         #endregion
 
+        private bool CalificacionExiste(int calificacionNro)
+        {
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "SELECT COUNT(*) FROM Calificaciones WHERE CalificacionNro = @CalificacionNro";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@CalificacionNro", calificacionNro);
+
+                    int count = (int)comando.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+
         public static List<Calificacion> ListarCalificacionesDeAlumno(string usuarioAlumno)
         {
             List<Calificacion> calificaciones = ListarTodos();
@@ -97,40 +161,65 @@ namespace BibliotecaClases
             List<string> nombresAlumnos = alumnosCalificaciones.Select(a => a.NombreUsuario).ToList();
             return calificaciones.Where(c => nombresAlumnos.Contains(c.Alumno)).ToList();
         }
-       
 
-        private bool AgregarCalificacionAXml()
+
+        private bool AgregarCalificacionABD()
         {
-            List<Calificacion> calificaciones = ListarTodos();
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "INSERT INTO Calificaciones (Alumno, Materia, Nota, Observaciones, Concepto, Fecha) " +
+                                  "VALUES (@Alumno, @Materia, @Nota, @Observaciones, @Concepto, @Fecha)";
 
-            calificaciones.Add(this);
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Alumno", this.Alumno);
+                    comando.Parameters.AddWithValue("@Materia", this.materia);
+                    comando.Parameters.AddWithValue("@Nota", this.nota);
+                    comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
+                    comando.Parameters.AddWithValue("@Concepto", this.concepto);
+                    comando.Parameters.AddWithValue("@Fecha", this.Fecha);
 
-            return SerializarCalificaciones(calificaciones, archivoXml);
+                    comando.ExecuteNonQuery();
+                }
+            }
+
+            return true;
         }
 
         public static List<Calificacion> DeserializarCalificaciones()
         {
             List<Calificacion> calificaciones = new List<Calificacion>();
-            string archivoXml = "Calificaciones.xml";
 
-            if (File.Exists(archivoXml))
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                try
+                string consulta = "SELECT * FROM Calificaciones";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Calificacion>));
-                    using (FileStream fs = new FileStream(archivoXml, FileMode.Open))
+                    using (SqlDataReader reader = comando.ExecuteReader())
                     {
-                        calificaciones = (List<Calificacion>)serializer.Deserialize(fs);
+                        while (reader.Read())
+                        {
+                            Calificacion calificacion = new Calificacion
+                            {
+                                calificacionNro = Convert.ToInt32(reader["CalificacionNro"]),
+                                Alumno = reader["Alumno"].ToString(),
+                                materia = (Materia)Enum.Parse(typeof(Materia), reader["Materia"].ToString()),
+                                nota = Convert.ToDouble(reader["Nota"]),
+                                observaciones = reader["Observaciones"].ToString(),
+                                concepto = reader["Concepto"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["Fecha"])
+                            };
+
+                            calificaciones.Add(calificacion);
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
                 }
             }
 
             return calificaciones;
         }
+       
 
         public static bool SerializarCalificaciones(List<Calificacion> calificaciones, string archivoXml)
         {

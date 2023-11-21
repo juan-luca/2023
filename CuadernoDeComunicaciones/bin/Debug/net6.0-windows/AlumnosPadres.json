@@ -1,27 +1,12 @@
 [
   {
-    "NombreUsuario": "scott",
-    "Padre": "Padres",
-    "Madre": "travis"
+    "NombreUsuario": "lucasAlumno",
+    "Padre": "Padre1",
+    "Madre": "padre2"
   },
   {
-    "NombreUsuario": "karlin",
-    "Padre": "travis",
-    "Madre": "juan"
-  },
-  {
-    "NombreUsuario": "Olga",
-    "Padre": "travis",
-    "Madre": "travis"
-  },
-  {
-    "NombreUsuario": "Alumno",
-    "Padre": "travis",
-    "Madre": "travis"
-  },
-  {
-    "NombreUsuario": "sdfd",
-    "Padre": "juan",
-    "Madre": "juan"
+    "NombreUsuario": "robertito",
+    "Padre": "padre2",
+    "Madre": "padre2"
   }
 ]

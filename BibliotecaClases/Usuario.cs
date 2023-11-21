@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Xml.Serialization;
 using Excepciones;
 using Serializer;
@@ -57,76 +58,127 @@ namespace BibliotecaClases
         }
         #endregion
 
-        
         public static List<Usuario> ListarTodos()
         {
-            List<Usuario> usuarios = null;
-            XML<List<Usuario>> xmlSerializer = new XML<List<Usuario>>();
-            try
+            List<Usuario> usuarios = new List<Usuario>();
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                xmlSerializer.Leer(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\" + "Usuarios.xml", out usuarios);
-                
-            }
-            catch (SerializerException ex)
-            {
-                
-                throw new SerializerException(ex);
+                string consulta = "SELECT * FROM Usuarios";
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Usuario usuario = new Usuario
+                            {
+                                NombreUsuario = reader["NombreUsuario"].ToString(),
+                                Contraseña = reader["Contraseña"].ToString(),
+                                Perfil = reader["Perfil"].ToString(),
+                                NombreCompleto = reader["NombreCompleto"].ToString()
+                            };
+                            usuarios.Add(usuario);
+                        }
+                    }
+                }
             }
 
-            return usuarios ?? new List<Usuario>();
+            return usuarios;
         }
 
+        
         public bool Crear()
         {
-            List<Usuario> usuarios = ListarTodos();
-            Usuario usuarioExistente = usuarios.FirstOrDefault(u => u.NombreUsuario == this.NombreUsuario);
-
-            if (usuarioExistente != null)
+            // Verificar si el usuario ya existe
+            if (UsuarioExiste(this.NombreUsuario))
             {
-                throw new Exception("El usuario ya existe.");
+                throw new UsuarioRepetidoExcepcion("El usuario ya existe.");
+              
             }
 
-            if (AgregarUsuarioAXml())
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                return true;
+                string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Perfil, NombreCompleto) VALUES (@NombreUsuario, @Contraseña, @Perfil, @NombreCompleto)";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+                    comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
+                    comando.Parameters.AddWithValue("@Perfil", this.Perfil);
+                    comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+
+                    comando.ExecuteNonQuery();
+                }
             }
 
-            return false;
+            return true;
+        }
+
+        private bool UsuarioExiste(string nombreUsuario)
+        {
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+                    return count > 0;
+                }
+            }
         }
         public bool Modificar()
         {
-            List<Usuario> usuarios = ListarTodos();
-            Usuario usuarioExistente = usuarios.FirstOrDefault(u => u.NombreUsuario == this.NombreUsuario);
-
-            if (usuarioExistente != null)
-            {
-                usuarioExistente.Contraseña = this.Contraseña;
-                usuarioExistente.Perfil = this.Perfil;
-                usuarioExistente.NombreCompleto = this.NombreCompleto;
-
-                return SerializarUsuarios(usuarios, archivoXml);
-            }
-            else
+            if (!UsuarioExiste(this.NombreUsuario))
             {
                 throw new Exception("El usuario a modificar no existe.");
             }
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "UPDATE Usuarios SET Contraseña = @Contraseña, Perfil = @Perfil, NombreCompleto = @NombreCompleto WHERE NombreUsuario = @NombreUsuario";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+                    comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
+                    comando.Parameters.AddWithValue("@Perfil", this.Perfil);
+                    comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+
+            return true;
         }
 
         public bool Borrar()
         {
-            List<Usuario> usuarios = ListarTodos();
-            Usuario usuarioAEliminar = usuarios.Find(u => u.NombreUsuario == this.NombreUsuario);
-
-            if (usuarioAEliminar != null)
-            {
-                usuarios.Remove(usuarioAEliminar);
-                return SerializarUsuarios(usuarios, archivoXml);
-            }
-            else
+            if (!UsuarioExiste(this.NombreUsuario))
             {
                 throw new Exception("El usuario a eliminar no existe.");
             }
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "DELETE FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+
+            return true;
         }
+
+
+        
 
         private bool AgregarUsuarioAXml()
         {

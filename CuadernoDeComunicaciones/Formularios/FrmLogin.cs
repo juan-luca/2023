@@ -15,27 +15,9 @@ namespace CuadernoDeComunicaciones
 
         private void CargarUsuariosDesdeXML()
         {
-            string archivoXML = "usuarios.xml";
 
-            if (File.Exists(archivoXML))
-            {
-                try
-                {
-                    using (FileStream fs = new FileStream(archivoXML, FileMode.Open))
-                    {
-                        XmlSerializer serializer = new XmlSerializer(typeof(List<Usuario>));
-                        this.usuarios = (List<Usuario>)serializer.Deserialize(fs);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar usuarios desde el archivo XML: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("El archivo de usuarios no existe. Debes crearlo primero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            this.usuarios = Usuario.ListarTodos();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
