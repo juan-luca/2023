@@ -12,13 +12,52 @@ namespace CuadernoDeComunicaciones.Formularios
         private List<Usuario> madres;
         private RelacionesManager relacionesManager;
         private bool FilaSeleccionada = false;
+        Thread hiloActualizador;
+        private bool pauseThread = false;
+
+        // Delegado para manejar eventos de actualización de la interfaz de usuario
+        public delegate void ActualizacionEventHandler();
+
+        // Evento que se dispara cuando se actualiza la interfaz de usuario
+        public event ActualizacionEventHandler ActualizacionUI;
         public FrmPerfiles()
         {
             InitializeComponent();
+            this.Load += FrmPerfiles_Load;
+            this.FormClosing += FrmPerfiles_FormClosing;
+        }
+        private void FrmPerfiles_Load(object sender, EventArgs e)
+        {
             relacionesManager = new RelacionesManager();
             HabilitarDeshabilitarBotones();
+            this.hiloActualizador = new Thread(this.ActualizarGrillaAutomaticamente);
+            this.hiloActualizador.Start();
         }
+        private void ActualizarGrillaAutomaticamente()
+        {
+            try
+            {
+                while (!this.pauseThread)
+                {
+                    Thread.Sleep(2000);
 
+                    if (this.dgvUsuarios.InvokeRequired)
+                    {
+                        this.Invoke((MethodInvoker)delegate ()
+                        {
+                            this.Listar();
+
+                            ActualizacionUI?.Invoke();
+                        });
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
 
         private void ActualizarGrilla()
         {
@@ -260,6 +299,10 @@ namespace CuadernoDeComunicaciones.Formularios
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+        private void FrmPerfiles_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            pauseThread = true;
         }
     }
 }
