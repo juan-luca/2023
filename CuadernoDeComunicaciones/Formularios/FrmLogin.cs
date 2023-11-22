@@ -79,5 +79,14 @@ namespace CuadernoDeComunicaciones
             txtUsuario.Text = "Alumno";
             txtContraseña.Text = "contraseña_alumno";
         }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

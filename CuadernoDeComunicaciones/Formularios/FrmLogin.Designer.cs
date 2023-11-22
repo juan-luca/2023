@@ -26,40 +26,47 @@ namespace CuadernoDeComunicaciones
             btnPreceptor = new Button();
             btnPadres = new Button();
             btnAlumno = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             groupBoxBotonesTest.SuspendLayout();
             SuspendLayout();
             // 
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtUsuario.Location = new Point(116, 64);
+            txtUsuario.Location = new Point(120, 104);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
-            txtUsuario.Size = new Size(300, 27);
+            txtUsuario.Size = new Size(300, 23);
             txtUsuario.TabIndex = 0;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(116, 104);
+            txtContraseña.Location = new Point(121, 144);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
             txtContraseña.PlaceholderText = "Contraseña";
-            txtContraseña.Size = new Size(300, 27);
+            txtContraseña.Size = new Size(300, 23);
             txtContraseña.TabIndex = 1;
+            txtContraseña.TextChanged += txtContraseña_TextChanged;
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.Lavender;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.BackgroundImageLayout = ImageLayout.None;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogin.ForeColor = Color.Black;
+            btnLogin.ForeColor = Color.White;
             btnLogin.Image = (Image)resources.GetObject("btnLogin.Image");
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogin.Location = new Point(116, 137);
+            btnLogin.Location = new Point(378, 173);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(300, 51);
+            btnLogin.Size = new Size(43, 51);
             btnLogin.TabIndex = 2;
-            btnLogin.Text = "Iniciar sesion";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
@@ -82,9 +89,10 @@ namespace CuadernoDeComunicaciones
             // 
             // btnDirector
             // 
-            btnDirector.BackColor = Color.LavenderBlush;
+            btnDirector.BackColor = Color.Transparent;
+            btnDirector.FlatStyle = FlatStyle.Flat;
             btnDirector.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDirector.ForeColor = Color.Black;
+            btnDirector.ForeColor = Color.White;
             btnDirector.Location = new Point(12, 51);
             btnDirector.Name = "btnDirector";
             btnDirector.Size = new Size(106, 40);
@@ -95,9 +103,10 @@ namespace CuadernoDeComunicaciones
             // 
             // btnProfesor
             // 
-            btnProfesor.BackColor = Color.LavenderBlush;
+            btnProfesor.BackColor = Color.Transparent;
+            btnProfesor.FlatStyle = FlatStyle.Flat;
             btnProfesor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnProfesor.ForeColor = Color.Black;
+            btnProfesor.ForeColor = Color.White;
             btnProfesor.Location = new Point(125, 51);
             btnProfesor.Name = "btnProfesor";
             btnProfesor.Size = new Size(104, 40);
@@ -108,9 +117,10 @@ namespace CuadernoDeComunicaciones
             // 
             // btnPreceptor
             // 
-            btnPreceptor.BackColor = Color.LavenderBlush;
+            btnPreceptor.BackColor = Color.Transparent;
+            btnPreceptor.FlatStyle = FlatStyle.Flat;
             btnPreceptor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPreceptor.ForeColor = Color.Black;
+            btnPreceptor.ForeColor = Color.White;
             btnPreceptor.Location = new Point(232, 51);
             btnPreceptor.Name = "btnPreceptor";
             btnPreceptor.Size = new Size(97, 40);
@@ -121,9 +131,10 @@ namespace CuadernoDeComunicaciones
             // 
             // btnPadres
             // 
-            btnPadres.BackColor = Color.LavenderBlush;
+            btnPadres.BackColor = Color.Transparent;
+            btnPadres.FlatStyle = FlatStyle.Flat;
             btnPadres.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPadres.ForeColor = Color.Black;
+            btnPadres.ForeColor = Color.White;
             btnPadres.Location = new Point(333, 51);
             btnPadres.Name = "btnPadres";
             btnPadres.Size = new Size(84, 40);
@@ -134,9 +145,10 @@ namespace CuadernoDeComunicaciones
             // 
             // btnAlumno
             // 
-            btnAlumno.BackColor = Color.LavenderBlush;
+            btnAlumno.BackColor = Color.Transparent;
+            btnAlumno.FlatStyle = FlatStyle.Flat;
             btnAlumno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAlumno.ForeColor = Color.Black;
+            btnAlumno.ForeColor = Color.White;
             btnAlumno.Location = new Point(420, 51);
             btnAlumno.Name = "btnAlumno";
             btnAlumno.Size = new Size(92, 40);
@@ -145,11 +157,46 @@ namespace CuadernoDeComunicaciones
             btnAlumno.UseVisualStyleBackColor = false;
             btnAlumno.Click += btnAlumno_Click;
             // 
+            // label1
+            // 
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.Coral;
+            label1.Image = (Image)resources.GetObject("label1.Image");
+            label1.Location = new Point(84, 88);
+            label1.Name = "label1";
+            label1.Size = new Size(30, 50);
+            label1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.Coral;
+            label2.Image = (Image)resources.GetObject("label2.Image");
+            label2.Location = new Point(84, 129);
+            label2.Name = "label2";
+            label2.Size = new Size(30, 50);
+            label2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(161, 39);
+            label3.Name = "label3";
+            label3.Size = new Size(203, 50);
+            label3.TabIndex = 6;
+            label3.Text = "Iniciar sesion";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FrmLogin
             // 
             BackColor = Color.Firebrick;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(523, 322);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(txtUsuario);
             Controls.Add(txtContraseña);
             Controls.Add(btnLogin);
@@ -171,5 +218,8 @@ namespace CuadernoDeComunicaciones
         private Button btnPreceptor;
         private Button btnPadres;
         private Button btnAlumno;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
