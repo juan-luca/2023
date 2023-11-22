@@ -51,7 +51,7 @@ namespace CuadernoDeComunicaciones
 
             pnlElemento.Controls.Add(formulario);
             pnlElemento.Tag = formulario;
-
+            pnlElemento.Visible = true;
             formulario.BringToFront();
             formulario.Show();
 
@@ -70,6 +70,37 @@ namespace CuadernoDeComunicaciones
             FrmPerfiles FrmPerfil = new FrmPerfiles();
 
             MostrarFormularioEnPanel(FrmPerfil);
+        }
+
+        private void btnComunicaciones_MouseHover(object sender, EventArgs e)
+        {
+            btnComunicaciones.BackgroundImage = null;
+
+        }
+
+        private void btnComunicaciones_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave("COMU");
+        }
+
+        private void btnPerfiles_MouseHover(object sender, EventArgs e)
+        {
+            btnPerfiles.BackgroundImage = null;
+        }
+
+        private void btnCalificaciones_MouseHover(object sender, EventArgs e)
+        {
+            btnCalificaciones.BackgroundImage = null;
+        }
+
+        private void btnCalificaciones_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave("CALI");
+        }
+
+        private void btnPerfiles_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave("P");
         }
     }
 }
