@@ -66,6 +66,8 @@ namespace CuadernoDeComunicaciones.Formularios
             this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
+            dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             this.usuarios = Usuario.ListarTodos();
 
             this.dgvUsuarios.DataSource = this.usuarios;
@@ -78,6 +80,10 @@ namespace CuadernoDeComunicaciones.Formularios
             this.txtNombreUsuario.Size = new System.Drawing.Size(200, 20);
             this.txtNombreUsuario.TabIndex = 1;
             this.txtNombreUsuario.TextChanged += TxtNombreUsuario_TextChanged;
+            txtNombreUsuario.BackColor = Color.Orange;
+            txtNombreUsuario.ForeColor = Color.White;
+            txtNombreUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // txtContraseña
             // 
@@ -85,6 +91,10 @@ namespace CuadernoDeComunicaciones.Formularios
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(200, 20);
             this.txtContraseña.TabIndex = 2;
+            txtContraseña.BackColor = Color.Orange;
+            txtContraseña.ForeColor = Color.White;
+            txtContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // cboPerfil
             // 
@@ -96,6 +106,10 @@ namespace CuadernoDeComunicaciones.Formularios
             this.cboPerfil.TabIndex = 3;
             this.cboPerfil.DataSource = Enum.GetValues(typeof(Perfil));
             this.cboPerfil.SelectedIndexChanged += cboPerfil_SelectedIndexChanged;
+            cboPerfil.BackColor = Color.Orange;
+            cboPerfil.ForeColor = Color.White;
+            cboPerfil.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // txtNombreCompleto
             // 
@@ -104,6 +118,10 @@ namespace CuadernoDeComunicaciones.Formularios
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(200, 20);
             this.txtNombreCompleto.TabIndex = 4;
+            txtNombreCompleto.BackColor = Color.Orange;
+            txtNombreCompleto.ForeColor = Color.White;
+            txtNombreCompleto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // btnCrear
             // 
@@ -156,6 +174,11 @@ namespace CuadernoDeComunicaciones.Formularios
             this.lblNombreUsuario.Size = new System.Drawing.Size(97, 13);
             this.lblNombreUsuario.TabIndex = 9;
             this.lblNombreUsuario.Text = "Nombre de Usuario";
+            lblNombreUsuario.BackColor = Color.Orange;
+            lblNombreUsuario.ForeColor = Color.White;
+            lblNombreUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
+
 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Location = new System.Drawing.Point(640, 52);
@@ -164,6 +187,9 @@ namespace CuadernoDeComunicaciones.Formularios
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 10;
             this.lblContraseña.Text = "Contraseña";
+            lblContraseña.BackColor = Color.Orange;
+            lblContraseña.ForeColor = Color.White;
+            lblContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
 
 
             this.lblPerfil.AutoSize = true;
@@ -173,6 +199,10 @@ namespace CuadernoDeComunicaciones.Formularios
             this.lblPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblPerfil.TabIndex = 11;
             this.lblPerfil.Text = "Perfil";
+            lblPerfil.BackColor = Color.Orange;
+            lblPerfil.ForeColor = Color.White;
+            lblPerfil.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
 
             this.lblNombreCompleto.AutoSize = true;
             this.lblNombreCompleto.Location = new System.Drawing.Point(640, 132);
@@ -180,6 +210,9 @@ namespace CuadernoDeComunicaciones.Formularios
             this.lblNombreCompleto.Size = new System.Drawing.Size(92, 13);
             this.lblNombreCompleto.TabIndex = 12;
             this.lblNombreCompleto.Text = "Nombre Completo";
+            lblNombreCompleto.BackColor = Color.Orange;
+            lblNombreCompleto.ForeColor = Color.White;
+            lblNombreCompleto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
 
 
             //
@@ -192,6 +225,10 @@ namespace CuadernoDeComunicaciones.Formularios
             lblPadre.Size = new Size(37, 15);
             lblPadre.TabIndex = 14;
             lblPadre.Text = "Padre";
+            lblPadre.BackColor = Color.Orange;
+            lblPadre.ForeColor = Color.White;
+            lblPadre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             this.lblPadre.Visible = false;
             // 
             // lblMadre
@@ -203,6 +240,10 @@ namespace CuadernoDeComunicaciones.Formularios
             lblMadre.Size = new Size(41, 15);
             lblMadre.TabIndex = 16;
             lblMadre.Text = "Madre";
+            lblMadre.BackColor = Color.Orange;
+            lblMadre.ForeColor = Color.White;
+            lblMadre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             this.lblMadre.Visible = false;
             // 
             // cboPadre
@@ -214,6 +255,10 @@ namespace CuadernoDeComunicaciones.Formularios
             cboPadre.Name = "cboPadre";
             cboPadre.Size = new Size(233, 23);
             cboPadre.TabIndex = 13;
+            cboPadre.BackColor = Color.Orange;
+            cboPadre.ForeColor = Color.White;
+            cboPadre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             this.cboPadre.Visible = false;
             // 
             // cboMadre
@@ -225,6 +270,10 @@ namespace CuadernoDeComunicaciones.Formularios
             cboMadre.Name = "cboMadre";
             cboMadre.Size = new Size(235, 23);
             cboMadre.TabIndex = 15;
+            cboMadre.BackColor = Color.Orange;
+            cboMadre.ForeColor = Color.White;
+            cboMadre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             this.cboMadre.Visible = false;
 
 
@@ -233,7 +282,7 @@ namespace CuadernoDeComunicaciones.Formularios
             padres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
             madres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
 
-            
+
             cboPadre.DisplayMember = "NombreUsuario";
             cboPadre.ValueMember = "NombreUsuario";
             cboPadre.DataSource = padres;
@@ -241,7 +290,6 @@ namespace CuadernoDeComunicaciones.Formularios
             cboMadre.DisplayMember = "NombreUsuario";
             cboMadre.ValueMember = "NombreUsuario";
             cboMadre.DataSource = madres;
-            
 
             // 
             // FrmPerfiles
