@@ -26,6 +26,7 @@ namespace CuadernoDeComunicaciones
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalificacion));
             lblCalificacionNro = new Label();
             lblCalificacionNroValue = new Label();
             lblMateria = new Label();
@@ -42,6 +43,7 @@ namespace CuadernoDeComunicaciones
             // 
             // gbxDatos
             // 
+            gbxDatos.BackgroundImage = (Image)resources.GetObject("gbxDatos.BackgroundImage");
             gbxDatos.Controls.Add(txtConcepto);
             gbxDatos.Controls.Add(lblConcepto);
             gbxDatos.Controls.Add(lblCalificacionNro);
@@ -98,14 +100,15 @@ namespace CuadernoDeComunicaciones
             // 
             // CboMateria
             // 
+            CboMateria.DataSource = new Materia[] { Materia.Matematica, Materia.Lengua, Materia.Historia, Materia.Quimica };
             CboMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             CboMateria.FormattingEnabled = true;
+            CboMateria.Items.AddRange(new object[] { Materia.Matematica, Materia.Lengua, Materia.Historia, Materia.Quimica });
             CboMateria.Location = new Point(458, 73);
             CboMateria.Margin = new Padding(5, 4, 5, 4);
             CboMateria.Name = "CboMateria";
             CboMateria.Size = new Size(135, 28);
             CboMateria.TabIndex = 9;
-            CboMateria.DataSource = Enum.GetValues(typeof(Materia));
             // 
             // lblNota
             // 
@@ -123,9 +126,9 @@ namespace CuadernoDeComunicaciones
             nuNota.Margin = new Padding(5, 4, 5, 4);
             nuNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nuNota.Name = "nuNota";
-            nuNota.Value = 10;
             nuNota.Size = new Size(120, 27);
             nuNota.TabIndex = 11;
+            nuNota.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // lblObservaciones
             // 
@@ -144,8 +147,8 @@ namespace CuadernoDeComunicaciones
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
             txtObservaciones.Size = new Size(448, 89);
-            txtObservaciones.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin ut dui nec sapien varius lacinia. Sed auctor ullamcorper lorem, a accumsan arcu tempor vel. Vivamus ultrices congue justo, sit amet vehicula odio accumsan nec. Vestibulum sagittis urna vel mi posuere, eu feugiat ante malesuada";
             txtObservaciones.TabIndex = 13;
+            txtObservaciones.Text = resources.GetString("txtObservaciones.Text");
             // 
             // lblConcepto
             // 
@@ -161,30 +164,25 @@ namespace CuadernoDeComunicaciones
             txtConcepto.Location = new Point(459, 122);
             txtConcepto.Name = "txtConcepto";
             txtConcepto.Size = new Size(134, 27);
-            txtConcepto.Text = "Conceptual";
             txtConcepto.TabIndex = 15;
-
-
-            BtnCrearClick += FrmElemento_BtnCrearClick;
-            BtnModificarClick += FrmElemento_BtnModificarClick;
-            BtnBorrarClick += FrmElemento_BtnBorrarClick;
-            BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
-            BtnListarClick += FrmElemento_BtnListarClick;
-            dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
-
-            this.Listar();
-
+            txtConcepto.Text = "Conceptual";
             // 
             // FrmCalificacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1243, 799);
             Fecha = new DateTime(2023, 9, 30, 18, 56, 35, 845);
             Margin = new Padding(6, 4, 6, 4);
             Name = "FrmCalificacion";
             Text = "Calificación";
-
+            BtnCrearClick += FrmElemento_BtnCrearClick;
+            BtnModificarClick += FrmElemento_BtnModificarClick;
+            BtnBorrarClick += FrmElemento_BtnBorrarClick;
+            BtnListarClick += FrmElemento_BtnListarClick;
+            BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
+            dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
             gbxDatos.ResumeLayout(false);
             gbxDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nuNota).EndInit();

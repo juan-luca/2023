@@ -203,19 +203,19 @@ namespace CuadernoDeComunicaciones
             RelacionesManager relacionesManager = new RelacionesManager();
             if (Usuario.Perfil == "Padres")
             {
-               List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
+                List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
 
                 calificaciones = Calificacion.ListarCalificacionesDeAlumno(alumnosRelacionados);
             }
             else if (Usuario.Perfil == "Alumno")
             {
-                
+
                 calificaciones = Calificacion.ListarCalificacionesDeAlumno(Usuario.NombreUsuario);
             }
 
             this.DgvElementos.DataSource = this.calificaciones;
         }
-       
+
 
         private void Limpiar()
         {
@@ -226,7 +226,7 @@ namespace CuadernoDeComunicaciones
             this.txtObservaciones.Text = "";
             this.txtConcepto.Text = "";
         }
-       
+
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
             bool habilitarFiltro = false;

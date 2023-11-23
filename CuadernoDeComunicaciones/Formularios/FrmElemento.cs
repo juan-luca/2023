@@ -90,7 +90,7 @@ namespace CuadernoDeComunicaciones
             this.usuarios = Usuarios;
 
             CargarAlumnos();
-           
+
         }
         private void CargarAlumnos()
         {
@@ -102,7 +102,7 @@ namespace CuadernoDeComunicaciones
             cboAlumno.DataSource = usuariosAlumnos;
         }
 
-        protected virtual void ConfigurarControlesSegunPerfil(string Perfil="")
+        protected virtual void ConfigurarControlesSegunPerfil(string Perfil = "")
         {
             if (Perfil == "")
                 Perfil = this.usuario.Perfil;
@@ -134,7 +134,7 @@ namespace CuadernoDeComunicaciones
             }
         }
 
-        protected virtual void HabilitarControles(bool habilitar=false, bool modificar = false)
+        protected virtual void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
             switch (this.usuario.Perfil)
             {
@@ -169,7 +169,7 @@ namespace CuadernoDeComunicaciones
                     btnListar.Enabled = true;
                     btnLimpiar.Enabled = true;
                     dtpFecha.Enabled = true;
-                    
+
                     break;
                 case "Preceptor":
                     habilitar = true;
@@ -205,11 +205,11 @@ namespace CuadernoDeComunicaciones
                     break;
             }
 
-          
 
-           
-            
-            
+
+
+
+
 
         }
 
