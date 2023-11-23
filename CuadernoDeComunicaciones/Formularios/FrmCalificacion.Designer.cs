@@ -114,7 +114,6 @@ namespace CuadernoDeComunicaciones
             CboMateria.BackColor = Color.Orange;
             CboMateria.ForeColor = Color.White;
             CboMateria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-
             // 
             // lblNota
             // 
@@ -160,7 +159,7 @@ namespace CuadernoDeComunicaciones
             txtObservaciones.Margin = new Padding(5, 4, 5, 4);
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
-            txtObservaciones.Size = new Size(448, 89);
+            txtObservaciones.Size = new Size(254, 89);
             txtObservaciones.TabIndex = 13;
             txtObservaciones.Text = resources.GetString("txtObservaciones.Text");
             // 

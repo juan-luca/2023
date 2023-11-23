@@ -83,7 +83,20 @@ namespace CuadernoDeComunicaciones
             lblComunicacionNroValue.Size = new Size(136, 31);
             lblComunicacionNroValue.TabIndex = 7;
             lblComunicacionNroValue.TextChanged += lblComunicacionNroValue_TextChanged;
-            
+            // 
+            // lblRemitente
+            // 
+            lblRemitente.Location = new Point(0, 0);
+            lblRemitente.Name = "lblRemitente";
+            lblRemitente.Size = new Size(100, 23);
+            lblRemitente.TabIndex = 0;
+            // 
+            // lblRemitenteValue
+            // 
+            lblRemitenteValue.Location = new Point(0, 0);
+            lblRemitenteValue.Name = "lblRemitenteValue";
+            lblRemitenteValue.Size = new Size(100, 23);
+            lblRemitenteValue.TabIndex = 0;
             // 
             // lblCategoria
             // 
@@ -98,7 +111,10 @@ namespace CuadernoDeComunicaciones
             lblCategoria.Size = new Size(80, 20);
             lblCategoria.TabIndex = 8;
             lblCategoria.Text = "Categoría:";
-            // Configuración de CboCategoria
+            // 
+            // CboCategoria
+            // 
+
             CboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             CboCategoria.FormattingEnabled = true;
             CboCategoria.Location = new Point(458, 73);
@@ -135,9 +151,10 @@ namespace CuadernoDeComunicaciones
             txtTexto.Margin = new Padding(5, 4, 5, 4);
             txtTexto.Multiline = true;
             txtTexto.Name = "txtTexto";
-            txtTexto.Size = new Size(540, 152);
+            txtTexto.Size = new Size(367, 152);
             txtTexto.TabIndex = 11;
             txtTexto.Text = resources.GetString("txtTexto.Text");
+
             this.Listar();
             // 
             // FrmComunicacion
