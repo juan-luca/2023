@@ -220,7 +220,7 @@
             dgvElementos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvElementos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvElementos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dgvElementos.BackgroundColor = SystemColors.ControlDarkDark;
+            dgvElementos.BackgroundColor = Color.Orange;
             dgvElementos.BorderStyle = BorderStyle.None;
             dgvElementos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvElementos.GridColor = SystemColors.ControlLight;

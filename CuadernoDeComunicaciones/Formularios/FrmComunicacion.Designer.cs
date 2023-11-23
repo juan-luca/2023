@@ -51,50 +51,53 @@ namespace CuadernoDeComunicaciones
             gbxDatos.Location = new Point(18, 21);
             gbxDatos.Margin = new Padding(6, 4, 6, 4);
             gbxDatos.Padding = new Padding(6, 4, 6, 4);
-            gbxDatos.Size = new Size(1182, 177);
+            gbxDatos.Size = new Size(1034, 177);
             gbxDatos.Controls.SetChildIndex(txtTexto, 0);
             gbxDatos.Controls.SetChildIndex(lblTexto, 0);
             gbxDatos.Controls.SetChildIndex(CboCategoria, 0);
             gbxDatos.Controls.SetChildIndex(lblCategoria, 0);
             gbxDatos.Controls.SetChildIndex(lblComunicacionNroValue, 0);
             gbxDatos.Controls.SetChildIndex(lblComunicacionNro, 0);
-            // Configuración de lblComunicacionNro
+            // 
+            // lblComunicacionNro
+            // 
             lblComunicacionNro.AutoSize = true;
-            lblComunicacionNro.Location = new Point(277, 28);
-            lblComunicacionNro.Margin = new Padding(5, 0, 5, 0);
-            lblComunicacionNro.Name = "lblComunicacionNro";
-            lblComunicacionNro.Size = new Size(185, 20);
-            lblComunicacionNro.TabIndex = 6;
-            lblComunicacionNro.Text = "Número de Comunicación:";
             lblComunicacionNro.BackColor = Color.Transparent;
             lblComunicacionNro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblComunicacionNro.ForeColor = Color.White;
-
-            // Configuración de lblComunicacionNroValue
+            lblComunicacionNro.Location = new Point(277, 28);
+            lblComunicacionNro.Margin = new Padding(5, 0, 5, 0);
+            lblComunicacionNro.Name = "lblComunicacionNro";
+            lblComunicacionNro.Size = new Size(194, 20);
+            lblComunicacionNro.TabIndex = 6;
+            lblComunicacionNro.Text = "Número de Comunicación:";
+            // 
+            // lblComunicacionNroValue
+            // 
+            lblComunicacionNroValue.BackColor = Color.Transparent;
+            lblComunicacionNroValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblComunicacionNroValue.ForeColor = Color.White;
             lblComunicacionNroValue.Location = new Point(458, 23);
             lblComunicacionNroValue.Margin = new Padding(5, 4, 5, 4);
             lblComunicacionNroValue.Name = "lblComunicacionNroValue";
             lblComunicacionNroValue.Size = new Size(136, 31);
             lblComunicacionNroValue.TabIndex = 7;
             lblComunicacionNroValue.TextChanged += lblComunicacionNroValue_TextChanged;
-            lblComunicacionNroValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblComunicacionNroValue.BackColor = Color.Transparent;
-            lblComunicacionNroValue.ForeColor = Color.White;
-
-
-            // Configuración de lblCategoria
+            
+            // 
+            // lblCategoria
+            // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(277, 69);
-            lblCategoria.Margin = new Padding(5, 0, 5, 0);
-            lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(77, 20);
-            lblCategoria.TabIndex = 8;
-            lblCategoria.Text = "Categoría:";
             lblCategoria.BackColor = Color.Transparent;
             lblCategoria.FlatStyle = FlatStyle.Flat;
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCategoria.ForeColor = Color.White;
-
+            lblCategoria.Location = new Point(277, 69);
+            lblCategoria.Margin = new Padding(5, 0, 5, 0);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(80, 20);
+            lblCategoria.TabIndex = 8;
+            lblCategoria.Text = "Categoría:";
             // Configuración de CboCategoria
             CboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             CboCategoria.FormattingEnabled = true;
@@ -106,20 +109,26 @@ namespace CuadernoDeComunicaciones
             CboCategoria.DataSource = Enum.GetValues(typeof(Categoria));
             CboCategoria.BackColor = Color.White;
             CboCategoria.ForeColor = Color.Black;
-
-            // Configuración de lblTexto
+            // 
+            // lblTexto
+            // 
             lblTexto.AutoSize = true;
-            lblTexto.Location = new Point(603, 23);
-            lblTexto.Margin = new Padding(5, 0, 5, 0);
-            lblTexto.Name = "lblTexto";
-            lblTexto.Size = new Size(48, 20);
-            lblTexto.TabIndex = 10;
-            lblTexto.Text = "Texto:";
             lblTexto.BackColor = Color.Transparent;
             lblTexto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblTexto.ForeColor = Color.White;
-
-            // Configuración de txtTexto
+            lblTexto.Location = new Point(603, 23);
+            lblTexto.Margin = new Padding(5, 0, 5, 0);
+            lblTexto.Name = "lblTexto";
+            lblTexto.Size = new Size(52, 20);
+            lblTexto.TabIndex = 10;
+            lblTexto.Text = "Texto:";
+            // 
+            // txtTexto
+            // 
+            txtTexto.BackColor = Color.Orange;
+            txtTexto.BorderStyle = BorderStyle.None;
+            txtTexto.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTexto.ForeColor = Color.White;
             txtTexto.Location = new Point(656, 16);
             txtTexto.Margin = new Padding(5, 4, 5, 4);
             txtTexto.Multiline = true;
@@ -127,16 +136,6 @@ namespace CuadernoDeComunicaciones
             txtTexto.Size = new Size(540, 152);
             txtTexto.TabIndex = 11;
             txtTexto.Text = resources.GetString("txtTexto.Text");
-            txtTexto.BackColor = Color.White;
-            txtTexto.ForeColor = Color.Black;
-
-            this.BtnCrearClick += FrmElemento_BtnCrearClick;
-            this.BtnModificarClick += FrmElemento_BtnModificarClick;
-            this.BtnBorrarClick += FrmElemento_BtnBorrarClick;
-            this.BtnListarClick += FrmElemento_BtnListarClick;
-            this.BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
-            this.dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
-            this.Listar();
             // 
             // FrmComunicacion
             // 
@@ -147,10 +146,15 @@ namespace CuadernoDeComunicaciones
             Margin = new Padding(6, 4, 6, 4);
             Name = "FrmComunicacion";
             Text = "Comunicación";
+            BtnCrearClick += FrmElemento_BtnCrearClick;
+            BtnModificarClick += FrmElemento_BtnModificarClick;
+            BtnBorrarClick += FrmElemento_BtnBorrarClick;
+            BtnListarClick += FrmElemento_BtnListarClick;
+            BtnLimpiarClick += FrmElemento_BtnLimpiarClick;
+            dgvElementosCellClick += FrmElemento_dgvElementosCellClick;
             gbxDatos.ResumeLayout(false);
             gbxDatos.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace CuadernoDeComunicaciones
         public FrmComunicacion(Usuario Usuario, List<Usuario> Usuarios) : base(Usuario, Usuarios)
         {
             InitializeComponent();
-            
+
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
         }
 
@@ -47,7 +47,7 @@ namespace CuadernoDeComunicaciones
                     break;
                 case "Alumno":
                     HabilitarControles();
-                    
+
                     break;
                 default:
                     break;
@@ -81,7 +81,7 @@ namespace CuadernoDeComunicaciones
 
                 int ComunicacionNro = -1;
                 int.TryParse(lblComunicacionNroValue.Text, out ComunicacionNro);
-                
+
                 Comunicacion nuevaComunicacion = new Comunicacion(this.Usuario.NombreCompleto, this.CboAlumnos.SelectedValue.ToString(), ComunicacionNro, this.CategoriaSeleccionada, this.TextoValue, this.Fecha);
 
                 if (nuevaComunicacion.Modificar())
@@ -213,7 +213,7 @@ namespace CuadernoDeComunicaciones
         }
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
-            
+
 
             switch (base.Usuario.Perfil)
             {
