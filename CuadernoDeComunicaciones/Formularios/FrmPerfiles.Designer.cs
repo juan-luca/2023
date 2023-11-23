@@ -60,13 +60,16 @@ namespace CuadernoDeComunicaciones.Formularios
             // dgvUsuarios
             // 
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
-            this.dgvUsuarios.TabIndex = 0;
-            this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
-            dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+    this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill; // Ajusta al completo
+    this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
+    this.dgvUsuarios.Name = "dgvUsuarios";
+    this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+    this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
+    this.dgvUsuarios.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right); // Ajusta tanto horizontal como verticalmente
+    this.dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Ajusta el tamaño de las columnas automáticamente
+    this.dgvUsuarios.TabIndex = 0;
+    this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
+    this.dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
 
             this.usuarios = Usuario.ListarTodos();
 
@@ -74,7 +77,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(640, 26);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(810, 26);
 
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(200, 20);
@@ -87,7 +90,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(640, 66);
+            this.txtContraseña.Location = new System.Drawing.Point(810, 66);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(200, 20);
             this.txtContraseña.TabIndex = 2;
@@ -100,7 +103,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             this.cboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(640, 106);
+            this.cboPerfil.Location = new System.Drawing.Point(810, 106);
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(200, 21);
             this.cboPerfil.TabIndex = 3;
@@ -113,7 +116,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // txtNombreCompleto
             // 
-            this.txtNombreCompleto.Location = new System.Drawing.Point(640, 146);
+            this.txtNombreCompleto.Location = new System.Drawing.Point(810, 146);
 
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(200, 20);
@@ -125,7 +128,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnCrear
             // 
-            btnCrear.Location = new Point(640, 305);
+            btnCrear.Location = new Point(810, 300);
             btnCrear.Margin = new Padding(4, 3, 4, 3);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(88, 27);
@@ -136,7 +139,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(790, 305);
+            btnModificar.Location = new Point(920, 300);
             btnModificar.Margin = new Padding(4, 3, 4, 3);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(88, 27);
@@ -147,7 +150,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(640, 342);
+            btnEliminar.Location = new Point(810, 350);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(88, 27);
@@ -158,7 +161,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(790, 342);
+            btnLimpiar.Location = new Point(920, 350);
             btnLimpiar.Margin = new Padding(4, 3, 4, 3);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(88, 27);
@@ -168,7 +171,7 @@ namespace CuadernoDeComunicaciones.Formularios
             btnLimpiar.Click += btnLimpiar_Click;
             // lblNombreUsuario
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(640, 12);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(810, 12);
 
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(97, 13);
@@ -181,7 +184,7 @@ namespace CuadernoDeComunicaciones.Formularios
 
 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(640, 52);
+            this.lblContraseña.Location = new System.Drawing.Point(810, 52);
 
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
@@ -193,7 +196,7 @@ namespace CuadernoDeComunicaciones.Formularios
 
 
             this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Location = new System.Drawing.Point(640, 92);
+            this.lblPerfil.Location = new System.Drawing.Point(810, 92);
 
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(30, 13);
@@ -205,7 +208,7 @@ namespace CuadernoDeComunicaciones.Formularios
 
 
             this.lblNombreCompleto.AutoSize = true;
-            this.lblNombreCompleto.Location = new System.Drawing.Point(640, 132);
+            this.lblNombreCompleto.Location = new System.Drawing.Point(810, 132);
             this.lblNombreCompleto.Name = "lblNombreCompleto";
             this.lblNombreCompleto.Size = new System.Drawing.Size(92, 13);
             this.lblNombreCompleto.TabIndex = 12;
@@ -219,7 +222,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // lblPadre
             // 
             lblPadre.AutoSize = true;
-            lblPadre.Location = new Point(640, 197);
+            lblPadre.Location = new Point(810, 175);
             lblPadre.Margin = new Padding(5, 0, 5, 0);
             lblPadre.Name = "lblPadre";
             lblPadre.Size = new Size(37, 15);
@@ -234,7 +237,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // lblMadre
             // 
             lblMadre.AutoSize = true;
-            lblMadre.Location = new Point(640, 249);
+            lblMadre.Location = new Point(810, 220);
             lblMadre.Margin = new Padding(5, 0, 5, 0);
             lblMadre.Name = "lblMadre";
             lblMadre.Size = new Size(41, 15);
@@ -250,10 +253,10 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             cboPadre.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPadre.FormattingEnabled = true;
-            cboPadre.Location = new Point(640, 215);
+            cboPadre.Location = new Point(810, 190);
             cboPadre.Margin = new Padding(5, 3, 5, 3);
             cboPadre.Name = "cboPadre";
-            cboPadre.Size = new Size(233, 23);
+            cboPadre.Size = new System.Drawing.Size(200, 21);
             cboPadre.TabIndex = 13;
             cboPadre.BackColor = Color.Orange;
             cboPadre.ForeColor = Color.White;
@@ -265,10 +268,10 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             cboMadre.DropDownStyle = ComboBoxStyle.DropDownList;
             cboMadre.FormattingEnabled = true;
-            cboMadre.Location = new Point(640, 267);
+            cboMadre.Location = new Point(810, 240);
             cboMadre.Margin = new Padding(5, 3, 5, 3);
             cboMadre.Name = "cboMadre";
-            cboMadre.Size = new Size(235, 23);
+            cboMadre.Size = new System.Drawing.Size(200, 21);
             cboMadre.TabIndex = 15;
             cboMadre.BackColor = Color.Orange;
             cboMadre.ForeColor = Color.White;

@@ -25,6 +25,23 @@ namespace CuadernoDeComunicaciones.Formularios
             InitializeComponent();
             this.Load += FrmPerfiles_Load;
             this.FormClosing += FrmPerfiles_FormClosing;
+            this.BackColor = Color.Orange; // Establece el color de fondo del formulario
+            this.TransparencyKey = Color.Orange; // Establece el color transparente
+            AplicarEstiloControles();
+        }
+        private void AplicarEstiloControles()
+        {
+            // Configura el estilo de los controles aquí
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox || control is ComboBox || control is Label || control is Button)
+                {
+                    control.BackColor = Color.Orange; // Establece el color de fondo de los controles
+                    control.ForeColor = Color.White; // Establece el color de texto de los controles
+                    control.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point); // Establece el estilo de fuente
+                }
+            }
         }
         private void FrmPerfiles_Load(object sender, EventArgs e)
         {

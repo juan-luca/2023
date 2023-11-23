@@ -16,7 +16,12 @@
   },
   {
     "NombreUsuario": "ALUM2",
-    "Padre": "padre2",
+    "Padre": "kkkkkkkkk",
+    "Madre": "padre2"
+  },
+  {
+    "NombreUsuario": "bbbb",
+    "Padre": "Padre1",
     "Madre": "padre2"
   }
 ]
