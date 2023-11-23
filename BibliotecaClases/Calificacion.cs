@@ -65,7 +65,7 @@ namespace BibliotecaClases
                         {
                             comando.Parameters.AddWithValue("@CalificacionNro", this.calificacionNro);
                             comando.Parameters.AddWithValue("@Alumno", this.Alumno);
-                            comando.Parameters.AddWithValue("@Materia", this.materia);
+                            comando.Parameters.AddWithValue("@Materia", this.materia.ToString());
                             comando.Parameters.AddWithValue("@Nota", this.nota);
                             comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
                             comando.Parameters.AddWithValue("@Concepto", this.concepto);
@@ -167,13 +167,15 @@ namespace BibliotecaClases
         {
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string consulta = "INSERT INTO Calificaciones (Alumno, Materia, Nota, Observaciones, Concepto, Fecha) " +
-                                  "VALUES (@Alumno, @Materia, @Nota, @Observaciones, @Concepto, @Fecha)";
+                string consulta = "INSERT INTO Calificaciones (Alumno, Remitente, Materia, Nota, Observaciones, Concepto, Fecha) " +
+                                  "VALUES (@Alumno, @Remitente, @Materia, @Nota, @Observaciones, @Concepto, @Fecha)";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
                     comando.Parameters.AddWithValue("@Alumno", this.Alumno);
-                    comando.Parameters.AddWithValue("@Materia", this.materia);
+                    comando.Parameters.AddWithValue("@Remitente", this.Remitente);
+
+                    comando.Parameters.AddWithValue("@Materia", this.materia.ToString());
                     comando.Parameters.AddWithValue("@Nota", this.nota);
                     comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
                     comando.Parameters.AddWithValue("@Concepto", this.concepto);
@@ -204,6 +206,7 @@ namespace BibliotecaClases
                             {
                                 calificacionNro = Convert.ToInt32(reader["CalificacionNro"]),
                                 Alumno = reader["Alumno"].ToString(),
+                                Remitente = reader["Remitente"].ToString(),
                                 materia = (Materia)Enum.Parse(typeof(Materia), reader["Materia"].ToString()),
                                 nota = Convert.ToDouble(reader["Nota"]),
                                 observaciones = reader["Observaciones"].ToString(),

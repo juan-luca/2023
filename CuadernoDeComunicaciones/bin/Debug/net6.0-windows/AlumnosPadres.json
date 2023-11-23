@@ -8,5 +8,15 @@
     "NombreUsuario": "robertito",
     "Padre": "padre2",
     "Madre": "padre2"
+  },
+  {
+    "NombreUsuario": "ALUM",
+    "Padre": "padre2",
+    "Madre": "Padre1"
+  },
+  {
+    "NombreUsuario": "ALUM2",
+    "Padre": "padre2",
+    "Madre": "padre2"
   }
 ]
