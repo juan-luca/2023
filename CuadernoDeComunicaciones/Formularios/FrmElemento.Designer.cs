@@ -72,16 +72,17 @@
             // 
             // cboAlumno
             // 
-            cboAlumno.BackColor = Color.Black;
+            cboAlumno.BackColor = Color.Orange;
             cboAlumno.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAlumno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cboAlumno.ForeColor = Color.Yellow;
+            cboAlumno.ForeColor = Color.White;
             cboAlumno.FormattingEnabled = true;
             cboAlumno.Location = new Point(85, 101);
             cboAlumno.Margin = new Padding(5, 4, 5, 4);
             cboAlumno.Name = "cboAlumno";
             cboAlumno.Size = new Size(141, 28);
             cboAlumno.TabIndex = 12;
+           
             // 
             // lblAlumno
             // 

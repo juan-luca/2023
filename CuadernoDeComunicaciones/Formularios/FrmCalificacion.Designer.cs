@@ -100,10 +100,8 @@ namespace CuadernoDeComunicaciones
             // 
             // CboMateria
             // 
-            CboMateria.DataSource = new Materia[] { Materia.Matematica, Materia.Lengua, Materia.Historia, Materia.Quimica };
             CboMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             CboMateria.FormattingEnabled = true;
-            CboMateria.Items.AddRange(new object[] { Materia.Matematica, Materia.Lengua, Materia.Historia, Materia.Quimica });
             CboMateria.Location = new Point(458, 73);
             CboMateria.Margin = new Padding(5, 4, 5, 4);
             CboMateria.Name = "CboMateria";

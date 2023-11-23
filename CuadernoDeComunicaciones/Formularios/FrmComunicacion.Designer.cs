@@ -107,8 +107,10 @@ namespace CuadernoDeComunicaciones
             CboCategoria.Size = new Size(135, 28);
             CboCategoria.TabIndex = 9;
             CboCategoria.DataSource = Enum.GetValues(typeof(Categoria));
-            CboCategoria.BackColor = Color.White;
-            CboCategoria.ForeColor = Color.Black;
+            CboCategoria.BackColor = Color.Orange;
+            CboCategoria.ForeColor = Color.White;
+            CboCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // lblTexto
             // 
@@ -136,6 +138,7 @@ namespace CuadernoDeComunicaciones
             txtTexto.Size = new Size(540, 152);
             txtTexto.TabIndex = 11;
             txtTexto.Text = resources.GetString("txtTexto.Text");
+            this.Listar();
             // 
             // FrmComunicacion
             // 
