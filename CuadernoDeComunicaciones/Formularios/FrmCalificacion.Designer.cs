@@ -107,6 +107,11 @@ namespace CuadernoDeComunicaciones
             CboMateria.Name = "CboMateria";
             CboMateria.Size = new Size(135, 28);
             CboMateria.TabIndex = 9;
+            CboMateria.DataSource = Enum.GetValues(typeof(Materia));
+            CboMateria.BackColor = Color.Orange;
+            CboMateria.ForeColor = Color.White;
+            CboMateria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+
             // 
             // lblNota
             // 

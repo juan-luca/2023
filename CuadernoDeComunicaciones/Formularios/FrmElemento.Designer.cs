@@ -61,6 +61,9 @@
             gbxDatos.Controls.Add(lblFecha);
             gbxDatos.Controls.Add(lblRemitenteValue);
             gbxDatos.Controls.Add(lblRemitente);
+            gbxDatos.FlatStyle = FlatStyle.Flat;
+            gbxDatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            gbxDatos.ForeColor = Color.White;
             gbxDatos.Location = new Point(16, 19);
             gbxDatos.Margin = new Padding(5, 4, 5, 4);
             gbxDatos.Name = "gbxDatos";
@@ -82,7 +85,6 @@
             cboAlumno.Name = "cboAlumno";
             cboAlumno.Size = new Size(141, 28);
             cboAlumno.TabIndex = 12;
-           
             // 
             // lblAlumno
             // 
