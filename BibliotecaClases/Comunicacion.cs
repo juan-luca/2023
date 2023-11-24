@@ -5,20 +5,33 @@ using System.Xml.Serialization;
 
 namespace BibliotecaClases
 {
+    /// <summary>
+    /// Clase que representa una comunicación entre remitente y alumno.
+    /// </summary>
     public class Comunicacion : Elemento
     {
         #region Atributos
+
         private int comunicacionNro;
         private Categoria categoria;
         private string texto;
         protected string archivoXml = "Comunicaciones.xml";
+
         #endregion
 
         #region Constructor
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Comunicacion.
+        /// </summary>
         public Comunicacion()
         {
 
         }
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Comunicacion con parámetros específicos.
+        /// </summary>
         public Comunicacion(string Remitente, string Alumno, int ComunicacionNro, Categoria Categoria, string Texto, DateTime Fecha)
             : base(Remitente, Alumno, Fecha)
         {
@@ -26,14 +39,19 @@ namespace BibliotecaClases
             categoria = Categoria;
             texto = Texto;
         }
+
         #endregion
 
         #region Métodos Públicos
+
+        /// <summary>
+        /// Crea una nueva comunicación en la base de datos.
+        /// </summary>
         public override bool Crear()
         {
             try
             {
-                 if (ComunicacionExisteEnBD())
+                if (ComunicacionExisteEnBD())
                 {
                     throw new Exception("La comunicación ya existe en la base de datos.");
                 }
@@ -62,11 +80,13 @@ namespace BibliotecaClases
             }
         }
 
+        /// <summary>
+        /// Modifica una comunicación existente en la base de datos.
+        /// </summary>
         public override bool Modificar()
         {
             try
             {
-                
                 if (!ComunicacionExisteEnBD())
                 {
                     throw new Exception("La comunicación no existe en la base de datos.");
@@ -100,11 +120,13 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
-                
                 throw new Exception("Error al modificar la comunicación en la base de datos.", ex);
             }
         }
 
+        /// <summary>
+        /// Verifica si la comunicación ya existe en la base de datos.
+        /// </summary>
         private bool ComunicacionExisteEnBD()
         {
             try
@@ -128,8 +150,9 @@ namespace BibliotecaClases
             }
         }
 
-
-
+        /// <summary>
+        /// Elimina una comunicación existente en la base de datos.
+        /// </summary>
         public override bool Borrar()
         {
             try
@@ -159,6 +182,9 @@ namespace BibliotecaClases
             }
         }
 
+        /// <summary>
+        /// Lista todas las comunicaciones existentes en la base de datos.
+        /// </summary>
         public static List<Comunicacion> ListarTodos()
         {
             try
@@ -182,7 +208,6 @@ namespace BibliotecaClases
                                 string texto = reader.GetString(reader.GetOrdinal("Texto"));
                                 DateTime fecha = reader.GetDateTime(reader.GetOrdinal("Fecha"));
 
-
                                 Enum.TryParse<Categoria>(categoria, out Categoria categoriaEnum);
                                 Comunicacion comunicacion = new Comunicacion(remitente, alumno, comunicacionNro, categoriaEnum, texto, fecha);
 
@@ -200,7 +225,9 @@ namespace BibliotecaClases
             }
         }
 
-
+        /// <summary>
+        /// Busca una comunicación por número de comunicación.
+        /// </summary>
         public override Elemento Buscar()
         {
             try
@@ -240,14 +267,18 @@ namespace BibliotecaClases
             }
         }
 
-        #endregion
-
-
+        /// <summary>
+        /// Lista las comunicaciones de un alumno específico.
+        /// </summary>
         public static List<Comunicacion> ListarComunicacionesDeAlumno(string usuarioAlumno)
         {
             List<Comunicacion> Comunicaciones = ListarTodos();
             return Comunicaciones.Where(c => c.Alumno == usuarioAlumno).ToList();
         }
+
+        /// <summary>
+        /// Lista las comunicaciones de una lista de alumnos.
+        /// </summary>
         public static List<Comunicacion> ListarComunicacionesDeAlumno(List<Alumno> alumnosComunicaciones)
         {
             List<Comunicacion> Comunicaciones = ListarTodos();
@@ -255,12 +286,15 @@ namespace BibliotecaClases
             return Comunicaciones.Where(c => nombresAlumnos.Contains(c.Alumno)).ToList();
         }
 
+        /// <summary>
+        /// Agrega la comunicación actual a la lista de comunicaciones en el archivo XML.
+        /// </summary>
         private bool AgregarComunicacionAXml()
         {
             List<Comunicacion> comunicaciones = ListarTodos();
             Comunicacion comunicacionExistente = comunicaciones.FirstOrDefault(c => c.ComunicacionNro == this.ComunicacionNro);
 
-            if (comunicacionExistente==null)
+            if (comunicacionExistente == null)
             {
                 comunicaciones.Add(this);
                 return SerializarComunicaciones(comunicaciones, archivoXml);
@@ -268,6 +302,10 @@ namespace BibliotecaClases
 
             return false;
         }
+
+        /// <summary>
+        /// Deserializa la lista de comunicaciones desde el archivo XML.
+        /// </summary>
         public static List<Comunicacion> DeserializarComunicaciones()
         {
             List<Comunicacion> comunicaciones = new List<Comunicacion>();
@@ -290,6 +328,10 @@ namespace BibliotecaClases
 
             return comunicaciones;
         }
+
+        /// <summary>
+        /// Serializa la lista de comunicaciones en el archivo XML.
+        /// </summary>
         public static bool SerializarComunicaciones(List<Comunicacion> comunicaciones, string archivoXml)
         {
             bool Serializado = false;
@@ -309,19 +351,31 @@ namespace BibliotecaClases
             return Serializado;
         }
 
+        #endregion
+
         #region Propiedades Públicas
+
+        /// <summary>
+        /// Obtiene o establece el número de la comunicación.
+        /// </summary>
         public int ComunicacionNro
         {
             get { return comunicacionNro; }
             set { comunicacionNro = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece la categoría de la comunicación.
+        /// </summary>
         public Categoria Categoria
         {
             get { return categoria; }
             set { categoria = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece el texto de la comunicación.
+        /// </summary>
         public string Texto
         {
             get { return texto; }

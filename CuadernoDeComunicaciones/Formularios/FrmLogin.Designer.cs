@@ -201,6 +201,7 @@ namespace CuadernoDeComunicaciones
             Controls.Add(txtContraseña);
             Controls.Add(btnLogin);
             Controls.Add(groupBoxBotonesTest);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de Sesión";

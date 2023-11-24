@@ -53,6 +53,7 @@ namespace CuadernoDeComunicaciones
             // 
             btnComunicaciones.BackColor = Color.Transparent;
             btnComunicaciones.BackgroundImage = (Image)resources.GetObject("btnComunicaciones.BackgroundImage");
+            btnComunicaciones.Cursor = Cursors.Hand;
             btnComunicaciones.FlatAppearance.BorderSize = 2;
             btnComunicaciones.FlatStyle = FlatStyle.Flat;
             btnComunicaciones.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -75,6 +76,7 @@ namespace CuadernoDeComunicaciones
             btnCalificaciones.BackColor = Color.Transparent;
             btnCalificaciones.BackgroundImage = (Image)resources.GetObject("btnCalificaciones.BackgroundImage");
             btnCalificaciones.BackgroundImageLayout = ImageLayout.None;
+            btnCalificaciones.Cursor = Cursors.Hand;
             btnCalificaciones.FlatAppearance.BorderSize = 2;
             btnCalificaciones.FlatStyle = FlatStyle.Flat;
             btnCalificaciones.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -91,12 +93,15 @@ namespace CuadernoDeComunicaciones
             btnCalificaciones.Click += btnCalificaciones_Click;
             btnCalificaciones.MouseLeave += btnCalificaciones_MouseLeave;
             btnCalificaciones.MouseHover += btnCalificaciones_MouseHover;
+            BtnImg = (Image)resources.GetObject("btnCalificaciones.BackgroundImage");
+
             // 
             // btnPerfiles
             // 
             btnPerfiles.BackColor = Color.Transparent;
             btnPerfiles.BackgroundImage = (Image)resources.GetObject("btnPerfiles.BackgroundImage");
             btnPerfiles.BackgroundImageLayout = ImageLayout.None;
+            btnPerfiles.Cursor = Cursors.Hand;
             btnPerfiles.FlatAppearance.BorderSize = 2;
             btnPerfiles.FlatStyle = FlatStyle.Flat;
             btnPerfiles.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -113,7 +118,6 @@ namespace CuadernoDeComunicaciones
             btnPerfiles.Click += btnPerfiles_Click;
             btnPerfiles.MouseLeave += btnPerfiles_MouseLeave;
             btnPerfiles.MouseHover += btnPerfiles_MouseHover;
-            BtnImg = (Image)resources.GetObject("btnComunicaciones.BackgroundImage");
             // 
             // pnlElemento
             // 
@@ -140,6 +144,7 @@ namespace CuadernoDeComunicaciones
             Controls.Add(btnPerfiles);
             Controls.Add(btnCalificaciones);
             Controls.Add(btnComunicaciones);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;

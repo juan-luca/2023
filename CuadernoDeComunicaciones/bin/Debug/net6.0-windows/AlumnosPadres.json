@@ -23,5 +23,10 @@
     "NombreUsuario": "bbbb",
     "Padre": "Padre1",
     "Madre": "padre2"
+  },
+  {
+    "NombreUsuario": "Alumno",
+    "Padre": "222222222",
+    "Madre": "kkkkkkkkk"
   }
 ]

@@ -1,11 +1,17 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Xml.Serialization;
 
 namespace BibliotecaClases
 {
+    /// <summary>
+    /// Clase que representa una calificación de un alumno en una materia.
+    /// </summary>
     public class Calificacion : Elemento
     {
         #region Atributos
+
         private int calificacionNro;
         private Materia materia;
         private double nota;
@@ -16,13 +22,20 @@ namespace BibliotecaClases
         #endregion
 
         #region Constructor
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Calificacion.
+        /// </summary>
         public Calificacion()
         {
 
         }
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Calificacion con parámetros específicos.
+        /// </summary>
         public Calificacion(string Remitente, string Alumno, double Nota, Materia Materia, int CalificacionNro, string Concepto = "", string Observaciones = "", DateTime? Fecha = null)
-     : base(Remitente, Alumno, Fecha)
+            : base(Remitente, Alumno, Fecha)
         {
             this.calificacionNro = CalificacionNro;
             this.concepto = Concepto;
@@ -30,9 +43,14 @@ namespace BibliotecaClases
             this.materia = Materia;
             this.observaciones = Observaciones;
         }
+
         #endregion
 
         #region Métodos Públicos
+
+        /// <summary>
+        /// Crea una nueva calificación en la base de datos.
+        /// </summary>
         public override bool Crear()
         {
             try
@@ -49,6 +67,9 @@ namespace BibliotecaClases
             }
         }
 
+        /// <summary>
+        /// Modifica una calificación existente en la base de datos.
+        /// </summary>
         public override bool Modificar()
         {
             try
@@ -89,6 +110,9 @@ namespace BibliotecaClases
             }
         }
 
+        /// <summary>
+        /// Elimina una calificación existente en la base de datos.
+        /// </summary>
         public override bool Borrar()
         {
             try
@@ -121,40 +145,34 @@ namespace BibliotecaClases
             }
         }
 
+        /// <summary>
+        /// Lista todas las calificaciones existentes en la base de datos.
+        /// </summary>
         public static List<Calificacion> ListarTodos()
         {
             return DeserializarCalificaciones();
         }
 
+        /// <summary>
+        /// Busca una calificación en la base de datos.
+        /// </summary>
         public override Elemento Buscar()
         {
             Elemento calificacionEncontrada = null;
             return calificacionEncontrada;
         }
-        #endregion
-
-        private bool CalificacionExiste(int calificacionNro)
-        {
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
-            {
-                string consulta = "SELECT COUNT(*) FROM Calificaciones WHERE CalificacionNro = @CalificacionNro";
-
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
-                {
-                    comando.Parameters.AddWithValue("@CalificacionNro", calificacionNro);
-
-                    int count = (int)comando.ExecuteScalar();
-
-                    return count > 0;
-                }
-            }
-        }
-
+        /// <summary>
+        /// Lista las calificaciones de un alumno específico.
+        /// </summary>
         public static List<Calificacion> ListarCalificacionesDeAlumno(string usuarioAlumno)
         {
             List<Calificacion> calificaciones = ListarTodos();
             return calificaciones.Where(c => c.Alumno == usuarioAlumno).ToList();
         }
+
+        /// <summary>
+        /// Lista las calificaciones de una lista de alumnos.
+        /// </summary>
         public static List<Calificacion> ListarCalificacionesDeAlumno(List<Alumno> alumnosCalificaciones)
         {
             List<Calificacion> calificaciones = ListarTodos();
@@ -162,7 +180,9 @@ namespace BibliotecaClases
             return calificaciones.Where(c => nombresAlumnos.Contains(c.Alumno)).ToList();
         }
 
-
+        /// <summary>
+        /// Agrega la calificación actual a la base de datos.
+        /// </summary>
         private bool AgregarCalificacionABD()
         {
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
@@ -174,7 +194,6 @@ namespace BibliotecaClases
                 {
                     comando.Parameters.AddWithValue("@Alumno", this.Alumno);
                     comando.Parameters.AddWithValue("@Remitente", this.Remitente);
-
                     comando.Parameters.AddWithValue("@Materia", this.materia.ToString());
                     comando.Parameters.AddWithValue("@Nota", this.nota);
                     comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
@@ -188,6 +207,9 @@ namespace BibliotecaClases
             return true;
         }
 
+        /// <summary>
+        /// Deserializa las calificaciones desde la base de datos.
+        /// </summary>
         public static List<Calificacion> DeserializarCalificaciones()
         {
             List<Calificacion> calificaciones = new List<Calificacion>();
@@ -222,8 +244,10 @@ namespace BibliotecaClases
 
             return calificaciones;
         }
-       
 
+        /// <summary>
+        /// Serializa las calificaciones en un archivo XML.
+        /// </summary>
         public static bool SerializarCalificaciones(List<Calificacion> calificaciones, string archivoXml)
         {
             bool Serializado = false;
@@ -239,43 +263,86 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
-               
                 throw ex;
             }
 
             return Serializado;
         }
+        #endregion
+
+        #region Métodos Privados
+
+        /// <summary>
+        /// Verifica si la calificación ya existe en la base de datos.
+        /// </summary>
+        private bool CalificacionExiste(int calificacionNro)
+        {
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string consulta = "SELECT COUNT(*) FROM Calificaciones WHERE CalificacionNro = @CalificacionNro";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@CalificacionNro", calificacionNro);
+
+                    int count = (int)comando.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+
+        #endregion
+
+       
 
         #region Propiedades Públicas
+
+        /// <summary>
+        /// Obtiene o establece el número de la calificación.
+        /// </summary>
         public int CalificacionNro
         {
             get { return this.calificacionNro; }
             set { this.calificacionNro = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece la materia de la calificación.
+        /// </summary>
         public Materia Materia
         {
             get { return this.materia; }
             set { this.materia = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece la nota de la calificación.
+        /// </summary>
         public double Nota
         {
             get { return this.nota; }
             set { this.nota = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece las observaciones de la calificación.
+        /// </summary>
         public string Observaciones
         {
             get { return this.observaciones; }
             set { this.observaciones = value; }
         }
 
+        /// <summary>
+        /// Obtiene o establece el concepto de la calificación.
+        /// </summary>
         public string Concepto
         {
             get { return this.concepto; }
             set { this.concepto = value; }
         }
+
         #endregion
     }
 }

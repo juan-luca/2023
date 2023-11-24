@@ -66,4 +66,22 @@
     <Perfil>Preceptor</Perfil>
     <NombreCompleto>sdasad</NombreCompleto>
   </Usuario>
+  <Usuario>
+    <NombreUsuario>dddddd</NombreUsuario>
+    <Contraseña>ddddd</Contraseña>
+    <Perfil>Director</Perfil>
+    <NombreCompleto>ddddd</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>Preceptor</NombreUsuario>
+    <Contraseña>contraseña_preceptor</Contraseña>
+    <Perfil>Preceptor</Perfil>
+    <NombreCompleto>Carlos</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <NombreUsuario>mmmmm</NombreUsuario>
+    <Contraseña>mmmmm</Contraseña>
+    <Perfil>Padres</Perfil>
+    <NombreCompleto>mmmmmm</NombreCompleto>
+  </Usuario>
 </ArrayOfUsuario>
