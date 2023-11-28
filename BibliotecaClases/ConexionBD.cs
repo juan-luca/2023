@@ -4,8 +4,6 @@ using System.Data.SqlClient;
 
 namespace BibliotecaClases
 {
-
-    
     public static class ConexionBD
     {
         private static readonly string CadenaConexion = "Data Source=DESKTOP-TEO2IE6\\SQLEXPRESS;Initial Catalog=CuadernoDeComunicaciones;Integrated Security=True;";

@@ -25,6 +25,24 @@ namespace TestUnitarios
             // Assert
             NUnit.Framework.Assert.IsTrue(resultado);
         }
+        [TestMethod]
+        public void BorrarUsuario_Valido()
+        {
+            // Arrange
+            Usuario usuario = new Usuario
+            {
+                NombreUsuario = "TestUser",
+                Contraseña = "TestPassword",
+                Perfil = Perfil.Alumno.ToString(),
+                NombreCompleto = "Test User"
+            };
+
+            // Act
+            bool resultado = usuario.Borrar();
+
+            // Assert
+            NUnit.Framework.Assert.IsTrue(resultado);
+        }
 
         [TestMethod]
         public void ModificarUsuario_Existente()
