@@ -22,6 +22,9 @@ namespace CuadernoDeComunicaciones.Formularios
         private Label lblContraseña;
         private Label lblPerfil;
         private Label lblNombreCompleto;
+        private ComboBox cboDivision;
+        private Label lblDivision;
+
 
         protected override void Dispose(bool disposing)
         {
@@ -70,10 +73,8 @@ namespace CuadernoDeComunicaciones.Formularios
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
             this.dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-
-            this.usuarios = Usuario.ListarTodos();
-
-            this.dgvUsuarios.DataSource = this.usuarios;
+            //goto error
+            //this.Listar();
             // 
             // txtNombreUsuario
             // 
@@ -128,7 +129,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnCrear
             // 
-            btnCrear.Location = new Point(810, 300);
+            btnCrear.Location = new Point(810, 330);
             btnCrear.Margin = new Padding(4, 3, 4, 3);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(88, 27);
@@ -139,7 +140,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(920, 300);
+            btnModificar.Location = new Point(920, 330);
             btnModificar.Margin = new Padding(4, 3, 4, 3);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(88, 27);
@@ -150,7 +151,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(810, 350);
+            btnEliminar.Location = new Point(810, 380);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(88, 27);
@@ -161,7 +162,7 @@ namespace CuadernoDeComunicaciones.Formularios
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(920, 350);
+            btnLimpiar.Location = new Point(920, 380);
             btnLimpiar.Margin = new Padding(4, 3, 4, 3);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(88, 27);
@@ -279,7 +280,7 @@ namespace CuadernoDeComunicaciones.Formularios
 
             this.cboMadre.Visible = false;
 
-
+            this.usuarios = Usuario.ListarTodos();
             this.padres = usuarios.Where(u => u.Perfil == "Padres").ToList();
             this.madres = usuarios.Where(u => u.Perfil == "Padres").ToList();
             padres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
@@ -293,6 +294,41 @@ namespace CuadernoDeComunicaciones.Formularios
             cboMadre.DisplayMember = "NombreUsuario";
             cboMadre.ValueMember = "NombreUsuario";
             cboMadre.DataSource = madres;
+
+            // Configurar ComboBox y Label para Division
+            this.cboDivision = new System.Windows.Forms.ComboBox();
+            this.lblDivision = new System.Windows.Forms.Label();
+
+            // Configuración ComboBox
+            this.cboDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDivision.FormattingEnabled = true;
+            this.cboDivision.Location = new System.Drawing.Point(810, 280);
+            this.cboDivision.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cboDivision.Name = "cboDivision";
+            this.cboDivision.Size = new System.Drawing.Size(200, 21);
+            this.cboDivision.TabIndex = 17;
+            this.cboDivision.BackColor = Color.Orange;
+            this.cboDivision.ForeColor = Color.White;
+            this.cboDivision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            this.cboDivision.Visible = false;
+            this.cboDivision.DataSource = Enum.GetValues(typeof(Division));
+            // Configuración Label
+            this.lblDivision.AutoSize = true;
+            this.lblDivision.Location = new System.Drawing.Point(810, 265);
+            this.lblDivision.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDivision.Name = "lblDivision";
+            this.lblDivision.Size = new System.Drawing.Size(53, 15);
+            this.lblDivision.TabIndex = 18;
+            this.lblDivision.Text = "División";
+            this.lblDivision.BackColor = Color.Orange;
+            this.lblDivision.ForeColor = Color.White;
+            this.lblDivision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            this.lblDivision.Visible = false;
+            // Agregar al formulario
+            this.Controls.Add(this.cboDivision);
+            this.Controls.Add(this.lblDivision);
+
+
 
             // 
             // FrmPerfiles

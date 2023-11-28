@@ -30,6 +30,7 @@ namespace CuadernoDeComunicaciones.Formularios
             this.TransparencyKey = Color.Orange; // Establece el color transparente
             AplicarEstiloControles();
             AplicarConfiguracion();
+            
         }
         private void AplicarEstiloControles()
         {
@@ -89,7 +90,11 @@ namespace CuadernoDeComunicaciones.Formularios
             this.dgvUsuarios.DataSource = this.usuarios;
             this.padres = usuarios.Where(u => u.Perfil == "Padres").ToList();
             this.madres = usuarios.Where(u => u.Perfil == "Padres").ToList();
-            if(!automatico)
+            if (dgvUsuarios.Columns.Contains("Division"))
+            {
+                dgvUsuarios.Columns["Division"].Visible = false;
+            }
+            if (!automatico)
             {
                 padres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
                 madres.Insert(0, new Usuario { NombreUsuario = "Sin Seleccionar" });
@@ -157,8 +162,17 @@ namespace CuadernoDeComunicaciones.Formularios
                     {
                         cboMadre.SelectedValue = alumno.Madre;
                         cboPadre.SelectedValue = alumno.Padre;
+                        
                     }
-                    
+                    int divisionIndex;
+                    if (int.TryParse(usuarioSeleccionado.Division.ToString(), out divisionIndex))
+                    {
+                        cboDivision.SelectedIndex = divisionIndex;
+                    }
+                    else
+                    {
+                        cboDivision.SelectedIndex = 0;
+                    }
                 }
 
                 this.FilaSeleccionada = true;
@@ -195,8 +209,8 @@ namespace CuadernoDeComunicaciones.Formularios
                     }
                     string padre = cboPadre.SelectedValue.ToString();
                     string madre = cboMadre.SelectedValue.ToString();
-
-                    Alumno nuevoAlumno = new Alumno(nombreUsuario, contraseña, perfil, nombreCompleto, padre, madre);
+                    string division = cboDivision.SelectedValue.ToString();
+                    Alumno nuevoAlumno = new Alumno(nombreUsuario, contraseña, perfil, nombreCompleto, padre, madre,division);
                     relacionesManager.CrearRelacion(nuevoAlumno);
 
                    
@@ -266,7 +280,8 @@ namespace CuadernoDeComunicaciones.Formularios
                     string contraseña = txtContraseña.Text;
                     string perfil = cboPerfil.SelectedItem.ToString();
                     string nombreCompleto = txtNombreCompleto.Text;
-                    if(perfil=="Alumno")
+                    string division = cboDivision.SelectedIndex.ToString();
+                    if (perfil=="Alumno")
                     {
                         if (cboPadre.SelectedIndex == 0 || cboMadre.SelectedIndex == 0)
                         {
@@ -276,8 +291,9 @@ namespace CuadernoDeComunicaciones.Formularios
                         string padre = cboPadre.SelectedValue.ToString();
                         string madre = cboMadre.SelectedValue.ToString();
 
-                        Alumno alumnoModificado = new Alumno(nombreUsuario, contraseña, perfil, nombreCompleto, padre, madre);
-
+                       
+                        
+                        Alumno alumnoModificado = new Alumno(nombreUsuario, contraseña, perfil, nombreCompleto, padre, madre, division);
                         relacionesManager.CrearRelacion(alumnoModificado);
 
                     }
@@ -287,6 +303,7 @@ namespace CuadernoDeComunicaciones.Formularios
                     usuarioSeleccionado.Contraseña = contraseña;
                     usuarioSeleccionado.Perfil = perfil;
                     usuarioSeleccionado.NombreCompleto = nombreCompleto;
+                    usuarioSeleccionado.Division = division;
                     if (usuarioSeleccionado.Modificar())
                     {
                         MessageBox.Show("Usuario modificado con éxito");
@@ -336,6 +353,8 @@ namespace CuadernoDeComunicaciones.Formularios
                 cboMadre.Visible = true;
                 lblPadre.Visible = true;
                 lblMadre.Visible = true;
+                lblDivision.Visible = true;
+                cboDivision.Visible = true;
             }
             else
             {
@@ -343,6 +362,8 @@ namespace CuadernoDeComunicaciones.Formularios
                 cboMadre.Visible = false;
                 lblPadre.Visible = false;
                 lblMadre.Visible = false;
+                lblDivision.Visible = false;
+                cboDivision.Visible = false;
             }
         }
 

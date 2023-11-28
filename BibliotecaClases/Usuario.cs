@@ -23,6 +23,8 @@ namespace BibliotecaClases
         private string archivoXml = "Usuarios.xml";
         private XML<List<Usuario>> xmlSerializer = new XML<List<Usuario>>();
 
+        public string Division { get; set; }
+
         #endregion
 
         #region Propiedades
@@ -78,12 +80,13 @@ namespace BibliotecaClases
         /// <summary>
         /// Inicializa una nueva instancia de la clase Usuario con los datos proporcionados.
         /// </summary>
-        public Usuario(string NombreUsuario, string Contraseña, string Perfil, string NombreCompleto)
+        public Usuario(string NombreUsuario, string Contraseña, string Perfil, string NombreCompleto,string Division="0")
         {
             this.nombreUsuario = NombreUsuario;
             this.contraseña = Contraseña;
             this.perfil = Perfil;
             this.nombreCompleto = NombreCompleto;
+            this.Division = Division;
         }
 
         #endregion
@@ -112,7 +115,8 @@ namespace BibliotecaClases
                                 NombreUsuario = reader["NombreUsuario"].ToString(),
                                 Contraseña = reader["Contraseña"].ToString(),
                                 Perfil = reader["Perfil"].ToString(),
-                                NombreCompleto = reader["NombreCompleto"].ToString()
+                                NombreCompleto = reader["NombreCompleto"].ToString(),
+                                Division = reader["IdDivision"].ToString()
                             };
                             usuarios.Add(usuario);
                         }
@@ -137,7 +141,7 @@ namespace BibliotecaClases
 
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Perfil, NombreCompleto) VALUES (@NombreUsuario, @Contraseña, @Perfil, @NombreCompleto)";
+                string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Perfil, NombreCompleto, IdDivision) VALUES (@NombreUsuario, @Contraseña, @Perfil, @NombreCompleto, @Division)";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -145,6 +149,7 @@ namespace BibliotecaClases
                     comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
                     comando.Parameters.AddWithValue("@Perfil", this.Perfil);
                     comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+                    comando.Parameters.AddWithValue("@Division", this.Division);
 
                     comando.ExecuteNonQuery();
                 }
@@ -169,7 +174,7 @@ namespace BibliotecaClases
 
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string consulta = "UPDATE Usuarios SET Contraseña = @Contraseña, Perfil = @Perfil, NombreCompleto = @NombreCompleto WHERE NombreUsuario = @NombreUsuario";
+                string consulta = "UPDATE Usuarios SET Contraseña = @Contraseña, Perfil = @Perfil, NombreCompleto = @NombreCompleto, IdDivision = @Division WHERE NombreUsuario = @NombreUsuario";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -177,6 +182,7 @@ namespace BibliotecaClases
                     comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
                     comando.Parameters.AddWithValue("@Perfil", this.Perfil);
                     comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+                    comando.Parameters.AddWithValue("@Division", this.Division.ToString());
 
                     comando.ExecuteNonQuery();
                 }

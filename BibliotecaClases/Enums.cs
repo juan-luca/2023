@@ -25,3 +25,15 @@ public enum Perfil
     Alumno
 }
 
+public enum Division
+{
+    SinSeleccionar = 0,
+    Division1 = 1,
+    Division2 = 2,
+    Division3 = 3,
+    Division4 = 4,
+    Division5 = 5,
+    Division6 = 6,
+    Division7 = 7
+}
+

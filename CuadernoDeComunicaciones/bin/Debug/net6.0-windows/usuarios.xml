@@ -13,12 +13,6 @@
     <NombreCompleto>Sebastian</NombreCompleto>
   </Usuario>
   <Usuario>
-    <NombreUsuario>Alumno</NombreUsuario>
-    <Contraseña>contraseña_alumno</Contraseña>
-    <Perfil>Alumno</Perfil>
-    <NombreCompleto>Juan</NombreCompleto>
-  </Usuario>
-  <Usuario>
     <NombreUsuario>Olga</NombreUsuario>
     <Contraseña>contraseña_alumno</Contraseña>
     <Perfil>Alumno</Perfil>
@@ -85,6 +79,14 @@
     <NombreCompleto>sadsadsa</NombreCompleto>
   </Usuario>
   <Usuario>
+    <Division>7</Division>
+    <NombreUsuario>Alumno</NombreUsuario>
+    <Contraseña>contraseña_alumno</Contraseña>
+    <Perfil>Alumno</Perfil>
+    <NombreCompleto>Juan</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <Division>1</Division>
     <NombreUsuario>asdasd</NombreUsuario>
     <Contraseña>dsadsa</Contraseña>
     <Perfil>Alumno</Perfil>
