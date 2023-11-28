@@ -60,16 +60,16 @@ namespace CuadernoDeComunicaciones.Formularios
             // dgvUsuarios
             // 
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-    this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill; // Ajusta al completo
-    this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
-    this.dgvUsuarios.Name = "dgvUsuarios";
-    this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-    this.dgvUsuarios.Size = new System.Drawing.Size(600, 300);
-    this.dgvUsuarios.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right); // Ajusta tanto horizontal como verticalmente
-    this.dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Ajusta el tamaño de las columnas automáticamente
-    this.dgvUsuarios.TabIndex = 0;
-    this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
-    this.dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill; // Ajusta al completo
+            this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(470, 300);
+            this.dgvUsuarios.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right); // Ajusta tanto horizontal como verticalmente
+            this.dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Ajusta el tamaño de las columnas automáticamente
+            this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellClick += DgvUsuarios_CellClick;
+            this.dgvUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
 
             this.usuarios = Usuario.ListarTodos();
 
@@ -317,7 +317,7 @@ namespace CuadernoDeComunicaciones.Formularios
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.dgvUsuarios);
-            
+
             this.Name = "FrmPerfiles";
             this.Text = "Perfiles de Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -326,7 +326,7 @@ namespace CuadernoDeComunicaciones.Formularios
 
         }
 
-        
+
 
 
 

@@ -8,6 +8,7 @@ namespace CuadernoDeComunicaciones
         private Usuario usuario;
         private List<Usuario> usuarios;
         private Form FormularioActual = null;
+        private Configuraciones configuraciones;
         public FrmPrincipal(Usuario Usuario, List<Usuario> Usuarios)
         {
             InitializeComponent();
@@ -15,6 +16,7 @@ namespace CuadernoDeComunicaciones
             this.usuarios = Usuarios;
             ConfigurarControlesSegunPerfil();
             IsMdiContainer = true;
+            AplicarConfiguracion();
         }
         private void ConfigurarControlesSegunPerfil()
         {
@@ -29,7 +31,45 @@ namespace CuadernoDeComunicaciones
             }
         }
 
+        public void AplicarConfiguracion()
+        {
+            configuraciones = Configuraciones.CargarConfiguraciones();
+            if (configuraciones.ModoOscuro)
+            {
+                // Aplicar cambios para el modo oscuro
+                this.BackColor = Color.FromArgb(30, 30, 30);
+            }
+            else
+            {
+                // Restaurar a los valores por defecto o modo claro
+                this.BackColor = Color.LightGray;
+            }
+            foreach (Control control in Controls)
+            {
+                AplicarConfiguracionRecursiva(control, configuraciones.ModoOscuro);
+                if (configuraciones.ModoOscuro)
+                {
+                    // Aplicar cambios para el modo oscuro
+                    control.BackColor = Color.FromArgb(30, 30, 30);
+                }
+                else
+                {
+                    // Restaurar a los valores por defecto o modo claro
+                    control.BackColor = Color.LightGray;
+                }
+            }
+        }
+        private void AplicarConfiguracionRecursiva(Control control, bool modoOscuro)
+        {
+            foreach (Control subControl in control.Controls)
+            {
+                subControl.BackColor = modoOscuro ? Color.FromArgb(30, 30, 30) : Color.LightGray;
+                subControl.ForeColor = modoOscuro ? Color.White : Color.Black;
 
+                // Aplicar configuración a controles anidados
+                AplicarConfiguracionRecursiva(subControl, modoOscuro);
+            }
+        }
         private void btnComunicaciones_Click(object sender, EventArgs e)
         {
             FrmComunicacion FrmComunicacion = new FrmComunicacion(this.usuario, this.usuarios);

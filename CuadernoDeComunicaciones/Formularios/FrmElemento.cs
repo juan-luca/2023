@@ -15,6 +15,7 @@ namespace CuadernoDeComunicaciones
     {
         private Usuario usuario;
         private List<Usuario> usuarios;
+        private Configuraciones configuraciones;
         public Usuario Usuario
         {
             get { return this.usuario; }
@@ -82,6 +83,7 @@ namespace CuadernoDeComunicaciones
         public FrmElemento()
         {
             InitializeComponent();
+            AplicarConfiguracion();
         }
         public FrmElemento(Usuario Usuario, List<Usuario> Usuarios)
         {
@@ -90,7 +92,38 @@ namespace CuadernoDeComunicaciones
             this.usuarios = Usuarios;
 
             CargarAlumnos();
+            AplicarConfiguracion();
 
+        }
+        public void AplicarConfiguracion()
+        {
+            configuraciones = Configuraciones.CargarConfiguraciones();
+            if (configuraciones.ModoOscuro)
+            {
+                // Aplicar cambios para el modo oscuro
+                this.BackColor = Color.FromArgb(30, 30, 30);
+                DgvElementos.BackgroundColor = Color.FromArgb(30, 30, 30);
+
+            }
+            else
+            {
+                // Restaurar a los valores por defecto o modo claro
+                this.BackColor = Color.LightGray;
+                DgvElementos.BackgroundColor = Color.LightGray;
+            }
+            foreach (Control control in Controls)
+            {
+                if (configuraciones.ModoOscuro)
+                {
+                    // Aplicar cambios para el modo oscuro
+                    control.BackColor = Color.FromArgb(30, 30, 30);
+                }
+                else
+                {
+                    // Restaurar a los valores por defecto o modo claro
+                    control.BackColor = Color.LightGray;
+                }
+            }
         }
         private void CargarAlumnos()
         {

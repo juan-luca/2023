@@ -15,6 +15,7 @@ namespace CuadernoDeComunicaciones
     {
         private List<Calificacion> calificaciones;
         private string archivoXml = "Calificaciones.xml";
+        private Configuraciones configuraciones;
         public Materia MateriaSeleccionada
         {
             get { return (Materia)this.CboMateria.SelectedItem; }
@@ -25,6 +26,7 @@ namespace CuadernoDeComunicaciones
             InitializeComponent();
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
+            AplicarConfiguracion();
         }
         protected override void ConfigurarControlesSegunPerfil(string Perfil)
         {
@@ -159,7 +161,47 @@ namespace CuadernoDeComunicaciones
                 MessageBox.Show("Error al eliminar la calificación: " + ex.Message);
             }
         }
+        public void AplicarConfiguracion()
+        {
+            configuraciones = Configuraciones.CargarConfiguraciones();
+            if (configuraciones.ModoOscuro)
+            {
+                // Aplicar cambios para el modo oscuro
+                this.BackColor = Color.FromArgb(30, 30, 30);
+                DgvElementos.BackgroundColor = Color.FromArgb(30, 30, 30);
+            }
+            else
+            {
+                // Restaurar a los valores por defecto o modo claro
+                this.BackColor = Color.LightGray;
+                DgvElementos.BackgroundColor = Color.LightGray;
+            }
+            foreach (Control control in Controls)
+            {
+                AplicarConfiguracionRecursiva(control, configuraciones.ModoOscuro);
+                if (configuraciones.ModoOscuro)
+                {
+                    // Aplicar cambios para el modo oscuro
+                    control.BackColor = Color.FromArgb(30, 30, 30);
+                }
+                else
+                {
+                    // Restaurar a los valores por defecto o modo claro
+                    control.BackColor = Color.LightGray;
+                }
+            }
+        }
+        private void AplicarConfiguracionRecursiva(Control control, bool modoOscuro)
+        {
+            foreach (Control subControl in control.Controls)
+            {
+                subControl.BackColor = modoOscuro ? Color.FromArgb(30, 30, 30) : Color.LightGray;
+                subControl.ForeColor = modoOscuro ? Color.White : Color.Black;
 
+                // Aplicar configuración a controles anidados
+                AplicarConfiguracionRecursiva(subControl, modoOscuro);
+            }
+        }
         private void FrmElemento_BtnListarClick(object sender, EventArgs e)
         {
             ActualizarGrilla();

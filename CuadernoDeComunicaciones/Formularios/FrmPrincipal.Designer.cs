@@ -52,7 +52,6 @@ namespace CuadernoDeComunicaciones
             // btnComunicaciones
             // 
             btnComunicaciones.BackColor = Color.Transparent;
-            btnComunicaciones.BackgroundImage = (Image)resources.GetObject("btnComunicaciones.BackgroundImage");
             btnComunicaciones.Cursor = Cursors.Hand;
             btnComunicaciones.FlatAppearance.BorderSize = 2;
             btnComunicaciones.FlatStyle = FlatStyle.Flat;
@@ -74,7 +73,6 @@ namespace CuadernoDeComunicaciones
             // btnCalificaciones
             // 
             btnCalificaciones.BackColor = Color.Transparent;
-            btnCalificaciones.BackgroundImage = (Image)resources.GetObject("btnCalificaciones.BackgroundImage");
             btnCalificaciones.BackgroundImageLayout = ImageLayout.None;
             btnCalificaciones.Cursor = Cursors.Hand;
             btnCalificaciones.FlatAppearance.BorderSize = 2;
@@ -93,13 +91,10 @@ namespace CuadernoDeComunicaciones
             btnCalificaciones.Click += btnCalificaciones_Click;
             btnCalificaciones.MouseLeave += btnCalificaciones_MouseLeave;
             btnCalificaciones.MouseHover += btnCalificaciones_MouseHover;
-            BtnImg = (Image)resources.GetObject("btnCalificaciones.BackgroundImage");
-
             // 
             // btnPerfiles
             // 
             btnPerfiles.BackColor = Color.Transparent;
-            btnPerfiles.BackgroundImage = (Image)resources.GetObject("btnPerfiles.BackgroundImage");
             btnPerfiles.BackgroundImageLayout = ImageLayout.None;
             btnPerfiles.Cursor = Cursors.Hand;
             btnPerfiles.FlatAppearance.BorderSize = 2;
@@ -124,7 +119,6 @@ namespace CuadernoDeComunicaciones
             pnlElemento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlElemento.AutoSize = true;
             pnlElemento.BackColor = Color.Transparent;
-            pnlElemento.BackgroundImage = (Image)resources.GetObject("pnlElemento.BackgroundImage");
             pnlElemento.BackgroundImageLayout = ImageLayout.None;
             pnlElemento.ImeMode = ImeMode.NoControl;
             pnlElemento.Location = new Point(2, 178);
@@ -137,8 +131,7 @@ namespace CuadernoDeComunicaciones
             // 
             // FrmPrincipal
             // 
-            BackColor = Color.White;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Black;
             ClientSize = new Size(1374, 880);
             Controls.Add(pnlElemento);
             Controls.Add(btnPerfiles);

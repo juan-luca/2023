@@ -2,15 +2,48 @@
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using BibliotecaClases;
+using CuadernoDeComunicaciones.Formularios;
+
 namespace CuadernoDeComunicaciones
 {
     public partial class FrmLogin : Form
     {
         private List<Usuario> usuarios;
+        private Configuraciones configuraciones;
         public FrmLogin()
         {
             InitializeComponent();
             CargarUsuariosDesdeXML();
+
+            
+            AplicarConfiguracion();
+        }
+        public void AplicarConfiguracion()
+        {
+            configuraciones = Configuraciones.CargarConfiguraciones();
+            if (configuraciones.ModoOscuro)
+            {
+                // Aplicar cambios para el modo oscuro
+                this.BackColor = Color.FromArgb(30, 30, 30);
+            }
+            else
+            {
+                // Restaurar a los valores por defecto o modo claro
+                this.BackColor = Color.LightGray;
+            }
+            foreach (Control control in Controls)
+            {
+                if (configuraciones.ModoOscuro)
+                {
+                    // Aplicar cambios para el modo oscuro
+                    control.BackColor = Color.FromArgb(30, 30, 30);
+                }
+                else
+                {
+                    // Restaurar a los valores por defecto o modo claro
+                    control.BackColor = Color.LightGray;
+                }
+            }
         }
 
         private void CargarUsuariosDesdeXML()
@@ -87,6 +120,21 @@ namespace CuadernoDeComunicaciones
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            // Crea una instancia del formulario FrmConfiguraciones
+            FrmConfiguracion frmConfiguraciones = new FrmConfiguracion();
+
+            // Muestra el formulario FrmConfiguraciones de manera modal (bloquea el FrmLogin)
+            DialogResult result = frmConfiguraciones.ShowDialog();
+
+            // Verifica si el usuario guardó las configuraciones antes de cerrar el formulario
+            if (result == DialogResult.Cancel)
+            {
+                AplicarConfiguracion();
+            }
         }
     }
 }

@@ -43,7 +43,6 @@ namespace CuadernoDeComunicaciones
             // 
             // gbxDatos
             // 
-            gbxDatos.BackgroundImage = (Image)resources.GetObject("gbxDatos.BackgroundImage");
             gbxDatos.Controls.Add(txtConcepto);
             gbxDatos.Controls.Add(lblConcepto);
             gbxDatos.Controls.Add(lblCalificacionNro);
@@ -54,10 +53,10 @@ namespace CuadernoDeComunicaciones
             gbxDatos.Controls.Add(nuNota);
             gbxDatos.Controls.Add(lblObservaciones);
             gbxDatos.Controls.Add(txtObservaciones);
-            gbxDatos.Location = new Point(18, 21);
-            gbxDatos.Margin = new Padding(6, 4, 6, 4);
-            gbxDatos.Padding = new Padding(6, 4, 6, 4);
-            gbxDatos.Size = new Size(1034, 177);
+            gbxDatos.Location = new Point(16, 16);
+            gbxDatos.Margin = new Padding(5, 3, 5, 3);
+            gbxDatos.Padding = new Padding(5, 3, 5, 3);
+            gbxDatos.Size = new Size(1058, 172);
             gbxDatos.Controls.SetChildIndex(txtObservaciones, 0);
             gbxDatos.Controls.SetChildIndex(lblObservaciones, 0);
             gbxDatos.Controls.SetChildIndex(nuNota, 0);
@@ -73,20 +72,20 @@ namespace CuadernoDeComunicaciones
             // 
             lblCalificacionNro.AutoSize = true;
             lblCalificacionNro.BackColor = Color.Transparent;
-            lblCalificacionNro.Location = new Point(277, 28);
-            lblCalificacionNro.Margin = new Padding(5, 0, 5, 0);
+            lblCalificacionNro.Location = new Point(242, 21);
+            lblCalificacionNro.Margin = new Padding(4, 0, 4, 0);
             lblCalificacionNro.Name = "lblCalificacionNro";
-            lblCalificacionNro.Size = new Size(175, 20);
+            lblCalificacionNro.Size = new Size(138, 15);
             lblCalificacionNro.TabIndex = 6;
             lblCalificacionNro.Text = "Número de Calificación:";
             // 
             // lblCalificacionNroValue
             // 
             lblCalificacionNroValue.BackColor = Color.Transparent;
-            lblCalificacionNroValue.Location = new Point(458, 23);
-            lblCalificacionNroValue.Margin = new Padding(5, 4, 5, 4);
+            lblCalificacionNroValue.Location = new Point(401, 17);
+            lblCalificacionNroValue.Margin = new Padding(4, 3, 4, 3);
             lblCalificacionNroValue.Name = "lblCalificacionNroValue";
-            lblCalificacionNroValue.Size = new Size(136, 31);
+            lblCalificacionNroValue.Size = new Size(119, 23);
             lblCalificacionNroValue.TabIndex = 7;
             lblCalificacionNroValue.TextChanged += lblCalificacionNroValue_TextChanged;
             // 
@@ -94,48 +93,48 @@ namespace CuadernoDeComunicaciones
             // 
             lblMateria.AutoSize = true;
             lblMateria.BackColor = Color.Transparent;
-            lblMateria.Location = new Point(277, 69);
-            lblMateria.Margin = new Padding(5, 0, 5, 0);
+            lblMateria.Location = new Point(242, 52);
+            lblMateria.Margin = new Padding(4, 0, 4, 0);
             lblMateria.Name = "lblMateria";
-            lblMateria.Size = new Size(67, 20);
+            lblMateria.Size = new Size(53, 15);
             lblMateria.TabIndex = 8;
             lblMateria.Text = "Materia:";
             // 
             // CboMateria
             // 
-            CboMateria.DropDownStyle = ComboBoxStyle.DropDownList;
-            CboMateria.FormattingEnabled = true;
-            CboMateria.Location = new Point(458, 73);
-            CboMateria.Margin = new Padding(5, 4, 5, 4);
-            CboMateria.Name = "CboMateria";
-            CboMateria.Size = new Size(135, 28);
-            CboMateria.TabIndex = 9;
-            CboMateria.DataSource = Enum.GetValues(typeof(Materia));
-            CboMateria.BackColor = Color.Orange;
-            CboMateria.ForeColor = Color.White;
+            CboMateria.BackColor = Color.LightGray;
+           CboMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             CboMateria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CboMateria.ForeColor = Color.White;
+            CboMateria.FormattingEnabled = true;
+          CboMateria.Location = new Point(401, 55);
+            CboMateria.Margin = new Padding(4, 3, 4, 3);
+            CboMateria.Name = "CboMateria";
+            CboMateria.Size = new Size(119, 23);
+            CboMateria.TabIndex = 9;
+            CboMateria.DataSource = Enum.GetValues(typeof(Categoria));
             // 
             // lblNota
             // 
             lblNota.AutoSize = true;
             lblNota.BackColor = Color.Transparent;
-            lblNota.Location = new Point(621, 28);
-            lblNota.Margin = new Padding(5, 0, 5, 0);
+            lblNota.Location = new Point(543, 21);
+            lblNota.Margin = new Padding(4, 0, 4, 0);
             lblNota.Name = "lblNota";
-            lblNota.Size = new Size(48, 20);
+            lblNota.Size = new Size(37, 15);
             lblNota.TabIndex = 10;
             lblNota.Text = "Nota:";
             // 
             // nuNota
             // 
-            nuNota.BackColor = Color.Orange;
+            nuNota.BackColor = Color.LightGray;
             nuNota.Cursor = Cursors.Hand;
             nuNota.ForeColor = Color.White;
-            nuNota.Location = new Point(675, 23);
-            nuNota.Margin = new Padding(5, 4, 5, 4);
+            nuNota.Location = new Point(591, 17);
+            nuNota.Margin = new Padding(4, 3, 4, 3);
             nuNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nuNota.Name = "nuNota";
-            nuNota.Size = new Size(61, 27);
+            nuNota.Size = new Size(53, 23);
             nuNota.TabIndex = 11;
             nuNota.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
@@ -143,23 +142,23 @@ namespace CuadernoDeComunicaciones
             // 
             lblObservaciones.AutoSize = true;
             lblObservaciones.BackColor = Color.Transparent;
-            lblObservaciones.Location = new Point(621, 69);
-            lblObservaciones.Margin = new Padding(5, 0, 5, 0);
+            lblObservaciones.Location = new Point(543, 52);
+            lblObservaciones.Margin = new Padding(4, 0, 4, 0);
             lblObservaciones.Name = "lblObservaciones";
-            lblObservaciones.Size = new Size(115, 20);
+            lblObservaciones.Size = new Size(91, 15);
             lblObservaciones.TabIndex = 12;
             lblObservaciones.Text = "Observaciones:";
             // 
             // txtObservaciones
             // 
-            txtObservaciones.BackColor = Color.Orange;
+            txtObservaciones.BackColor = Color.LightGray;
             txtObservaciones.Cursor = Cursors.Hand;
             txtObservaciones.ForeColor = Color.White;
-            txtObservaciones.Location = new Point(757, 63);
-            txtObservaciones.Margin = new Padding(5, 4, 5, 4);
+            txtObservaciones.Location = new Point(662, 47);
+            txtObservaciones.Margin = new Padding(4, 3, 4, 3);
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
-            txtObservaciones.Size = new Size(254, 89);
+            txtObservaciones.Size = new Size(303, 68);
             txtObservaciones.TabIndex = 13;
             txtObservaciones.Text = resources.GetString("txtObservaciones.Text");
             // 
@@ -167,33 +166,31 @@ namespace CuadernoDeComunicaciones
             // 
             lblConcepto.AutoSize = true;
             lblConcepto.BackColor = Color.Transparent;
-            lblConcepto.Location = new Point(277, 118);
+            lblConcepto.Location = new Point(242, 88);
             lblConcepto.Name = "lblConcepto";
-            lblConcepto.Size = new Size(75, 20);
+            lblConcepto.Size = new Size(60, 15);
             lblConcepto.TabIndex = 14;
             lblConcepto.Text = "Concepto";
             // 
             // txtConcepto
             // 
-            txtConcepto.BackColor = Color.Orange;
+            txtConcepto.BackColor = Color.LightGray;
             txtConcepto.Cursor = Cursors.Hand;
             txtConcepto.ForeColor = Color.White;
-            txtConcepto.Location = new Point(459, 122);
+            txtConcepto.Location = new Point(402, 92);
+            txtConcepto.Margin = new Padding(3, 2, 3, 2);
             txtConcepto.Name = "txtConcepto";
-            txtConcepto.Size = new Size(134, 27);
+            txtConcepto.Size = new Size(118, 23);
             txtConcepto.TabIndex = 15;
             txtConcepto.Text = "Conceptual";
-
-            this.Listar();
             // 
             // FrmCalificacion
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1243, 799);
+            ClientSize = new Size(1088, 599);
             Fecha = new DateTime(2023, 9, 30, 18, 56, 35, 845);
-            Margin = new Padding(6, 4, 6, 4);
+            Margin = new Padding(5, 3, 5, 3);
             Name = "FrmCalificacion";
             Text = "Calificación";
             BtnCrearClick += FrmElemento_BtnCrearClick;

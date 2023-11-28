@@ -14,6 +14,7 @@ namespace CuadernoDeComunicaciones.Formularios
         private bool FilaSeleccionada = false;
         Thread hiloActualizador;
         private bool pauseThread = false;
+        private Configuraciones configuraciones;
 
         // Delegado para manejar eventos de actualización de la interfaz de usuario
         public delegate void ActualizacionEventHandler();
@@ -28,6 +29,7 @@ namespace CuadernoDeComunicaciones.Formularios
             this.BackColor = Color.Orange; // Establece el color de fondo del formulario
             this.TransparencyKey = Color.Orange; // Establece el color transparente
             AplicarEstiloControles();
+            AplicarConfiguracion();
         }
         private void AplicarEstiloControles()
         {
@@ -221,6 +223,34 @@ namespace CuadernoDeComunicaciones.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show("Error al crear el usuario: " + ex.Message);
+            }
+        }
+
+        public void AplicarConfiguracion()
+        {
+            configuraciones = Configuraciones.CargarConfiguraciones();
+            if (configuraciones.ModoOscuro)
+            {
+                // Aplicar cambios para el modo oscuro
+                this.BackColor = Color.FromArgb(30, 30, 30);
+            }
+            else
+            {
+                // Restaurar a los valores por defecto o modo claro
+                this.BackColor = Color.LightGray;
+            }
+            foreach (Control control in Controls)
+            {
+                if (configuraciones.ModoOscuro)
+                {
+                    // Aplicar cambios para el modo oscuro
+                    control.BackColor = Color.FromArgb(30, 30, 30);
+                }
+                else
+                {
+                    // Restaurar a los valores por defecto o modo claro
+                    control.BackColor = Color.LightGray;
+                }
             }
         }
 

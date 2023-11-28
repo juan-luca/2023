@@ -29,6 +29,7 @@ namespace CuadernoDeComunicaciones
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            btnConfig = new Button();
             groupBoxBotonesTest.SuspendLayout();
             SuspendLayout();
             // 
@@ -38,7 +39,7 @@ namespace CuadernoDeComunicaciones
             txtUsuario.Location = new Point(120, 104);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
-            txtUsuario.Size = new Size(300, 27);
+            txtUsuario.Size = new Size(300, 23);
             txtUsuario.TabIndex = 0;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
@@ -49,7 +50,7 @@ namespace CuadernoDeComunicaciones
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
             txtContraseña.PlaceholderText = "Contraseña";
-            txtContraseña.Size = new Size(300, 27);
+            txtContraseña.Size = new Size(300, 23);
             txtContraseña.TabIndex = 1;
             txtContraseña.TextChanged += txtContraseña_TextChanged;
             // 
@@ -189,11 +190,26 @@ namespace CuadernoDeComunicaciones
             label3.Text = "Iniciar sesion";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnConfig
+            // 
+            btnConfig.BackColor = Color.Transparent;
+            btnConfig.BackgroundImageLayout = ImageLayout.None;
+            btnConfig.FlatAppearance.BorderSize = 0;
+            btnConfig.FlatStyle = FlatStyle.Flat;
+            btnConfig.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfig.ForeColor = Color.White;
+            btnConfig.Image = (Image)resources.GetObject("btnConfig.Image");
+            btnConfig.Location = new Point(468, 12);
+            btnConfig.Name = "btnConfig";
+            btnConfig.Size = new Size(43, 51);
+            btnConfig.TabIndex = 7;
+            btnConfig.UseVisualStyleBackColor = false;
+            btnConfig.Click += btnConfig_Click;
+            // 
             // FrmLogin
             // 
-            BackColor = Color.Firebrick;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(523, 322);
+            Controls.Add(btnConfig);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -222,5 +238,6 @@ namespace CuadernoDeComunicaciones
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button btnConfig;
     }
 }

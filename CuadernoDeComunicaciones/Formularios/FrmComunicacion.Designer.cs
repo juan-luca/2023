@@ -48,10 +48,10 @@ namespace CuadernoDeComunicaciones
             gbxDatos.Controls.Add(CboCategoria);
             gbxDatos.Controls.Add(lblTexto);
             gbxDatos.Controls.Add(txtTexto);
-            gbxDatos.Location = new Point(18, 21);
-            gbxDatos.Margin = new Padding(6, 4, 6, 4);
-            gbxDatos.Padding = new Padding(6, 4, 6, 4);
-            gbxDatos.Size = new Size(1034, 177);
+            gbxDatos.Location = new Point(16, 16);
+            gbxDatos.Margin = new Padding(5, 3, 5, 3);
+            gbxDatos.Padding = new Padding(5, 3, 5, 3);
+            gbxDatos.Size = new Size(905, 181);
             gbxDatos.Controls.SetChildIndex(txtTexto, 0);
             gbxDatos.Controls.SetChildIndex(lblTexto, 0);
             gbxDatos.Controls.SetChildIndex(CboCategoria, 0);
@@ -65,10 +65,10 @@ namespace CuadernoDeComunicaciones
             lblComunicacionNro.BackColor = Color.Transparent;
             lblComunicacionNro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblComunicacionNro.ForeColor = Color.White;
-            lblComunicacionNro.Location = new Point(277, 28);
-            lblComunicacionNro.Margin = new Padding(5, 0, 5, 0);
+            lblComunicacionNro.Location = new Point(242, 21);
+            lblComunicacionNro.Margin = new Padding(4, 0, 4, 0);
             lblComunicacionNro.Name = "lblComunicacionNro";
-            lblComunicacionNro.Size = new Size(194, 20);
+            lblComunicacionNro.Size = new Size(153, 15);
             lblComunicacionNro.TabIndex = 6;
             lblComunicacionNro.Text = "Número de Comunicación:";
             // 
@@ -77,10 +77,10 @@ namespace CuadernoDeComunicaciones
             lblComunicacionNroValue.BackColor = Color.Transparent;
             lblComunicacionNroValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblComunicacionNroValue.ForeColor = Color.White;
-            lblComunicacionNroValue.Location = new Point(458, 23);
-            lblComunicacionNroValue.Margin = new Padding(5, 4, 5, 4);
+            lblComunicacionNroValue.Location = new Point(401, 17);
+            lblComunicacionNroValue.Margin = new Padding(4, 3, 4, 3);
             lblComunicacionNroValue.Name = "lblComunicacionNroValue";
-            lblComunicacionNroValue.Size = new Size(136, 31);
+            lblComunicacionNroValue.Size = new Size(119, 23);
             lblComunicacionNroValue.TabIndex = 7;
             lblComunicacionNroValue.TextChanged += lblComunicacionNroValue_TextChanged;
             // 
@@ -105,28 +105,26 @@ namespace CuadernoDeComunicaciones
             lblCategoria.FlatStyle = FlatStyle.Flat;
             lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblCategoria.ForeColor = Color.White;
-            lblCategoria.Location = new Point(277, 69);
-            lblCategoria.Margin = new Padding(5, 0, 5, 0);
+            lblCategoria.Location = new Point(242, 52);
+            lblCategoria.Margin = new Padding(4, 0, 4, 0);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(80, 20);
+            lblCategoria.Size = new Size(63, 15);
             lblCategoria.TabIndex = 8;
             lblCategoria.Text = "Categoría:";
             // 
             // CboCategoria
             // 
-
-            CboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboCategoria.BackColor = Color.Orange;
+           CboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            CboCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CboCategoria.ForeColor = Color.White;
             CboCategoria.FormattingEnabled = true;
-            CboCategoria.Location = new Point(458, 73);
-            CboCategoria.Margin = new Padding(5, 4, 5, 4);
+            CboCategoria.Location = new Point(401, 55);
+            CboCategoria.Margin = new Padding(4, 3, 4, 3);
             CboCategoria.Name = "CboCategoria";
-            CboCategoria.Size = new Size(135, 28);
+            CboCategoria.Size = new Size(119, 23);
             CboCategoria.TabIndex = 9;
             CboCategoria.DataSource = Enum.GetValues(typeof(Categoria));
-            CboCategoria.BackColor = Color.Orange;
-            CboCategoria.ForeColor = Color.White;
-            CboCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-
             // 
             // lblTexto
             // 
@@ -134,36 +132,34 @@ namespace CuadernoDeComunicaciones
             lblTexto.BackColor = Color.Transparent;
             lblTexto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblTexto.ForeColor = Color.White;
-            lblTexto.Location = new Point(603, 23);
-            lblTexto.Margin = new Padding(5, 0, 5, 0);
+            lblTexto.Location = new Point(528, 17);
+            lblTexto.Margin = new Padding(4, 0, 4, 0);
             lblTexto.Name = "lblTexto";
-            lblTexto.Size = new Size(52, 20);
+            lblTexto.Size = new Size(42, 15);
             lblTexto.TabIndex = 10;
             lblTexto.Text = "Texto:";
             // 
             // txtTexto
             // 
             txtTexto.BackColor = Color.Orange;
-            txtTexto.BorderStyle = BorderStyle.None;
+            txtTexto.BorderStyle = BorderStyle.Fixed3D;
             txtTexto.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             txtTexto.ForeColor = Color.White;
-            txtTexto.Location = new Point(656, 16);
-            txtTexto.Margin = new Padding(5, 4, 5, 4);
+            txtTexto.Location = new Point(574, 12);
+            txtTexto.Margin = new Padding(4, 3, 4, 3);
             txtTexto.Multiline = true;
             txtTexto.Name = "txtTexto";
-            txtTexto.Size = new Size(367, 152);
+            txtTexto.Size = new Size(386, 114);
             txtTexto.TabIndex = 11;
             txtTexto.Text = resources.GetString("txtTexto.Text");
-
-            this.Listar();
             // 
             // FrmComunicacion
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1243, 799);
+            ClientSize = new Size(1088, 599);
             Fecha = new DateTime(2023, 9, 30, 18, 56, 35, 845);
-            Margin = new Padding(6, 4, 6, 4);
+            Margin = new Padding(5, 3, 5, 3);
             Name = "FrmComunicacion";
             Text = "Comunicación";
             BtnCrearClick += FrmElemento_BtnCrearClick;
