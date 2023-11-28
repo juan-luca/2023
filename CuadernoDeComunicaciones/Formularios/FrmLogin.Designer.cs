@@ -36,21 +36,23 @@ namespace CuadernoDeComunicaciones
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUsuario.ForeColor = SystemColors.Window;
             txtUsuario.Location = new Point(120, 104);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
-            txtUsuario.Size = new Size(300, 23);
+            txtUsuario.Size = new Size(300, 27);
             txtUsuario.TabIndex = 0;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtContraseña.ForeColor = SystemColors.Window;
             txtContraseña.Location = new Point(121, 144);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
             txtContraseña.PlaceholderText = "Contraseña";
-            txtContraseña.Size = new Size(300, 23);
+            txtContraseña.Size = new Size(300, 27);
             txtContraseña.TabIndex = 1;
             txtContraseña.TextChanged += txtContraseña_TextChanged;
             // 
@@ -217,6 +219,7 @@ namespace CuadernoDeComunicaciones
             Controls.Add(txtContraseña);
             Controls.Add(btnLogin);
             Controls.Add(groupBoxBotonesTest);
+            ForeColor = SystemColors.ButtonHighlight;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;

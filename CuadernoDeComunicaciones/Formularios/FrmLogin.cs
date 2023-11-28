@@ -15,7 +15,7 @@ namespace CuadernoDeComunicaciones
             InitializeComponent();
             CargarUsuariosDesdeXML();
 
-            
+
             AplicarConfiguracion();
         }
         public void AplicarConfiguracion()
