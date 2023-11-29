@@ -83,6 +83,8 @@ namespace CuadernoDeComunicaciones
         public FrmElemento()
         {
             InitializeComponent();
+            this.cboDivision.DataSource =  Enum.GetValues(typeof(Division));
+
             AplicarConfiguracion();
         }
         public FrmElemento(Usuario Usuario, List<Usuario> Usuarios)

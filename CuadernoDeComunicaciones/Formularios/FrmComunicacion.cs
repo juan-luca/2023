@@ -27,6 +27,7 @@ namespace CuadernoDeComunicaciones
         public FrmComunicacion(Usuario Usuario, List<Usuario> Usuarios) : base(Usuario, Usuarios)
         {
             InitializeComponent();
+            this.CboCategoria.DataSource = Enum.GetValues(typeof(Categoria));
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
             AplicarConfiguracion();

@@ -24,6 +24,7 @@ namespace CuadernoDeComunicaciones
         public FrmCalificacion(Usuario Usuario, List<Usuario> Usuarios) : base(Usuario, Usuarios)
         {
             InitializeComponent();
+            this.CboMateria.DataSource = Enum.GetValues(typeof(Materia));
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
             AplicarConfiguracion();

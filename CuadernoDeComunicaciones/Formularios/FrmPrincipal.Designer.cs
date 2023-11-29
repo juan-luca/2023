@@ -125,14 +125,14 @@ namespace CuadernoDeComunicaciones
             pnlElemento.Margin = new Padding(2);
             pnlElemento.Name = "pnlElemento";
             pnlElemento.RightToLeft = RightToLeft.No;
-            pnlElemento.Size = new Size(1371, 700);
+            pnlElemento.Size = new Size(1392, 875);
             pnlElemento.TabIndex = 3;
             pnlElemento.Visible = false;
             // 
             // FrmPrincipal
             // 
             BackColor = Color.Black;
-            ClientSize = new Size(1374, 880);
+            ClientSize = new Size(1374, 1055);
             Controls.Add(pnlElemento);
             Controls.Add(btnPerfiles);
             Controls.Add(btnCalificaciones);

@@ -46,6 +46,8 @@
             btnListar = new Button();
             dgvElementos = new DataGridView();
             btnLimpiar = new Button();
+            cboDivision = new ComboBox();
+            label1 = new Label();
             gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvElementos).BeginInit();
             SuspendLayout();
@@ -53,6 +55,8 @@
             // gbxDatos
             // 
             gbxDatos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gbxDatos.Controls.Add(cboDivision);
+            gbxDatos.Controls.Add(label1);
             gbxDatos.Controls.Add(cboAlumno);
             gbxDatos.Controls.Add(lblAlumno);
             gbxDatos.Controls.Add(dtpFecha);
@@ -62,11 +66,11 @@
             gbxDatos.FlatStyle = FlatStyle.Flat;
             gbxDatos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             gbxDatos.ForeColor = Color.White;
-            gbxDatos.Location = new Point(14, 14);
-            gbxDatos.Margin = new Padding(4, 3, 4, 3);
+            gbxDatos.Location = new Point(16, 19);
+            gbxDatos.Margin = new Padding(5, 4, 5, 4);
             gbxDatos.Name = "gbxDatos";
-            gbxDatos.Padding = new Padding(4, 3, 4, 3);
-            gbxDatos.Size = new Size(905, 115);
+            gbxDatos.Padding = new Padding(5, 4, 5, 4);
+            gbxDatos.Size = new Size(1300, 272);
             gbxDatos.TabIndex = 0;
             gbxDatos.TabStop = false;
             gbxDatos.Text = "Datos";
@@ -78,10 +82,10 @@
             cboAlumno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cboAlumno.ForeColor = Color.White;
             cboAlumno.FormattingEnabled = true;
-            cboAlumno.Location = new Point(74, 76);
-            cboAlumno.Margin = new Padding(4, 3, 4, 3);
+            cboAlumno.Location = new Point(104, 130);
+            cboAlumno.Margin = new Padding(5, 4, 5, 4);
             cboAlumno.Name = "cboAlumno";
-            cboAlumno.Size = new Size(124, 23);
+            cboAlumno.Size = new Size(141, 28);
             cboAlumno.TabIndex = 12;
             // 
             // lblAlumno
@@ -92,10 +96,10 @@
             lblAlumno.FlatStyle = FlatStyle.Flat;
             lblAlumno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblAlumno.ForeColor = Color.White;
-            lblAlumno.Location = new Point(7, 78);
-            lblAlumno.Margin = new Padding(4, 0, 4, 0);
+            lblAlumno.Location = new Point(5, 130);
+            lblAlumno.Margin = new Padding(5, 0, 5, 0);
             lblAlumno.Name = "lblAlumno";
-            lblAlumno.Size = new Size(53, 15);
+            lblAlumno.Size = new Size(69, 20);
             lblAlumno.TabIndex = 4;
             lblAlumno.Text = "Alumno:";
             // 
@@ -107,10 +111,10 @@
             dtpFecha.CalendarTitleBackColor = Color.Transparent;
             dtpFecha.CalendarTitleForeColor = Color.Transparent;
             dtpFecha.CalendarTrailingForeColor = Color.Transparent;
-            dtpFecha.Location = new Point(74, 45);
-            dtpFecha.Margin = new Padding(4, 3, 4, 3);
+            dtpFecha.Location = new Point(107, 72);
+            dtpFecha.Margin = new Padding(5, 4, 5, 4);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(124, 23);
+            dtpFecha.Size = new Size(141, 27);
             dtpFecha.TabIndex = 3;
             // 
             // lblFecha
@@ -121,10 +125,10 @@
             lblFecha.FlatStyle = FlatStyle.Flat;
             lblFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblFecha.ForeColor = Color.White;
-            lblFecha.Location = new Point(7, 48);
-            lblFecha.Margin = new Padding(4, 0, 4, 0);
+            lblFecha.Location = new Point(10, 79);
+            lblFecha.Margin = new Padding(5, 0, 5, 0);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(42, 15);
+            lblFecha.Size = new Size(53, 20);
             lblFecha.TabIndex = 2;
             lblFecha.Text = "Fecha:";
             // 
@@ -132,10 +136,10 @@
             // 
             lblRemitenteValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblRemitenteValue.BackColor = Color.Transparent;
-            lblRemitenteValue.Location = new Point(74, 17);
-            lblRemitenteValue.Margin = new Padding(4, 3, 4, 3);
+            lblRemitenteValue.Location = new Point(104, 33);
+            lblRemitenteValue.Margin = new Padding(5, 4, 5, 4);
             lblRemitenteValue.Name = "lblRemitenteValue";
-            lblRemitenteValue.Size = new Size(124, 23);
+            lblRemitenteValue.Size = new Size(150, 31);
             lblRemitenteValue.TabIndex = 1;
             // 
             // lblRemitente
@@ -146,10 +150,10 @@
             lblRemitente.FlatStyle = FlatStyle.Flat;
             lblRemitente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblRemitente.ForeColor = Color.White;
-            lblRemitente.Location = new Point(7, 18);
-            lblRemitente.Margin = new Padding(4, 0, 4, 0);
+            lblRemitente.Location = new Point(8, 33);
+            lblRemitente.Margin = new Padding(5, 0, 5, 0);
             lblRemitente.Name = "lblRemitente";
-            lblRemitente.Size = new Size(70, 15);
+            lblRemitente.Size = new Size(86, 20);
             lblRemitente.TabIndex = 0;
             lblRemitente.Text = "Remitente:";
             // 
@@ -160,10 +164,10 @@
             btnCrear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
             btnCrear.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCrear.Location = new Point(14, 158);
-            btnCrear.Margin = new Padding(4, 3, 4, 3);
+            btnCrear.Location = new Point(16, 301);
+            btnCrear.Margin = new Padding(5, 4, 5, 4);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(88, 27);
+            btnCrear.Size = new Size(101, 36);
             btnCrear.TabIndex = 6;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = false;
@@ -175,10 +179,10 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(108, 158);
-            btnModificar.Margin = new Padding(4, 3, 4, 3);
+            btnModificar.Location = new Point(123, 301);
+            btnModificar.Margin = new Padding(5, 4, 5, 4);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(88, 27);
+            btnModificar.Size = new Size(101, 36);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
@@ -190,10 +194,10 @@
             btnBorrar.FlatStyle = FlatStyle.Flat;
             btnBorrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBorrar.ForeColor = Color.White;
-            btnBorrar.Location = new Point(203, 158);
-            btnBorrar.Margin = new Padding(4, 3, 4, 3);
+            btnBorrar.Location = new Point(232, 301);
+            btnBorrar.Margin = new Padding(5, 4, 5, 4);
             btnBorrar.Name = "btnBorrar";
-            btnBorrar.Size = new Size(88, 27);
+            btnBorrar.Size = new Size(101, 36);
             btnBorrar.TabIndex = 8;
             btnBorrar.Text = "Borrar";
             btnBorrar.UseVisualStyleBackColor = false;
@@ -205,10 +209,10 @@
             btnListar.FlatStyle = FlatStyle.Flat;
             btnListar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnListar.ForeColor = Color.White;
-            btnListar.Location = new Point(298, 158);
-            btnListar.Margin = new Padding(4, 3, 4, 3);
+            btnListar.Location = new Point(341, 301);
+            btnListar.Margin = new Padding(5, 4, 5, 4);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(88, 27);
+            btnListar.Size = new Size(101, 36);
             btnListar.TabIndex = 9;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
@@ -225,14 +229,14 @@
             dgvElementos.BorderStyle = BorderStyle.None;
             dgvElementos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvElementos.GridColor = SystemColors.ControlLight;
-            dgvElementos.Location = new Point(14, 192);
-            dgvElementos.Margin = new Padding(4, 3, 4, 3);
+            dgvElementos.Location = new Point(16, 352);
+            dgvElementos.Margin = new Padding(5, 4, 5, 4);
             dgvElementos.MultiSelect = false;
             dgvElementos.Name = "dgvElementos";
             dgvElementos.ReadOnly = true;
             dgvElementos.RowHeadersWidth = 51;
             dgvElementos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvElementos.Size = new Size(905, 314);
+            dgvElementos.Size = new Size(1250, 584);
             dgvElementos.TabIndex = 10;
             dgvElementos.CellClick += dgvElementos_CellClick;
             // 
@@ -242,20 +246,48 @@
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(396, 157);
-            btnLimpiar.Margin = new Padding(4, 3, 4, 3);
+            btnLimpiar.Location = new Point(453, 299);
+            btnLimpiar.Margin = new Padding(5, 4, 5, 4);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(88, 27);
+            btnLimpiar.Size = new Size(101, 36);
             btnLimpiar.TabIndex = 12;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // cboDivision
+            // 
+            cboDivision.BackColor = Color.Orange;
+            cboDivision.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDivision.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cboDivision.ForeColor = Color.White;
+            cboDivision.FormattingEnabled = true;
+            cboDivision.Location = new Point(104, 182);
+            cboDivision.Margin = new Padding(5, 4, 5, 4);
+            cboDivision.Name = "cboDivision";
+            cboDivision.Size = new Size(141, 28);
+            cboDivision.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(5, 182);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Division";
+            // 
             // FrmElemento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(1282, 953);
             Controls.Add(btnLimpiar);
             Controls.Add(dgvElementos);
             Controls.Add(btnListar);
@@ -263,7 +295,7 @@
             Controls.Add(btnModificar);
             Controls.Add(btnCrear);
             Controls.Add(gbxDatos);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "FrmElemento";
             Text = "Elemento";
             gbxDatos.ResumeLayout(false);
@@ -276,5 +308,7 @@
 
 
         private Button btnLimpiar;
+        private ComboBox cboDivision;
+        private Label label1;
     }
 }
