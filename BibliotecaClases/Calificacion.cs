@@ -144,6 +144,24 @@ namespace BibliotecaClases
                 throw new Exception("Error al borrar calificación.", ex);
             }
         }
+        public static List<Calificacion> ListarCalificacionesPorDivision(List<Usuario> usuariosEnDivision)
+        {
+            List<Calificacion> calificacionesPorDivision = new List<Calificacion>();
+
+            // Obtener todas las calificaciones
+            List<Calificacion> todasLasCalificaciones = ListarTodos();
+
+            // Filtrar usuarios por división
+            List<string> nombresUsuariosEnDivision = usuariosEnDivision.Select(u => u.NombreUsuario).ToList();
+
+            // Filtrar calificaciones por usuarios en la división
+            calificacionesPorDivision = todasLasCalificaciones
+                .Where(c => nombresUsuariosEnDivision.Contains(c.Alumno))
+                .ToList();
+
+            return calificacionesPorDivision;
+        }
+
 
         /// <summary>
         /// Lista todas las calificaciones existentes en la base de datos.

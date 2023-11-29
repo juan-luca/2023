@@ -237,13 +237,62 @@ namespace CuadernoDeComunicaciones
                 this.txtObservaciones.Text = observaciones;
                 this.txtConcepto.Text = concepto;
                 this.Fecha = Fecha;
+                
+                Usuarios = Usuario.ListarTodos();
+                // Buscar el usuario en la lista por nombre de usuario
+                Usuario usuario = Usuarios.Find(u => u.NombreUsuario == alumno);
+
+                // Verificar si se encontró el usuario y tiene un valor de división
+                if (usuario != null && int.TryParse(usuario.Division, out int valorDivision))
+                {
+                    this.CboDivision.SelectedIndex = valorDivision;
+                }
+                else
+                {
+                    this.CboDivision.SelectedIndex = 0;
+                }
+
             }
         }
+        private void CargarAlumnosPorDivision(List<Usuario> usuarios)
+        {
+            // Crear un objeto BindingSource y asignar la lista de usuarios
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = usuarios;
 
+            // Asignar el BindingSource como fuente de datos del ComboBox
+            CboAlumnos.DataSource = bindingSource;
+
+            // Establecer las propiedades DisplayMember y ValueMember del ComboBox
+            CboAlumnos.DisplayMember = "NombreCompleto"; // Cambia esto según las propiedades del objeto Usuario
+            CboAlumnos.ValueMember = "NombreUsuario"; // Cambia esto según las propiedades del objeto Usuario
+
+            // Seleccionar el primer elemento
+            if (CboAlumnos.Items.Count > 0)
+            {
+                CboAlumnos.SelectedIndex = 0;
+            }
+        }
         private void Listar()
         {
             this.calificaciones = Calificacion.ListarTodos();
             RelacionesManager relacionesManager = new RelacionesManager();
+
+            if (this.CboDivision.SelectedIndex != null)
+            {
+                if (this.CboDivision.SelectedIndex != 0)
+                {
+                    // Obtener usuarios en la división
+                    List<Usuario> usuariosEnDivision = Usuarios.Where(u => u.Division == this.CboDivision.SelectedIndex.ToString()).ToList();
+
+                    // Obtener comunicaciones relacionadas con la división
+                    calificaciones = Calificacion.ListarCalificacionesPorDivision(usuariosEnDivision);
+
+                    // Cargar los alumnos de la división en CboAlumnos
+                    CargarAlumnosPorDivision(usuariosEnDivision);
+                }
+            }
+
             if (Usuario.Perfil == "Padres")
             {
                 List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);

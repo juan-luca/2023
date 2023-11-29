@@ -148,7 +148,7 @@ namespace CuadernoDeComunicaciones
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow fila = this.DgvElementos.Rows[e.RowIndex];
-
+                
                 string comunicacionNro = fila.Cells[0].Value.ToString();
                 Categoria categoria = (Categoria)Enum.Parse(typeof(Categoria), fila.Cells[1].Value.ToString());
                 string texto = fila.Cells["Texto"].Value.ToString();
@@ -159,29 +159,62 @@ namespace CuadernoDeComunicaciones
                 this.CboAlumnos.SelectedValue = alumno;
                 this.txtTexto.Text = texto;
                 this.Fecha = Fecha;
+                Usuarios = Usuario.ListarTodos();
+                // Buscar el usuario en la lista por nombre de usuario
+                Usuario usuario = Usuarios.Find(u => u.NombreUsuario == alumno);
+
+                // Verificar si se encontró el usuario y tiene un valor de división
+                if (usuario != null && int.TryParse(usuario.Division, out int valorDivision))
+                {
+                    this.CboDivision.SelectedIndex = valorDivision;
+                }
+                else
+                {
+                    this.CboDivision.SelectedIndex = 0;
+                }
+
+
             }
 
         }
-
 
         private void Listar()
         {
             this.comunicaciones = Comunicacion.ListarTodos();
             RelacionesManager relacionesManager = new RelacionesManager();
+
+            
+
+
+           
+           
+            if (this.CboDivision.SelectedIndex != null)
+            {
+                if (this.CboDivision.SelectedIndex != 0)
+                {
+                    // Obtener usuarios en la división
+                    List<Usuario> usuariosEnDivision = Usuarios.Where(u => u.Division == this.CboDivision.SelectedIndex.ToString()).ToList();
+
+                    // Obtener comunicaciones relacionadas con la división
+                    comunicaciones = Comunicacion.ListarComunicacionesPorDivision(usuariosEnDivision);
+                }
+            }
+
+
             if (Usuario.Perfil == "Padres")
             {
                 List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
-
                 comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(alumnosRelacionados);
             }
             else if (Usuario.Perfil == "Alumno")
             {
-
                 comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(Usuario.NombreUsuario);
             }
 
+
             this.DgvElementos.DataSource = this.comunicaciones;
         }
+      
         private void Limpiar()
         {
             this.Fecha = DateTime.Now;

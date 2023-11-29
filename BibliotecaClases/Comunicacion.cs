@@ -43,6 +43,23 @@ namespace BibliotecaClases
         #endregion
 
         #region Métodos Públicos
+        public static List<Comunicacion> ListarComunicacionesPorDivision(List<Usuario> usuariosEnDivision)
+        {
+            List<Comunicacion> comunicacionesPorDivision = new List<Comunicacion>();
+
+            // Obtener todas las comunicaciones
+            List<Comunicacion> todasLasComunicaciones = ListarTodos();
+
+            // Filtrar usuarios por división
+            List<string> nombresUsuariosEnDivision = usuariosEnDivision.Select(u => u.NombreUsuario).ToList();
+
+            // Filtrar comunicaciones por usuarios en la división
+            comunicacionesPorDivision = todasLasComunicaciones
+                .Where(c => nombresUsuariosEnDivision.Contains(c.Remitente) || nombresUsuariosEnDivision.Contains(c.Alumno))
+                .ToList();
+
+            return comunicacionesPorDivision;
+        }
 
         /// <summary>
         /// Crea una nueva comunicación en la base de datos.

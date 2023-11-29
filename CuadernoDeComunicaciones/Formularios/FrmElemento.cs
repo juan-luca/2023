@@ -32,6 +32,11 @@ namespace CuadernoDeComunicaciones
             get { return this.cboAlumno; }
             set { this.cboAlumno.SelectedValue = value; }
         }
+        public ComboBox CboDivision
+        {
+            get { return this.cboDivision; }
+            set { this.cboDivision.SelectedValue = value; }
+        }
         public Button BtnCrear
         {
             get { return this.btnCrear; }
@@ -92,6 +97,7 @@ namespace CuadernoDeComunicaciones
             InitializeComponent();
             this.usuario = Usuario;
             this.usuarios = Usuarios;
+            this.cboDivision.DataSource = Enum.GetValues(typeof(Division));
 
             CargarAlumnos();
             AplicarConfiguracion();
