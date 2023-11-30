@@ -16,6 +16,8 @@ namespace BibliotecaClases
         private Categoria categoria;
         private string texto;
         protected string archivoXml = "Comunicaciones.xml";
+        private IErrorLogger<CustomError> errorLogger = new ErrorLogger<CustomError>();
+
 
         #endregion
 
@@ -137,6 +139,12 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
                 throw new Exception("Error al modificar la comunicación en la base de datos.", ex);
             }
         }
@@ -163,6 +171,13 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
+                CustomError error = new CustomError($"Error al verificar la existencia de la comunicación en la base de datos: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                
                 throw new Exception("Error al verificar la existencia de la comunicación en la base de datos.", ex);
             }
         }
@@ -195,6 +210,13 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
+                CustomError error = new CustomError($"Error al borrar la comunicación en la base de datos: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+
                 throw new Exception("Error al borrar la comunicación en la base de datos.", ex);
             }
         }
@@ -238,6 +260,7 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
+
                 throw new Exception("Error al listar las comunicaciones desde la base de datos.", ex);
             }
         }
@@ -280,6 +303,13 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
+                CustomError error = new CustomError($"Error al buscar la comunicación en la base de datos: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+
                 throw new Exception("Error al buscar la comunicación en la base de datos.", ex);
             }
         }

@@ -18,17 +18,22 @@ namespace BibliotecaClases
         private string observaciones;
         private string concepto;
         protected string archivoXml = "Calificaciones.xml";
+        private IErrorLogger<CustomError> errorLogger = new ErrorLogger<CustomError>();
+
 
         #endregion
 
         #region Constructor
-
-        /// <summary>
-        /// Inicializa una nueva instancia de la clase Calificacion.
-        /// </summary>
         public Calificacion()
         {
 
+        }
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Calificacion.
+        /// </summary>
+        public Calificacion(IErrorLogger<CustomError> errorLogger)
+        {
+            this.errorLogger = errorLogger;
         }
 
         /// <summary>
@@ -55,6 +60,7 @@ namespace BibliotecaClases
         {
             try
             {
+                
                 if (AgregarCalificacionABD())
                     return true;
 
@@ -62,7 +68,12 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al crear calificación: " + ex.Message);
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
                 throw new Exception("Error al crear calificación.", ex);
             }
         }
@@ -105,8 +116,13 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al modificar calificación: " + ex.Message);
-                throw new Exception("Error al modificar calificación.", ex);
+                CustomError error = new CustomError($"Error al modificar la calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al modificar la calificación.", ex);
             }
         }
 
@@ -140,12 +156,18 @@ namespace BibliotecaClases
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al borrar calificación: " + ex.Message);
-                throw new Exception("Error al borrar calificación.", ex);
+                CustomError error = new CustomError($"Error al borrar la calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al borrar la calificación.", ex);
             }
         }
         public static List<Calificacion> ListarCalificacionesPorDivision(List<Usuario> usuariosEnDivision)
         {
+
             List<Calificacion> calificacionesPorDivision = new List<Calificacion>();
 
             // Obtener todas las calificaciones
@@ -203,26 +225,36 @@ namespace BibliotecaClases
         /// </summary>
         private bool AgregarCalificacionABD()
         {
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            try
             {
-                string consulta = "INSERT INTO Calificaciones (Alumno, Remitente, Materia, Nota, Observaciones, Concepto, Fecha) " +
-                                  "VALUES (@Alumno, @Remitente, @Materia, @Nota, @Observaciones, @Concepto, @Fecha)";
-
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    comando.Parameters.AddWithValue("@Alumno", this.Alumno);
-                    comando.Parameters.AddWithValue("@Remitente", this.Remitente);
-                    comando.Parameters.AddWithValue("@Materia", this.materia.ToString());
-                    comando.Parameters.AddWithValue("@Nota", this.nota);
-                    comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
-                    comando.Parameters.AddWithValue("@Concepto", this.concepto);
-                    comando.Parameters.AddWithValue("@Fecha", this.Fecha);
+                    string consulta = "INSERT INTO Calificaciones (Alumno, Remitente, Materia, Nota, Observaciones, Concepto, Fecha) " +
+                                      "VALUES (@Alumno, @Remitente, @Materia, @Nota, @Observaciones, @Concepto, @Fecha)";
 
-                    comando.ExecuteNonQuery();
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Alumno", this.Alumno);
+                        comando.Parameters.AddWithValue("@Remitente", this.Remitente);
+                        comando.Parameters.AddWithValue("@Materia", this.materia.ToString());
+                        comando.Parameters.AddWithValue("@Nota", this.nota);
+                        comando.Parameters.AddWithValue("@Observaciones", this.observaciones);
+                        comando.Parameters.AddWithValue("@Concepto", this.concepto);
+                        comando.Parameters.AddWithValue("@Fecha", this.Fecha);
+
+                        comando.ExecuteNonQuery();
+                    }
                 }
-            }
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al agregar calificación a la base de datos: {ex.Message}");
+                errorLogger.LogError(error);
+                throw new Exception("Error al agregar calificación a la base de datos.", ex);
+            }
+            
         }
 
         /// <summary>

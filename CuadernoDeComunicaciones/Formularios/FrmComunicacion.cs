@@ -142,6 +142,25 @@ namespace CuadernoDeComunicaciones
             ActualizarGrilla();
 
         }
+        private void CargarAlumnosPorDivision(List<Usuario> usuarios)
+        {
+            // Crear un objeto BindingSource y asignar la lista de usuarios
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = usuarios;
+
+            // Asignar el BindingSource como fuente de datos del ComboBox
+            CboAlumnos.DataSource = bindingSource;
+
+            // Establecer las propiedades DisplayMember y ValueMember del ComboBox
+            CboAlumnos.DisplayMember = "NombreCompleto"; // Cambia esto según las propiedades del objeto Usuario
+            CboAlumnos.ValueMember = "NombreUsuario"; // Cambia esto según las propiedades del objeto Usuario
+
+            // Seleccionar el primer elemento
+            if (CboAlumnos.Items.Count > 0)
+            {
+                CboAlumnos.SelectedIndex = 0;
+            }
+        }
         private void FrmElemento_dgvElementosCellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -197,6 +216,9 @@ namespace CuadernoDeComunicaciones
 
                     // Obtener comunicaciones relacionadas con la división
                     comunicaciones = Comunicacion.ListarComunicacionesPorDivision(usuariosEnDivision);
+
+                    // Cargar los alumnos de la división en CboAlumnos
+                    CargarAlumnosPorDivision(usuariosEnDivision);
                 }
             }
 

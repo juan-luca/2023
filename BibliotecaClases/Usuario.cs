@@ -22,6 +22,7 @@ namespace BibliotecaClases
         private string nombreCompleto;
         private string archivoXml = "Usuarios.xml";
         private XML<List<Usuario>> xmlSerializer = new XML<List<Usuario>>();
+        private IErrorLogger<CustomError> errorLogger = new ErrorLogger<CustomError>();
 
         public string Division { get; set; }
 
@@ -133,32 +134,46 @@ namespace BibliotecaClases
         /// <returns>Devuelve true si la creación es exitosa; de lo contrario, lanza una excepción.</returns>
         public bool Crear()
         {
-            // Verificar si el usuario ya existe
-            if (UsuarioExiste(this.NombreUsuario))
+            try
             {
-                throw new UsuarioRepetidoExcepcion("El usuario ya existe.");
-            }
-
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
-            {
-                string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Perfil, NombreCompleto, IdDivision) VALUES (@NombreUsuario, @Contraseña, @Perfil, @NombreCompleto, @Division)";
-
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                // Verificar si el usuario ya existe
+                if (UsuarioExiste(this.NombreUsuario))
                 {
-                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
-                    comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
-                    comando.Parameters.AddWithValue("@Perfil", this.Perfil);
-                    comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
-                    comando.Parameters.AddWithValue("@Division", this.Division);
-
-                    comando.ExecuteNonQuery();
+                    throw new UsuarioRepetidoExcepcion("El usuario ya existe.");
                 }
+
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña, Perfil, NombreCompleto, IdDivision) VALUES (@NombreUsuario, @Contraseña, @Perfil, @NombreCompleto, @Division)";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+                        comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
+                        comando.Parameters.AddWithValue("@Perfil", this.Perfil);
+                        comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+                        comando.Parameters.AddWithValue("@Division", this.Division);
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+
+                // Agregar usuario al archivo XML
+                AgregarUsuarioAXml();
+
+                return true;
             }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al crear el usuario: {ex.Message}");
 
-            // Agregar usuario al archivo XML
-            AgregarUsuarioAXml();
-
-            return true;
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al crear el usuario.", ex);
+            }
+           
         }
 
         /// <summary>
@@ -167,31 +182,45 @@ namespace BibliotecaClases
         /// <returns>Devuelve true si la modificación es exitosa; de lo contrario, lanza una excepción.</returns>
         public bool Modificar()
         {
-            if (!UsuarioExiste(this.NombreUsuario))
+            try
             {
-                throw new Exception("El usuario a modificar no existe.");
-            }
-
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
-            {
-                string consulta = "UPDATE Usuarios SET Contraseña = @Contraseña, Perfil = @Perfil, NombreCompleto = @NombreCompleto, IdDivision = @Division WHERE NombreUsuario = @NombreUsuario";
-
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                if (!UsuarioExiste(this.NombreUsuario))
                 {
-                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
-                    comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
-                    comando.Parameters.AddWithValue("@Perfil", this.Perfil);
-                    comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
-                    comando.Parameters.AddWithValue("@Division", this.Division.ToString());
-
-                    comando.ExecuteNonQuery();
+                    throw new Exception("El usuario a modificar no existe.");
                 }
+
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string consulta = "UPDATE Usuarios SET Contraseña = @Contraseña, Perfil = @Perfil, NombreCompleto = @NombreCompleto, IdDivision = @Division WHERE NombreUsuario = @NombreUsuario";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+                        comando.Parameters.AddWithValue("@Contraseña", this.Contraseña);
+                        comando.Parameters.AddWithValue("@Perfil", this.Perfil);
+                        comando.Parameters.AddWithValue("@NombreCompleto", this.NombreCompleto);
+                        comando.Parameters.AddWithValue("@Division", this.Division.ToString());
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+
+                // Modificar usuario en el archivo XML
+                ModificarUsuarioEnXml();
+
+                return true;
             }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
 
-            // Modificar usuario en el archivo XML
-            ModificarUsuarioEnXml();
-
-            return true;
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al crear calificación.", ex);
+            }
+           
         }
 
         /// <summary>
@@ -200,27 +229,41 @@ namespace BibliotecaClases
         /// <returns>Devuelve true si el borrado es exitoso; de lo contrario, lanza una excepción.</returns>
         public bool Borrar()
         {
-            if (!UsuarioExiste(this.NombreUsuario))
+            try
             {
-                throw new Exception("El usuario a eliminar no existe.");
-            }
-
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
-            {
-                string consulta = "DELETE FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
-
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                if (!UsuarioExiste(this.NombreUsuario))
                 {
-                    comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
-
-                    comando.ExecuteNonQuery();
+                    throw new Exception("El usuario a eliminar no existe.");
                 }
+
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string consulta = "DELETE FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NombreUsuario", this.NombreUsuario);
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+
+                // Eliminar usuario del archivo XML
+                EliminarUsuarioDeXml();
+
+                return true;
             }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
 
-            // Eliminar usuario del archivo XML
-            EliminarUsuarioDeXml();
-
-            return true;
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al crear calificación.", ex);
+            }
+            
         }
 
         #endregion
