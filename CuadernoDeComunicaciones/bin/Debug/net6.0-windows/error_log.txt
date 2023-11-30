@@ -1,2 +1,9 @@
 29/11/2023 20:21:39: Error al crear calificación: Este es un error simulado al crear la calificación.
 29/11/2023 20:22:27: Error al crear calificación: Este es un error simulado al crear la calificación.
+29/11/2023 23:39:06: Error al crear el usuario: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Usuarios__IdDivi__49C3F6B7". The conflict occurred in database "CuadernoDeComunicaciones", table "dbo.Divisiones", column 'IdDivision'.
+The statement has been terminated.
+29/11/2023 23:40:18: Error al crear el usuario: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Usuarios__IdDivi__49C3F6B7". The conflict occurred in database "CuadernoDeComunicaciones", table "dbo.Divisiones", column 'IdDivision'.
+The statement has been terminated.
+29/11/2023 23:42:12: Error al crear el usuario: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Usuarios__IdDivi__49C3F6B7". The conflict occurred in database "CuadernoDeComunicaciones", table "dbo.Divisiones", column 'IdDivision'.
+The statement has been terminated.
+30/11/2023 00:01:39: Error al crear calificación: Object reference not set to an instance of an object.

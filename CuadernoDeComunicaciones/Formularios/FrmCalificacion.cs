@@ -16,6 +16,8 @@ namespace CuadernoDeComunicaciones
         private List<Calificacion> calificaciones;
         private string archivoXml = "Calificaciones.xml";
         private Configuraciones configuraciones;
+
+        private IErrorLogger<CustomError> errorLogger = new ErrorLogger<CustomError>();
         public Materia MateriaSeleccionada
         {
             get { return (Materia)this.CboMateria.SelectedItem; }
@@ -28,26 +30,42 @@ namespace CuadernoDeComunicaciones
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
             AplicarConfiguracion();
+            Listar();
         }
         protected override void ConfigurarControlesSegunPerfil(string Perfil)
         {
-            HabilitarControles();
-            switch (Perfil)
+            try
             {
-                case "Director":
-                    break;
-                case "Profesor":
-                    break;
-                case "Preceptor":
-                    break;
-                case "Padres":
-                    break;
-                case "Alumno":
-                    HabilitarControles();
-                    break;
-                default:
-                    break;
+                HabilitarControles();
+                switch (Perfil)
+                {
+                    case "Director":
+                        break;
+                    case "Profesor":
+                        break;
+                    case "Preceptor":
+                        break;
+                    case "Padres":
+                        break;
+                    case "Alumno":
+                        HabilitarControles();
+                        break;
+                    default:
+                        break;
+                }
             }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al modificar la comunicación en la base de datos.", ex);
+
+            }
+            
 
         }
 
@@ -322,43 +340,68 @@ namespace CuadernoDeComunicaciones
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
             bool habilitarFiltro = false;
-
-
-            switch (base.Usuario.Perfil)
+            try
             {
-                case "Director":
-                    habilitar = true;
-                    modificar = true;
-                    habilitarFiltro = true;
-                    break;
-                case "Profesor":
-                    habilitar = true;
-                    habilitarFiltro = true;
-                    break;
-                case "Preceptor":
-                    habilitar = true;
-                    habilitarFiltro = true;
-                    break;
-                case "Padres":
-                    habilitar = false;
-                    habilitarFiltro = false;
-                    break;
-                case "Alumno":
-                    habilitar = false;
-                    habilitarFiltro = false;
-                    break;
-                default:
-                    break;
+                switch (base.Usuario.Perfil)
+                {
+                    case "Director":
+                        habilitar = true;
+                        modificar = true;
+                        habilitarFiltro = true;
+                        break;
+                    case "Profesor":
+                        habilitar = true;
+                        habilitarFiltro = true;
+                        break;
+                    case "Preceptor":
+                        habilitar = true;
+                        habilitarFiltro = true;
+                        break;
+                    case "Padres":
+                        habilitar = false;
+                        habilitarFiltro = false;
+                        break;
+                    case "Alumno":
+                        habilitar = false;
+                        habilitarFiltro = false;
+
+                        CboDivision.Enabled = false;
+
+                        if (base.Usuario != null && int.TryParse(base.Usuario.Division, out int valorDivision))
+                        {
+                            this.CboDivision.SelectedIndex = valorDivision;
+                        }
+                        else
+                        {
+                            this.CboDivision.SelectedIndex = 0;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                txtObservaciones.Enabled = habilitar;
+                txtConcepto.Enabled = habilitar;
+                nuNota.Enabled = habilitar;
+                CboMateria.Enabled = habilitar;
+
+                base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblCalificacionNroValue.Text));
+
+                CboAlumnos.Enabled = habilitarFiltro;
+            }
+            catch (Exception ex)
+            {
+                CustomError error = new CustomError($"Error al crear calificación: {ex.Message}");
+
+                if (errorLogger != null)
+                {
+                    errorLogger.LogError(error);
+                }
+                throw new Exception("Error al modificar la comunicación en la base de datos.", ex);
+
             }
 
-            txtObservaciones.Enabled = habilitar;
-            txtConcepto.Enabled = habilitar;
-            nuNota.Enabled = habilitar;
-            CboMateria.Enabled = habilitar;
-
-            base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblCalificacionNroValue.Text));
-
-            CboAlumnos.Enabled = habilitarFiltro;
+            
 
         }
         private void ActualizarGrilla()

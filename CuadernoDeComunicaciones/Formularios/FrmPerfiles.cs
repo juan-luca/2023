@@ -199,8 +199,8 @@ namespace CuadernoDeComunicaciones.Formularios
                 string contraseña = txtContraseña.Text;
                 string perfil = cboPerfil.SelectedItem.ToString();
                 string nombreCompleto = txtNombreCompleto.Text;
-                
-                if(perfil=="Alumno")
+                string division = "0";
+                if (perfil=="Alumno")
                 {
                     if (cboPadre.SelectedIndex == 0 || cboMadre.SelectedIndex == 0)
                     {
@@ -209,14 +209,14 @@ namespace CuadernoDeComunicaciones.Formularios
                     }
                     string padre = cboPadre.SelectedValue.ToString();
                     string madre = cboMadre.SelectedValue.ToString();
-                    string division = cboDivision.SelectedValue.ToString();
+                   
                     Alumno nuevoAlumno = new Alumno(nombreUsuario, contraseña, perfil, nombreCompleto, padre, madre,division);
                     relacionesManager.CrearRelacion(nuevoAlumno);
+                    division = cboDivision.SelectedIndex.ToString();
 
-                   
 
                 }
-                    Usuario nuevoUsuario = new Usuario(nombreUsuario, contraseña, perfil, nombreCompleto);
+                    Usuario nuevoUsuario = new Usuario(nombreUsuario, contraseña, perfil, nombreCompleto, division);
 
                     if (!nuevoUsuario.Crear())
                     {

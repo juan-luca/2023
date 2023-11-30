@@ -91,6 +91,7 @@ namespace CuadernoDeComunicaciones
             this.cboDivision.DataSource =  Enum.GetValues(typeof(Division));
 
             AplicarConfiguracion();
+            ConfigurarControlesSegunPerfil();
         }
         public FrmElemento(Usuario Usuario, List<Usuario> Usuarios)
         {
@@ -101,6 +102,7 @@ namespace CuadernoDeComunicaciones
 
             CargarAlumnos();
             AplicarConfiguracion();
+            ConfigurarControlesSegunPerfil();
 
         }
         public void AplicarConfiguracion()
@@ -169,6 +171,7 @@ namespace CuadernoDeComunicaciones
                     break;
                 case "Alumno":
                     HabilitarControles(false);
+                    CboAlumnos.SelectedItem = this.usuario.NombreUsuario;
                     break;
                 default:
                     break;

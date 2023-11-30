@@ -31,6 +31,7 @@ namespace CuadernoDeComunicaciones
 
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
             AplicarConfiguracion();
+            this.Listar();
         }
 
 
@@ -313,7 +314,7 @@ namespace CuadernoDeComunicaciones
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
         {
 
-
+            Usuarios = Usuario.ListarTodos();
             switch (base.Usuario.Perfil)
             {
                 case "Director":
@@ -332,6 +333,17 @@ namespace CuadernoDeComunicaciones
                     habilitar = false;
                     txtTexto.Enabled = false;
                     CboCategoria.Enabled = false;
+                    CboDivision.Enabled = false;
+
+                    if (base.Usuario != null && int.TryParse(base.Usuario.Division, out int valorDivision))
+                    {
+                        this.CboDivision.SelectedIndex = valorDivision;
+                    }
+                    else
+                    {
+                        this.CboDivision.SelectedIndex = 0;
+                    }
+
                     break;
                 default:
                     break;

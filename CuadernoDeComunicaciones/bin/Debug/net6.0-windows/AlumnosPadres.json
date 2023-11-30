@@ -33,5 +33,15 @@
     "NombreUsuario": "asdasd",
     "Padre": "222222222",
     "Madre": "Padre1"
+  },
+  {
+    "NombreUsuario": "X",
+    "Padre": "padre2",
+    "Madre": "222222222"
+  },
+  {
+    "NombreUsuario": "BB",
+    "Padre": "padre2",
+    "Madre": "kkkkkkkkk"
   }
 ]

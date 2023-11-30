@@ -205,7 +205,6 @@ namespace BibliotecaClases
                     }
                 }
 
-                // Modificar usuario en el archivo XML
                 ModificarUsuarioEnXml();
 
                 return true;
