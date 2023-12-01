@@ -46,8 +46,14 @@ namespace CuadernoDeComunicaciones
                 case "Profesor":
                     break;
                 case "Preceptor":
+                    BtnCrear.Enabled = true;
+                    BtnModificar.Enabled = false;
+                    BtnBorrar.Enabled = false;
                     break;
                 case "Padres":
+                    BtnCrear.Enabled = true;
+                    BtnModificar.Enabled = false;
+                    BtnBorrar.Enabled = false;
                     break;
                 case "Alumno":
                     HabilitarControles();
@@ -129,8 +135,9 @@ namespace CuadernoDeComunicaciones
         }
         private void ActualizarGrilla()
         {
-            this.Listar();
+           
             this.Limpiar();
+            this.Listar();
         }
 
         private void FrmElemento_BtnListarClick(object sender, EventArgs e)
@@ -217,9 +224,19 @@ namespace CuadernoDeComunicaciones
 
                     // Obtener comunicaciones relacionadas con la división
                     comunicaciones = Comunicacion.ListarComunicacionesPorDivision(usuariosEnDivision);
+                  
+                    if (this.Usuario.Perfil != "Alumno")
+                    {
+                        if (this.Usuario.Perfil != "Padres")
+                        {
+                            CargarAlumnosPorDivision(usuariosEnDivision);
+                        }
+                        
+                    }
+                    else
+                    {
 
-                    // Cargar los alumnos de la división en CboAlumnos
-                    CargarAlumnosPorDivision(usuariosEnDivision);
+                    }
                 }
             }
 
@@ -227,11 +244,39 @@ namespace CuadernoDeComunicaciones
             if (Usuario.Perfil == "Padres")
             {
                 List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
+                CboAlumnos.DataSource = alumnosRelacionados;
                 comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(alumnosRelacionados);
             }
             else if (Usuario.Perfil == "Alumno")
             {
                 comunicaciones = Comunicacion.ListarComunicacionesDeAlumno(Usuario.NombreUsuario);
+            }else
+            {
+                this.comunicaciones = Comunicacion.ListarTodos();
+                if (this.CboDivision.SelectedIndex != null)
+                {
+                    if (this.CboDivision.SelectedIndex != 0)
+                    {
+                        // Obtener usuarios en la división
+                        List<Usuario> usuariosEnDivision = Usuarios.Where(u => u.Division == this.CboDivision.SelectedIndex.ToString()).ToList();
+
+                        // Obtener comunicaciones relacionadas con la división
+                        comunicaciones = Comunicacion.ListarComunicacionesPorDivision(usuariosEnDivision);
+
+                        if (this.Usuario.Perfil != "Alumno")
+                        {
+                            if (this.Usuario.Perfil != "Padres")
+                            {
+                                CargarAlumnosPorDivision(usuariosEnDivision);
+                            }
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
             }
 
 
@@ -245,6 +290,7 @@ namespace CuadernoDeComunicaciones
             this.CboCategoria.SelectedIndex = 0;
             this.CboAlumnos.SelectedIndex = 0;
             this.TextoValue = "";
+            this.CboDivision.SelectedIndex = 0;
 
         }
 

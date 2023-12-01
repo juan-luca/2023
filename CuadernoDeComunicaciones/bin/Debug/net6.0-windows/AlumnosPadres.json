@@ -1,7 +1,7 @@
 [
   {
     "NombreUsuario": "lucasAlumno",
-    "Padre": "Padre1",
+    "Padre": "Padres",
     "Madre": "padre2"
   },
   {
@@ -36,7 +36,7 @@
   },
   {
     "NombreUsuario": "X",
-    "Padre": "padre2",
+    "Padre": "Padres",
     "Madre": "222222222"
   },
   {

@@ -50,8 +50,14 @@ namespace CuadernoDeComunicaciones
                         case "Profesor":
                             break;
                         case "Preceptor":
+                            BtnCrear.Enabled = false;
+                            BtnModificar.Enabled = false;
+                            BtnBorrar.Enabled = false;
                             break;
                         case "Padres":
+                            BtnCrear.Enabled = false;
+                            BtnModificar.Enabled = false;
+                            BtnBorrar.Enabled = false;
                             break;
                         case "Alumno":
                             HabilitarControles();
@@ -313,16 +319,26 @@ namespace CuadernoDeComunicaciones
 
                     // Obtener comunicaciones relacionadas con la división
                     calificaciones = Calificacion.ListarCalificacionesPorDivision(usuariosEnDivision);
+                    if (this.Usuario.Perfil != "Alumno")
+                    { 
+                        if(this.Usuario.Perfil != "Padres")
+                        {
+                            CargarAlumnosPorDivision(usuariosEnDivision);
+                        }
+                        
+                    }else
+                    {
 
+                    }
                     // Cargar los alumnos de la división en CboAlumnos
-                    CargarAlumnosPorDivision(usuariosEnDivision);
+                   
                 }
             }
 
             if (Usuario.Perfil == "Padres")
             {
                 List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
-
+               
                 calificaciones = Calificacion.ListarCalificacionesDeAlumno(alumnosRelacionados);
             }
             else if (Usuario.Perfil == "Alumno")
@@ -343,6 +359,7 @@ namespace CuadernoDeComunicaciones
             this.nuNota.Text = "";
             this.txtObservaciones.Text = "";
             this.txtConcepto.Text = "";
+            this.CboDivision.SelectedIndex = 0;
         }
 
         protected override void HabilitarControles(bool habilitar = false, bool modificar = false)
@@ -379,7 +396,7 @@ namespace CuadernoDeComunicaciones
                         if (base.Usuario != null && int.TryParse(base.Usuario.Division, out int valorDivision))
                         {
                             this.CboDivision.SelectedIndex = valorDivision;
-                            CboAlumnos.SelectedItem = this.Usuario.NombreUsuario;
+                            
                         }
                         else
                         {
@@ -395,7 +412,7 @@ namespace CuadernoDeComunicaciones
                 nuNota.Enabled = habilitar;
                 CboMateria.Enabled = habilitar;
 
-                base.HabilitarControles(habilitar, !string.IsNullOrEmpty(this.lblCalificacionNroValue.Text));
+                
 
                 CboAlumnos.Enabled = habilitarFiltro;
             }
@@ -416,8 +433,9 @@ namespace CuadernoDeComunicaciones
         }
         private void ActualizarGrilla()
         {
-            this.Listar();
             this.Limpiar();
+            this.Listar();
+           
         }
 
     }

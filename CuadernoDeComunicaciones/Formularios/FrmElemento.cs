@@ -91,7 +91,7 @@ namespace CuadernoDeComunicaciones
             this.cboDivision.DataSource =  Enum.GetValues(typeof(Division));
 
             AplicarConfiguracion();
-            ConfigurarControlesSegunPerfil();
+            ConfigurarControlesSegunPerfilE();
         }
         public FrmElemento(Usuario Usuario, List<Usuario> Usuarios)
         {
@@ -102,7 +102,7 @@ namespace CuadernoDeComunicaciones
 
             CargarAlumnos();
             AplicarConfiguracion();
-            this.ConfigurarControlesSegunPerfil();
+            this.ConfigurarControlesSegunPerfilE();
 
         }
         public void AplicarConfiguracion()
@@ -138,8 +138,20 @@ namespace CuadernoDeComunicaciones
         private void CargarAlumnos()
         {
             List<Usuario> usuariosAlumnos = this.usuarios.Where(u => u.Perfil == "Alumno").ToList();
-
-
+            RelacionesManager relacionesManager = new RelacionesManager();
+            if (this.usuario.Perfil=="Alumno")
+            {
+                // Si el perfil del usuario actual es "Alumno", solo agregar ese usuario a la lista
+                Usuario usuarioActual = this.usuarios.FirstOrDefault(u => u.NombreUsuario == this.usuario.NombreUsuario);
+                if (usuarioActual != null)
+                {
+                    usuariosAlumnos.Clear(); // Limpiar la lista actual
+                    usuariosAlumnos.Add(usuarioActual);
+                }
+            }else if(this.usuario.Perfil == "Padres")
+            {
+                List<Alumno> alumnosRelacionados = relacionesManager.ObtenerAlumnosRelacionados(Usuario.NombreUsuario);
+            }
             cboAlumno.DisplayMember = "nombreUsuario";
             cboAlumno.ValueMember = "nombreUsuario";
             cboAlumno.DataSource = usuariosAlumnos;
@@ -171,7 +183,7 @@ namespace CuadernoDeComunicaciones
                     break;
                 case "Alumno":
                     this.HabilitarControles(false);
-                    CboAlumnos.SelectedItem = this.usuario.NombreUsuario;
+                    CboAlumnos.SelectedValue = this.usuario.NombreUsuario;
                     break;
                 default:
                     break;
@@ -277,7 +289,116 @@ namespace CuadernoDeComunicaciones
         {
             BtnListarClick?.Invoke(this, EventArgs.Empty);
         }
+        protected virtual void ConfigurarControlesSegunPerfilE(string Perfil = "")
+        {
+            if (Perfil == "")
+                Perfil = this.usuario.Perfil;
 
+
+            lblRemitente.Text = Perfil;
+
+            lblRemitenteValue.Text = this.usuario.NombreCompleto;
+
+            switch (Perfil)
+            {
+                case "Director":
+                    this.HabilitarControlesE(true);
+                    break;
+                case "Profesor":
+                    HabilitarControlesE(true);
+                    break;
+                case "Preceptor":
+                    HabilitarControlesE(true);
+                    break;
+                case "Padres":
+                    HabilitarControlesE(true);
+                    break;
+                case "Alumno":
+                    this.HabilitarControlesE(false);
+                    CboAlumnos.SelectedValue = this.usuario.NombreUsuario;
+                    break;
+                default:
+                    break;
+            }
+        }
+        protected virtual void HabilitarControlesE(bool habilitar = false, bool modificar = false)
+        {
+            switch (this.usuario.Perfil)
+            {
+                case "Director":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = modificar;
+                    btnBorrar.Enabled = modificar;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    if (modificar)
+                    {
+                        this.BtnCrear.Enabled = false;
+                        this.BtnModificar.Enabled = true;
+                        this.BtnBorrar.Enabled = true;
+                    }
+                    else
+                    {
+                        this.BtnCrear.Enabled = true;
+                        this.BtnModificar.Enabled = false;
+                        this.BtnBorrar.Enabled = false;
+                    }
+                    break;
+                case "Profesor":
+                    habilitar = false;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+
+                    break;
+                case "Preceptor":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case "Padres":
+                    habilitar = true;
+                    cboAlumno.Enabled = true;
+                    btnCrear.Enabled = !modificar;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case "Alumno":
+                    habilitar = false;
+                    cboAlumno.Enabled = false;
+                    btnCrear.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnBorrar.Enabled = false;
+                    btnListar.Enabled = false;
+                    btnLimpiar.Enabled = false;
+                    dtpFecha.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
+
+
+
+
+
+
+
+        }
         private void dgvElementos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvElementosCellClick?.Invoke(this, e);

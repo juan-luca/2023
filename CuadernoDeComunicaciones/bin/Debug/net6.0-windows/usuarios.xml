@@ -93,13 +93,6 @@
     <NombreCompleto>sadsadsa</NombreCompleto>
   </Usuario>
   <Usuario>
-    <Division>3</Division>
-    <NombreUsuario>X</NombreUsuario>
-    <Contraseña>X</Contraseña>
-    <Perfil>Alumno</Perfil>
-    <NombreCompleto>X</NombreCompleto>
-  </Usuario>
-  <Usuario>
     <Division>7</Division>
     <NombreUsuario>V</NombreUsuario>
     <Contraseña>V</Contraseña>
@@ -112,5 +105,12 @@
     <Contraseña>BB</Contraseña>
     <Perfil>Alumno</Perfil>
     <NombreCompleto>BBB</NombreCompleto>
+  </Usuario>
+  <Usuario>
+    <Division>3</Division>
+    <NombreUsuario>X</NombreUsuario>
+    <Contraseña>X</Contraseña>
+    <Perfil>Alumno</Perfil>
+    <NombreCompleto>X</NombreCompleto>
   </Usuario>
 </ArrayOfUsuario>
