@@ -102,7 +102,7 @@ namespace CuadernoDeComunicaciones
 
             CargarAlumnos();
             AplicarConfiguracion();
-            ConfigurarControlesSegunPerfil();
+            this.ConfigurarControlesSegunPerfil();
 
         }
         public void AplicarConfiguracion()
@@ -158,7 +158,7 @@ namespace CuadernoDeComunicaciones
             switch (Perfil)
             {
                 case "Director":
-                    HabilitarControles(true);
+                    this.HabilitarControles(true);
                     break;
                 case "Profesor":
                     HabilitarControles(true);
@@ -170,7 +170,7 @@ namespace CuadernoDeComunicaciones
                     HabilitarControles(true);
                     break;
                 case "Alumno":
-                    HabilitarControles(false);
+                    this.HabilitarControles(false);
                     CboAlumnos.SelectedItem = this.usuario.NombreUsuario;
                     break;
                 default:

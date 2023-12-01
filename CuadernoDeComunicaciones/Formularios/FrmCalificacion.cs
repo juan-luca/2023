@@ -16,6 +16,7 @@ namespace CuadernoDeComunicaciones
         private List<Calificacion> calificaciones;
         private string archivoXml = "Calificaciones.xml";
         private Configuraciones configuraciones;
+        private bool Instanciado = false;
 
         private IErrorLogger<CustomError> errorLogger = new ErrorLogger<CustomError>();
         public Materia MateriaSeleccionada
@@ -27,7 +28,7 @@ namespace CuadernoDeComunicaciones
         {
             InitializeComponent();
             this.CboMateria.DataSource = Enum.GetValues(typeof(Materia));
-
+            this.Instanciado = true;
             ConfigurarControlesSegunPerfil(Usuario.Perfil);
             AplicarConfiguracion();
             Listar();
@@ -36,23 +37,30 @@ namespace CuadernoDeComunicaciones
         {
             try
             {
-                HabilitarControles();
-                switch (Perfil)
+                
+                if(Instanciado)
                 {
-                    case "Director":
-                        break;
-                    case "Profesor":
-                        break;
-                    case "Preceptor":
-                        break;
-                    case "Padres":
-                        break;
-                    case "Alumno":
-                        HabilitarControles();
-                        break;
-                    default:
-                        break;
+                    
+                    this.HabilitarControles();
+                    
+                    switch (Perfil)
+                    {
+                        case "Director":
+                            break;
+                        case "Profesor":
+                            break;
+                        case "Preceptor":
+                            break;
+                        case "Padres":
+                            break;
+                        case "Alumno":
+                            HabilitarControles();
+                            break;
+                        default:
+                            break;
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -62,7 +70,7 @@ namespace CuadernoDeComunicaciones
                 {
                     errorLogger.LogError(error);
                 }
-                throw new Exception("Error al modificar la comunicación en la base de datos.", ex);
+                MessageBox.Show("Error .", ex.Message);
 
             }
             
@@ -342,6 +350,7 @@ namespace CuadernoDeComunicaciones
             bool habilitarFiltro = false;
             try
             {
+                
                 switch (base.Usuario.Perfil)
                 {
                     case "Director":
@@ -370,6 +379,7 @@ namespace CuadernoDeComunicaciones
                         if (base.Usuario != null && int.TryParse(base.Usuario.Division, out int valorDivision))
                         {
                             this.CboDivision.SelectedIndex = valorDivision;
+                            CboAlumnos.SelectedItem = this.Usuario.NombreUsuario;
                         }
                         else
                         {

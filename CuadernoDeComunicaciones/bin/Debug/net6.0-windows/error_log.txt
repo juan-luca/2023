@@ -7,3 +7,9 @@ The statement has been terminated.
 29/11/2023 23:42:12: Error al crear el usuario: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Usuarios__IdDivi__49C3F6B7". The conflict occurred in database "CuadernoDeComunicaciones", table "dbo.Divisiones", column 'IdDivision'.
 The statement has been terminated.
 30/11/2023 00:01:39: Error al crear calificación: Object reference not set to an instance of an object.
+30/11/2023 21:22:40: Error al crear calificación: Object reference not set to an instance of an object.
+30/11/2023 21:22:49: Error al crear calificación: Error al modificar la comunicación en la base de datos.
+30/11/2023 21:24:22: Error al crear calificación: Object reference not set to an instance of an object.
+30/11/2023 21:24:22: Error al crear calificación: Error al modificar la comunicación en la base de datos.
+30/11/2023 21:33:57: Error al crear calificación: Object reference not set to an instance of an object.
+30/11/2023 21:33:58: Error al crear calificación: Error al modificar la comunicación en la base de datos.
